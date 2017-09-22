@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+        
+    <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
+        
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        
+        
+                
+    <style type="text/css">
+        body{
+            background: white;
+            margin: 0;
+        }
+    
+        #bar {
+            position: absolute;
+            /*padding-top: 40px;*/
+            background-color: #fff;
+            width:100%;
+            height:8%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            visibility : hidden;
+        }
+    
+        #bar.fade-in
+        {
+            padding-top: 40px;
+            background-color: #fff;
+            width:100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            visibility : visible;
+            -webkit-animation-name: example; /* Chrome, Safari, Opera */
+            -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+            animation-name: example;
+            animation-duration: 4s;
+        }
+    
+        .dropdown:hover #top-menu {
+            display: block;
+        }
+        
+        
+        /* Chrome, Safari, Opera */
+        @-webkit-keyframes example {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        /* Standard syntax */
+        @keyframes example {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    
+        @media (max-width: 768px) {
+            .btn-responsive {
+                padding:2px 4px;
+                font-size:80%;
+                line-height: 1;
+                border-radius:3px;
+            }
+        }
+    
+        @media (min-width: 769px) and (max-width: 992px) {
+            .btn-responsive {
+                padding:4px 9px;
+                font-size:90%;
+                line-height: 1.2;
+            }
+        }
+    
+        .img-bcg {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    
+        .iframe-menu {
+            position: absolute;
+            top: 44%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    
+        .triangulo-1 {
+            position: absolute;
+            top: 57%;
+            bottom: 38%;
+            left: 21%;
+            width: 8%;
+        }
+    
+        .triangulo-2 {
+            position: absolute;
+            top: 57%;
+            bottom: 38%;
+            left: 71%;
+            width: 8%;
+        }
+    
+        .sec2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .list-zona {
+            position: relative;
+            left: 17.5%;
+            width: 65%;
+            height: 16%;
+            
+        }
+        .list-zona-drop {
+            width: 100%;
+            height: 100%;
+            color: gray;
+        }
+        .sec3 {
+            position: absolute;
+            top: 63%;
+            bottom: 0;
+            left: 5%;
+            width: 40%;
+        }
+        .sec4 {
+            position: absolute;
+            top: 63%;
+            bottom: 0;
+            left: 55%;
+            width: 40%;
+        }
+        .button-1 {
+            position: absolute;
+            top: 18%;
+            left: 17.5%;
+            width: 65%;
+            height: 16%;
+        }
+        .line-1 {
+            position: absolute;
+            top: 58%;
+            left: 46%;
+            bottom: 0.2%;
+            width: 8%;
+        }
+        .descripcion-pkt {
+            position: absolute;
+            top: ;
+        }
+    
+        .txt-1 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            text-align:center;
+        }
+    
+        .txt-1-1 {
+            position: absolute;
+            top: 58%;
+            left: 0;
+            text-align:center;
+        }
+    
+        .txt-1-2 {
+            position: absolute;
+            top: 72%;
+            left: 0;
+            text-align:center;
+        }
+        .txt-1-3 {
+            position: absolute;
+            top: 60%;
+            left: 0;
+            text-align:center;
+        }
+    
+        .box-position {
+            position: absolute;
+            left: 30%;
+            font-family: calibri;
+        }
+    
+        .txt-titles {
+            font-family: Futura, Helvetica, Verdana;
+            /*font-size: 100%;*/
+            color: #EF0060;
+            text-align: center;
+        }
+    
+        input.search {
+            position: relative;
+            width: 49%;
+            background-color: #EF0060;
+            color: #ffffff;
+            border-color: #EF0060;
+        }
+    
+    .forgot-password{text-align:center;margin:15px 0 0}
+    .forgot-password a{color:#8c8c8c}
+    .modal-footer{text-align:center;padding:15px 30px;border-top:1px solid #d9d9d9;box-shadow:inset 0 1px 0 white}
+    .modal-footer a{font-weight:600;text-decoration:underline}
+    @media (min-width: 768px){.sr-login-modal .form-section,.sr-login-modal.signup .login-section{margin:0 -30px;padding:30px 30px 0}.sr-login-modal .modal-footer{margin:0 -15px}}
+    
+    /* Inicia configuración de elementos en window emergente pop-up */
+        /* Configuración botón facebook */
+        .or-break {
+            width: 2em;
+            height: 2em;
+            background-color: white;
+            color: #b3b3b3;
+            line-height: 2;
+            text-align: center;
+            border: 1px solid #b3b3b3;
+            border-radius: 50%;
+            display: block;
+            box-sizing: content-box;
+            margin: 0 auto;
+            position: relative;
+            bottom: -1em;
+        }
+        .btn-facebook-login {
+            color: white;
+            background-color: #3b5998;
+            border-color: #344e86;
+        }
+        .form-section, .sr-login-modal.signup .login-section {
+            margin: 0 0.5%;
+            padding: 4% 0 0;
+            border-top: 1px solid #d9d9d9;
+            box-shadow: inset 0 1px 0 white;
+        }
+        /* Fin configuración botón facebook */
+    
+        /* Configuración input text */
+        .sr-input-field {
+            height: 60%;
+            background-color: white;
+            display: block;
+            border: 1px solid #b3b3b3;
+            margin-bottom: 4%;
+            padding: 1.5%;
+            position: relative;
+        }
+        .sr-input-field:before, .sr-input-field:after {
+            content: " ";
+            display: table;
+        }
+    
+        .sr-input-field .input-label {
+            width: 22%;
+            color: #EF0060;
+            font-weight: 400;
+            text-transform: uppercase;
+            border-right: 1px solid #d9d9d9;
+            float: left;
+            font-size: 80%;
+        }
+        .sr-input-field .input-control {
+            width: calc(100% - 8em);
+            height: 40%;
+            color: #666666;
+            line-height: 20px;
+            font-weight: 400;
+            border: 0;
+            margin: 0;
+            padding: 0 0 0 4%;
+            outline: none;
+        }
+        /* Fin configuración input text */
+    /* Inicia configuración de elementos en window emergente pop-up */
+    
+        /* Configuración de la ventana emergente (pop up) */
+         .modalDialog {
+         position: fixed;
+         font-family: Arial, Helvetica, sans-serif;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         background: rgba(0,0,0,0.8);
+         z-index: 99999;
+         opacity:0;
+         -webkit-transition: opacity 400ms ease-in;
+         -moz-transition: opacity 400ms ease-in;
+         transition: opacity 400ms ease-in;
+         pointer-events: none;
+         }
+         
+         .modalDialog-after {
+         opacity:1;
+         pointer-events: auto;
+         }
+         
+         .modalDialog > div {
+         width: 45%;
+         position: relative;
+         margin: 6% auto;
+         /*padding: 5px 20px 13px 20px;*/
+         padding: 2% 5% 5% 2%;
+         border-radius: 1%;
+         background: #fff;
+         background: -moz-linear-gradient(#fff, #CCC);
+         background: -webkit-linear-gradient(#fff, #CCC);
+         background: -o-linear-gradient(#fff, #CCC);
+         }
+         
+         .close {
+         /*background: #606061;
+         color: #FFFFFF;*/
+         background: #EF0060;
+         color: #000000;
+         line-height: 25px;
+         position: absolute;
+         right: -2%;
+         text-align: center;
+         top: -2%;
+         width: 5%;
+         text-decoration: none;
+         font-weight: bold;
+         -webkit-border-radius: 12px;
+         -moz-border-radius: 12px;
+         border-radius: 12px;
+         -moz-box-shadow: 1px 1px 3px #000;
+         -webkit-box-shadow: 1px 1px 3px #000;
+         box-shadow: 1px 1px 3px #000;
+         }
+         /*#00d9ff*/
+         .close:hover { background: #EF0060; }
+         /* Finaliza configuración para la ventana emergente (pop up) */
+         
+        
+        /* Configuración de la ventana emergente (pop up) de Inicio de sesión */
+         .inicioSDialog {
+             position: fixed;
+             font-family: Arial, Helvetica, sans-serif;
+             top: 0;
+             right: 0;
+             bottom: 0;
+             left: 0;
+             background: rgba(0,0,0,0.8);
+             z-index: 99999;
+             opacity:0;
+             -webkit-transition: opacity 400ms ease-in;
+             -moz-transition: opacity 400ms ease-in;
+             transition: opacity 400ms ease-in;
+             pointer-events: none;
+         }
+    
+        .inicioSDialog-after {
+            opacity:1;
+            pointer-events: auto;
+        }
+    
+        .inicioSDialog > div {
+            width: 35%;
+            position: relative;
+            margin: 6% auto;
+            /*padding: 5px 20px 13px 20px;*/
+            padding: 2% 5% 5% 2%;
+            border-radius: 1%;
+            background: #fff;
+            background: -moz-linear-gradient(#fff, #CCC);
+            background: -webkit-linear-gradient(#fff, #CCC);
+            background: -o-linear-gradient(#fff, #CCC);
+        }
+    }
+    /*#00d9ff*/
+    .close:hover { background: #EF0060; }
+    
+    .sr-input-field2 {
+        height: 30%;
+        background-color: white;
+        display: block;
+        border: 1px solid #b3b3b3;
+        margin-bottom: 4%;
+        padding: 1.5%;
+        position: relative;
+    }
+    .sr-input-field2:before, .sr-input-field2:after {
+        content: " ";
+        display: table;
+    }
+    
+    .sr-input-field2 .input-label2 {
+        width: 28%;
+        color: #EF0060;
+        font-weight: 400;
+        text-transform: uppercase;
+        border-right: 1px solid #d9d9d9;
+        float: left;
+        font-size: 80%;
+    }
+    .sr-input-field2 .input-control2 {
+        width: calc(100% - 8em);
+        height: 30%;
+        color: #666666;
+        line-height: 100%;
+        font-weight: 400;
+        border: 0;
+        margin: 0;
+        padding: 0 0 0 4%;
+        outline: none;
+    }
+    /* Finaliza configuración para la ventana emergente (pop up) de inicio de sesión*/
+
+
+    </style>
+    
+    <script>
+        function showBar(){
+            document.getElementById("bar").className = "";
+            document.getElementById("bar").className = "fade-in";
+            var canvas4 = document.getElementById('mycanvas4');
+            if(canvas4.getContext){
+                var ctx = canvas4.getContext('2d');
+                ctx.lineWidth = 1+8;
+                ctx.beginPath();
+                ctx.moveTo(5+8*14,5);
+                ctx.lineTo(5+8*14,148);
+                ctx.strokeStyle="black";
+                ctx.stroke();
+            }
+        }
+    </script>
+    <script>
+        function drawShape() {
+            var canvas = document.getElementById('mycanvas');
+            var canvas2= document.getElementById('mycanvas2');
+            var canvas3= document.getElementById('mycanvas3');
+            if (canvas.getContext){
+                var ctx = canvas.getContext('2d');
+                ctx.beginPath();
+                ctx.moveTo(0,0);
+                ctx.lineTo(300,0);
+                ctx.lineTo(150,110);
+                ctx.fillStyle="rgba(255,255,255, 0.6)";
+                ctx.fill();
+            }
+            if (canvas2.getContext){
+                var ctx = canvas2.getContext('2d');
+                ctx.beginPath();
+                ctx.moveTo(0,0);
+                ctx.lineTo(300,0);
+                ctx.lineTo(150,110);
+                ctx.fillStyle="rgba(255,255,255, 0.6)";
+                ctx.fill();
+            }
+            if(canvas3.getContext){
+                var ctx = canvas3.getContext('2d');
+                    ctx.lineWidth = 1+10;
+                    ctx.beginPath();
+                    ctx.moveTo(5+10*14,5);
+                    ctx.lineTo(5+10*14,148);
+                    ctx.strokeStyle="#ffffff";
+                    ctx.stroke();
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#dropdown-1 ul li a").click(function(){
+                var selText = $(this).text();
+                $(this).parents('#dropdown-1').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+            });
+        });
+    </script>
+    
+    <!-- Google maps -->
+    <title>Google Maps JavaScript API v3 Example: Map Simple</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <!--><style>
+        html, body, #map_canvas {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+        var map;
+        
+        function initialize() {
+            var mapOptions = {
+                zoom: 8,
+                center: new google.maps.LatLng(19.4658666,-99.237783),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('map_canvas'),
+                                      mapOptions);
+        }
+    
+    google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    <!-- Fin google maps -->
+
+    <!-- Enviando info -->
+    <script>
+        $(document).ready(function(){
+            $(document).on('click', '#dropdown-1 ul a', function(){
+                var selText = $(this).text();
+                $(this).parents('#dropdown-1').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+            });
+            $(document).on('click', '#dropdown-2 ul a', function(){
+                var selText = $(this).text();
+                $(this).parents('#dropdown-2').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+            });
+
+            $.ajax({
+                type: "GET",
+                url: './zonas',
+                dataType: 'json',
+                success: function(json) {
+
+                    var $el = $("#dropdown-1 ul");
+                    $el.empty(); // remove old options
+                    $.each(json, function(value, key) {
+                        if (value == "data")
+                            $.each(key, function(index, elementValue){
+                                $el.append($("<li><a href='#'>" + elementValue.name + "</a></li>"));
+                            });
+                    });
+                }
+            });
+            $.ajax({
+                type: "GET",
+                url: './zonas',
+                dataType: 'json',
+                success: function(json) {
+
+                    var $el = $("#dropdown-2 ul");
+                    $el.empty(); // remove old options
+                    $.each(json, function(value, key) {
+                        if (value == "data")
+                            $.each(key, function(index, elementValue){
+                                $el.append($("<li><a href='#'>" + elementValue.name + "</a></li>"));
+                            });
+                    });
+                }
+            });
+
+        });
+    </script>
+    <!-- Fin enviando info -->
+    <script>
+        function enviaRegistro(e){
+
+            e.preventDefault();
+
+            var nombre = $("#nombre-registro").val();
+            var ap1 = $("#ap1-registro").val();
+            var ap2 = $("#ap2-registro").val();
+            var email = $("#email-registro").val();
+            var pass = $("#pass-registro").val();
+
+            var sendInfo = {
+               nombre: nombre,
+               ap1: ap1,
+               ap1: ap2,
+               email: email,
+               pass: pass
+           };
+
+           $.ajax({
+               type: "POST",
+               url: "./usuarios",
+               success: function (json) {
+                    $(openModal).toggleClass('modalDialog-after');
+                    var info = $.parseJSON(json);
+                    alert(info.status);
+               },
+               data: sendInfo
+           });
+        }
+    </script>
+
+</head>
+
+<body onmousemove="showBar();" onload="drawShape();">
+
+<div id="login" class="inicioSDialog">
+    <div style="padding-bottom: 1.5%;">
+        <a href="#" onclick="$(login).toggleClass('inicioSDialog-after');" title="Close" class="close">X</a>
+        <div style="position: relative; left: 4%;">
+            <h4 class="txt-titles">Inicio de Sesión</h4>
+        </div>
+        <div style="position: relative; left: 4%;">
+            <div class="facebook-section">
+                <button type="button" class="btn btn-block btn-facebook-login" data-event-click="toLoginWithFacebook" data-source-disabled="facebook_ready | not">
+                    <span class="fa fa-facebook-square"></span>
+                    Iniciar sesión con <b>Facebook</b>
+                </button>
+            </div>
+            <span class="or-break">o</span>
+            <div class="form-section">
+                <form action="*">
+                    <p class="form-section-title" style="text-align: center;">Iniciar sesión con Email</p>
+                    <label class="sr-input-field2">
+                        <span class="input-label2">Email</span>
+                        <input type="text" name="name" autocomplete="name" required
+                            class="input-control2" placeholder="ejemplo@email.com"
+                            data-bind="customer.name"
+                            data-source-disabled="submitting_form">
+                    </label>
+                    <label class="sr-input-field2">
+                        <span class="input-label2">Contraseña</span>
+                        <input type="text" name="name" autocomplete="name" required
+                            class="input-control2" placeholder="********"
+                            data-bind="customer.name"
+                            data-source-disabled="submitting_form">
+                    </label>
+                    <div>
+                        <input type="submit" class="search" value="Iniciar Sesión">
+                        <input type="button" value="Cancelar" class="search" onclick="">
+                    </div>
+                    <div style="margin-bottom: 4%">
+                        <p class="forgot-password">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        ¿Eres nuevo en LONCH?
+                        <a href="#openModal" style="font-size: 90%;color: #EF0060"
+                            data-event-click="#openModal">¡Registrate ahora!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Inicia ventana emergente de registro -->
+<div id="openModal" class="modalDialog">
+    <div style="padding-bottom: 3%;">
+        <a href="#" onClick="$(openModal).toggleClass('modalDialog-after');" title="Close" class="close">X</a>
+        <div style="position: relative; left: 4%;">
+            <h4 class="txt-titles">REGISTRO EN LONCH</h4>
+        </div>
+        <div style="position: relative; left: 4%;">
+            <div class="facebook-section">
+                <button type="button" class="btn btn-block btn-facebook-login" data-event-click="toLoginWithFacebook" data-source-disabled="facebook_ready | not">
+                <span class="fa fa-facebook-square"></span>
+                Registrarse mediante <b>Facebook</b>
+                </button>
+            </div>
+            <span class="or-break">o</span>
+            <div class="form-section">
+                <form id="form-registro">
+                    <p class="form-section-title" style="text-align: center;">Registrarse por email</p>
+                    <label class="sr-input-field">
+                        <span class="input-label">Nombre *</span>
+                        <input id="nombre-registro" type="text" name="name" autocomplete="name" required class="input-control" placeholder="Nombre (s)" data-bind="customer.name" data-source-disabled="submitting_form">
+                    </label>
+                    <label class="sr-input-field">
+                        <span class="input-label">Apellido 1 *</span>
+                        <input id="ap1-registro" type="text" name="name" autocomplete="name" required
+                            class="input-control" placeholder="Apellido Paterno"
+                            data-bind="customer.name"
+                            data-source-disabled="submitting_form">
+                    </label>
+                    <label class="sr-input-field">
+                        <span class="input-label">Apellido 2</span>
+                        <input id = "ap2-registro" type="text" name="name" autocomplete="name" required
+                            class="input-control" placeholder="Apellido Materno"
+                            data-bind="customer.name"
+                            data-source-disabled="submitting_form">
+                    </label>
+                    <label class="sr-input-field">
+                        <span class="input-label">Email *</span>
+                        <input id="email-registro" type="text" name="name" autocomplete="name" required
+                            class="input-control" placeholder="ejemplo@email.com"
+                            data-bind="customer.name"
+                            data-source-disabled="submitting_form">
+                    </label>
+                    <label class="sr-input-field">
+                        <span class="input-label">Contraseña *</span>
+                        <input id="pass-registro" type="text" name="name" autocomplete="name" required
+                            class="input-control" placeholder="********"
+                            data-bind="customer.name"
+                            data-source-disabled="submitting_form">
+                    </label>
+                    <div>
+                        <p style="font-size: 70%">* Campo requerido</p>
+                    </div>
+                    <input type="submit" class="search" onClick="enviaRegistro(event);" value="Enviar Registro">
+                    <input type="button" value="Cancelar" class="search" onclick="">
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!--Termina ventana emergente de registro-->
+
+    <!-- Inicia sección banner superior-->
+    <div id="bar">
+        <div class="dropdown" style="position: absolute; top:0; left: 2%; bottom: 0; right: 95%; font-family: Helvetica; font-size: 100%;">
+            <a href="#" style="color: black; position: absolute; top: 1%; left: 0; padding: 0 0; font-size: 180%; line-height:2" class="dropdown-toggle btn-responsive top-menu" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-align-justify btn-responsive"></span>
+            </a>
+            <ul id="top-menu" class="dropdown-menu">
+                <li><a href="#">Mi Perfil</a></li>
+                <li><a href="#">Come Gratis</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Lonch a la Carta</a></li>
+                <li><a href="#">Lonch al Momento</a></li>
+                <li><a href="#">¿Cómo Funciona?</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Servicios Corporativos</a></li>
+                <li><a href="#">Aviso de Privacidad</a></li>
+                <li><a href="#">Térimos y Condiciones</a></li>
+            </ul>
+        </div>
+        <div style="position: absolute; top:16%; left: 4%; bottom: 0; right: 90%;">
+            <canvas id="mycanvas4" style="width:100%; height:75%;"></canvas>
+        </div>
+        <div style="position: absolute; top:15%; left: 8%; bottom: 10%; right: 70%; font-family: Futura, Helvetica, Verdana; font-size: 100%;">
+            <p style="position: absolute; top: 16%;">SERVICIOS CORPORATIVOS</p>
+        </div>
+        <div style="position: absolute; top:15%; left: 29%; bottom: 10%; right: 59%; font-family: Futura, Helvetica, Verdana; font-size: 100%;">
+            <p style="position: absolute; top: 16%;">¡COME GRATIS!</p>
+            <a href="#" style="color: black; position: absolute; left: 80%; top: 16%; font-family: Futura, Helvetica, Verdana; font-size: 100%;">
+                <span class="glyphicon glyphicon-info-sign"></span>
+            </a>
+        </div>
+        <div style="position: absolute; top:15%; left: 80%; bottom: 10%; right: 0; font-family: Futura, Helvetica, Verdana; font-size: 100%;">
+            <a style="color: black; position: absolute; top: 16%; padding: 0 0; font-family: Futura, Helvetica, Verdana; font-size: 100%;" class="btn-responsive">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+            <a href="#" onclick="$(login).toggleClass('inicioSDialog-after');" style="color: black; position: absolute; top: 16%; left:10%; padding: 0 0; font-family: Futura, Helvetica, Verdana; font-size: 100%;" class="btn-responsive">Iniciar Sesión
+            </a>
+            <p style="color: black; position: absolute; top: 16%; left: 45%; padding: 0 0; font-family: Futura, Helvetica, Verdana; font-size: 100%;" class="btn-responsive">/</p>
+            <a href="#" onClick="$(openModal).toggleClass('modalDialog-after');" style="color: black; position: absolute; top: 16%; left: 50%; padding: 0 0; font-family: Futura, Helvetica, Verdana; font-size: 100%;" class="btn-responsive">
+                Registro
+            </a>
+            <!--<p style="position: absolute; top: 16%;">Iniciar Sesión / Bienvenidos </p>-->
+        </div>
+    </div><!-- Termina sección baner superior-->
+    
+    <!-- Inicia sección principal de imagen de inicio-->
+    <div class="img-bcg">
+        <img src="img/Inicio.gif" border="0" width="100%" height="100%">
+        
+        <!-- Inicia banner del centro-->
+        <div class="iframe-menu" style="background-color:rgba(255,255,255, 0); width: 100%; height: 13%;">
+            <div style="position: absolute; background-color:rgba(255,255,255, 0.6); width: 50%; height: 100%;">
+                <div style="font-family: Futura, Helvetica, Verdana; text-align: center; height:44%; font-size:1.5vw; padding: 1% 0 1% 0;">AL MOMENTO
+                </div>
+                <div style="font-family: calibri; text-align: center; color: #595959">Configura diariamente la entrega de una comida completa y balanceada.
+                </div>
+                <div style="font-family: calibri; text-align: center; color: #595959">¡Desde <b>$49.95 MXN</b> por paquete!*
+                </div>
+            </div>
+            <div style="position: absolute; left: 50%; top:0; background-color:rgba(255,255,255, 0.6); width: 50%; height: 100%;">
+                <div style="font-family: Futura, Helvetica, Verdana; text-align: center; height:44%; font-size:1.5vw; padding: 1% 0 1% 0;">A LA CARTA
+                </div>
+                <div style="font-family: calibri; text-align: center; color: #595959">Escoge la comida que se te antoje y programa su entrega.
+                </div>
+                <div style="font-family: calibri; text-align: center; color: #595959">¡Prácticamente sin restricciones!
+                </div>
+            </div>
+        </div><!-- Termina banner del centro-->
+        
+        <!-- Inicia banner del triangulo 1-->
+        <div class="triangulo-1">
+            <canvas id="mycanvas" style="height:100%; width:100%;">
+        </div><!-- Termina banner intermedio "triangle 1-->
+        
+        <!-- Inicia banner del triangulo 2-->
+        <div class="triangulo-2">
+            <canvas id="mycanvas2" style="height:100%; width:100%;">
+        </div><!-- Termina banner del triangulo 2-->
+        
+        <!-- Inicia sección de Zonas -->
+        <div class="sec3">
+            <div id="dropdown-1" class="list-zona dropdown">
+                <button class="list-zona-drop btn btn-default dropdown-toggle btn-responsive" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Zona
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu col-xs-12" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Santa Fé</a></li>
+                    <li><a href="#">Satélite</a></li>
+                    <li><a href="#">Polanco</a></li>
+                </ul>
+            </div>
+            <div class="button-1">
+                <button type="button" class="btn btn-default btn-responsive" style="position: relative;background-color:#FFBF00; border-color: yellow; width: 100%; height: 100%; color: #ffffff;">CONFIGURAR PAQUETE</button>
+            </div>
+            <div class="txt-1 btn-responsive" style="position: absolute; width: 100%; height: 100%; font-family: calibri;">
+                <p style="color: #E4E4E4;">*Precio aplica para suscripción mensual de $999.00 MXN.</p>
+            </div>
+            <div class="txt-1-1 btn-responsive" style="position: absolute; width: 100%; height: 100%; font-family: calibri;">
+                <p style="color: #E4E4E4;">Precio para pedidos únicos $80.00 MXN. Ambos incluyen entrega.</p>
+            </div>
+            <div class="txt-1-2 btn-responsive" style="position: absolute; width: 100%; height: 100%; font-family: calibri; font-size: 90%;">
+                <p style="color: #FFFFFF;">Los pedidos de LONCH AL MOMENTO solo pueden ser configurados de L-V de 15-17 hrs.</p>
+            </div>
+        </div><!-- Termina sección de Zonas -->
+        
+        <div class="line-1">
+            <canvas id="mycanvas3" style="width:100%; height:100%;"></canvas>
+        </div>
+        
+        <!-- Inicia sección de Delegación/Municipio -->
+        <div class="sec4">
+            <div id="dropdown-1" class="list-zona dropdown">
+                <button class="list-zona-drop btn btn-default dropdown-toggle btn-responsive" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Delegación/Municipio
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu col-xs-12" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Cuauhtémoc</a></li>
+                    <li><a href="#">Miguel Hidalgo</a></li>
+                    <li><a href="#">Benito Juárez</a></li>
+                </ul>
+            </div>
+            <div class="button-1">
+                <button type="button" class="btn btn-default btn-responsive" style="position: absolute;background-color:#26D4EB; border-color: #00FFFF; width: 100%; height: 100%; color: #ffffff;">VER MENÚ</button>
+            </div>
+            <div class="txt-1-3 btn-responsive" style="position: absolute; width: 100%; height: 100%; font-family: calibri; font-size: 90%;">
+                <p style="color: #FFFFFF;">Los pedidos de LONCH A LA CARTA pueden ser programados en cualquier momento con un mínimo de una semana de anticipación.</p>
+            </div>
+        </div><!-- Termina sección de Delegación/Municipio -->
+        
+    </div><!-- Termina sección principal de imagen de inicio -->
+    
+    <!--style="border-style: solid; border-color: red;"-->
+    
+    <!-- Inicia sección de Funcionamiento -->
+    <div class="sec2" style="height:75%; width:100%; top: 100%; left: 0;">
+        <div style="font-family: Futura, Helvetica, Verdana; padding: 1% 0 0 5%;">
+            <h2>¿CÓMO FUNCIONA?</h2>
+        </div>
+        <div style="position: absolute; height: 40%; width:20%; top: 30%; left:5%;">
+            <div style="position: absolute; height: 27%; width:22%; top: 35%;">
+                <img src="img/user.png" border="0" width="100%" height="100%">
+            </div>
+            <div style="position: absolute; height: 80%; width:75%; top: 15%; left: 25%; font-family: calibri; font-size: 2.5vmin;">
+                <p><b>Inicia Sesión</b></p>
+                <p style="color: #595959">Crea un perfil y administra tu cuenta. Será necesario para ordenar en cualquier modalidad.</p>
+            </div>
+        </div>
+        <div style="position: absolute; height: 30%; width:45%; top: 17.5%; left:27.5%;">
+            <div style="position: absolute; height: 20%; width: 40%; font-family: calibri; font-size: 2.5vmin;">
+                <p><b>Modalidad AL MOMENTO</b></p>
+            </div>
+            <div style="position: absolute; height: 85%; width: 100%; top: 15%; background-color: #f2f2f2;">
+                <div style="position: absolute; height: 28%; width:6%; top: 35%; left: 1%;">
+                    <img src="img/pencil.png" border="0" width="100%" height="100%">
+                </div>
+                <div style="position: absolute; height: 100%; width:38%; top: 0; left: 8%; font-family: calibri; font-size: 2.5vmin;">
+                    <p><b>Configura tu Menú del Día</b></p>
+                    <p style="color: #595959">Elige entre 5 opciones de sopa y plato fuerte. Te llegará junto al agua y postre del día.</p>
+                </div>
+                <div style="position: absolute; height: 28%; width:6%; top: 35%; left: 48%;">
+                    <img src="img/clock.png" border="0" width="100%" height="100%">
+                </div>
+                <div style="position: absolute; height: 100%; width:45%; top: 0; left: 56%; font-family: calibri; font-size: 2.5vmin;">
+                    <div style="position: absolute; height: 50%; width: 100%;">
+                        <b>Programa hora de entrega</b>
+                    </div>
+                    <div style="position: absolute; height: 90%; width: 100%; top: 22%;">
+                        <p style="color: #595959">Selecciona entre los horarios que disponemos para entrega en tu zona. Se bloquearán si no te podemos entregar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; height: 30%; width:45%; top: 52.5%; left:27.5%;">
+            <div style="position: absolute; height: 20%; width: 40%; font-family: calibri; font-size: 2.5vmin;">
+                <p><b>Modalidad A LA CARTA</b></p>
+            </div>
+            <div style="position: absolute; height: 85%; width: 100%; top: 15%; background-color: #f2f2f2;">
+                <div style="position: absolute; height: 28%; width:6%; top: 35%; left: 1%;">
+                    <img src="img/btn-ok.png" border="0" width="100%" height="100%">
+                </div>
+                <div style="position: absolute; height: 100%; width:38%; top: 10%; left: 8%; font-family: calibri; font-size: 2.5vmin;">
+                    <p><b>Explora todo el Menú</b></p>
+                    <p style="color: #595959">Elige entre cientos de opciones de platillos, bebidas y snacks.</p>
+                </div>
+                <div style="position: absolute; height: 28%; width:6%; top: 35%; left: 48%;">
+                    <img src="img/calendar.png" border="0" width="100%" height="100%">
+                        </div>
+                <div style="position: absolute; height: 100%; width:45%; top: 0; left: 56%; font-family: calibri; font-size: 2.5vmin;">
+                    <div style="position: absolute; height: 50%; width: 100%; top: 5%">
+                        <b>Programa la entrega</b>
+                    </div>
+                    <div style="position: absolute; height: 90%; width: 100%; top: 26%;">
+                        <p style="color: #595959">Selecciona entre fecha y hora de entrega. Te llevaremos desde un platillo hasta un banquete.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; height: 40%; width:20%; top: 30%; left:75%;">
+            <div style="position: absolute; height: 27%; width:22%; top: 35%;">
+                <img src="img/cubiertos.png" border="0" width="100%" height="100%">
+                    </div>
+            <div style="position: absolute; height: 80%; width:75%; top: 15%; left: 25%; font-family: calibri; font-size: 2.5vmin;">
+                <p><b>Confirma y disfruta</b></p>
+                <p style="color: #595959">Llama y/o confirma la información requerida. Nos encargaremos de que tu orden llegue a tiempo.</p>
+            </div>
+        </div>
+    </div><!-- Termina sesión de Funcionamiento -->
+    
+    <div style="position: absolute; height: 50%; width: 100%; top:170%; left:0;">
+        <!--<div style="font-family: Futura, Helvetica, Verdana; padding: 1% 0 0 5%;">
+            <h2>COBERTURA</h2>
+        </div>-->
+        <div id="map_canvas"></div>
+    </div>
+
+</body>
+
+</html>

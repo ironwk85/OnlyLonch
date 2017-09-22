@@ -1,0 +1,310 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Profile :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="stylesheets/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
+<!-- Custom Theme files -->
+<link href="stylesheets/admin.css" rel='stylesheet' type='text/css' />
+<link href="stylesheets/font-awesome.css" rel="stylesheet">
+<script src="javascripts/jquery.min.js"> </script>
+<script src="javascripts/bootstrap.min.js"> </script>
+  
+<!-- Mainly scripts -->
+<script src="javascripts/jquery.metisMenu.js"></script>
+<script src="javascripts/jquery.slimscroll.min.js"></script>
+<!-- Custom and plugin javascript -->
+<link href="stylesheets/custom.css" rel="stylesheet">
+<script src="javascripts/custom.js"></script>
+<script src="javascripts/screenfull.js"></script>
+		<script>
+		$(function () {
+			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+			if (!screenfull.enabled) {
+				return false;
+			}
+
+			
+
+			$('#toggle').click(function () {
+				screenfull.toggle($('#container')[0]);
+			});
+			
+
+			
+		});
+		</script>
+
+
+
+</head>
+<body>
+<div id="wrapper">
+      <!----->
+        <nav class="navbar-default navbar-static-top" role="navigation">
+            <div class="navbar-header">
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 </button>-->
+                <h1> <a class="navbar-brand" href="adminIndex.html">LONCH</a></h1>
+            </div>
+            <div class=" border-bottom">
+                <!--<div class="full-left">
+                 <section class="full-top">
+                 <button id="toggle"><i class="fa fa-arrows-alt"></i></button>
+                 </section>
+                 <form class=" navbar-left-right">
+                 <input type="text"  value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
+                 <input type="submit" value="" class="fa fa-search">
+                 </form>
+                 <div class="clearfix"> </div>
+                 </div>-->
+                
+                
+                <!-- Brand and toggle get grouped for better mobile display -->
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="drop-men" style="padding-top: 20px;">
+                    <ul class=" nav_1">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret" style="padding-right: 20px;">Cuenta de Usuario<i class="caret"></i></span></a>
+                            <ul class="dropdown-menu " role="menu">
+                                <li><a href="perfil.html"><i class="fa fa-user"></i>Editar Perfil</a></li>
+                                <li><a href=""><i class="fa fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+                <div class="clearfix"></div>
+	  
+		    <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        
+                        <li>
+                            <a href="adminIndex.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label">Dashboards</span> </a>
+                        </li>
+                        
+                        <li>
+                            <a href="consultaempleado.html" class=" hvr-bounce-to-right"><i class="fa fa-users nav_icon "></i><span class="nav-label">Empleados</span> </a>
+                        </li>
+                        
+                        <li>
+                            <a href="consultausuario.html" class=" hvr-bounce-to-right"><i class="fa fa-user nav_icon "></i><span class="nav-label">Cuentas de Usuario</span> </a>
+                        </li>
+                        
+                        <li>
+                            <a href="consultaperfil.html" class=" hvr-bounce-to-right"><i class="fa fa-user nav_icon "></i><span class="nav-label">Perfiles de Usuario</span> </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-cog nav_icon"></i> <span class="nav-label">Menú de LONCH</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="comidarapida.html" class=" hvr-bounce-to-right" style="font-size:12px"> <i class="fa fa-cutlery nav_icon"></i>LONCH Al Momento</a></li>
+                                <li><a href="alacarta.html" class=" hvr-bounce-to-right" style="font-size:12px"><i class="fa fa-coffee nav_icon"></i>LONCH A la Carta</a></li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="promos.html" class=" hvr-bounce-to-right"><i class="fa fa-gift nav_icon"></i> <span class="nav-label">Promociones</span> </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-shopping-cart nav_icon"></i> <span class="nav-label">Pedidos</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="#" class=" hvr-bounce-to-right" style="font-size:12px"><i class="fa fa-search nav_icon"></i>Consultar Estatus</a></li>
+                                <li><a href="#" class=" hvr-bounce-to-right" style="font-size:12px"><i class="fa fa fa-cart-plus nav_icon"></i>Admin Pedidos</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+            </div>
+			</div>
+        </nav>
+		 <div id="page-wrapper" class="gray-bg dashbard-1">
+       <div class="content-main">
+ 
+ 	<!--banner-->	
+		    <div class="banner">
+		    	<h2>
+				<a href="index.html">Home</a>
+				<i class="fa fa-angle-right"></i>
+				<span>Perfil</span>
+				</h2>
+		    </div>
+		<!--//banner-->
+ 	 <!--gallery-->
+ 	 <div class=" profile">
+
+		<div class="profile-bottom">
+			<h3><i class="fa fa-user"></i>Pefil</h3>
+			<div class="profile-bottom-top">
+			<div class="col-md-4 profile-bottom-img">
+				<img src="img/pr.jpg" alt="">
+			</div>
+			<div class="col-md-8 profile-text">
+				<h6>Info Personal</h6>
+				<table style="font-size:14px">
+                
+                <tr>
+                    <td>Nombre(s)</td>
+                    <td> :</td>
+                    <td><input type="text" value="Manuel"></a></td>
+                </tr>
+                
+                <tr>
+                    <td>Apellido 1</td>
+                    <td> :</td>
+                    <td><input type="text" value="Galindo"></a></td>
+                </tr>
+                
+                <tr>
+                    <td>Apellido 2</td>
+                    <td> :</td>
+                    <td><input type="text" value=""></a></td>
+                </tr>
+                
+				<tr><td>Celular</td>
+				<td>:</td>  
+				<td><input type="text" value="5515112048"></td></tr>
+				
+                <tr>
+                    <td>Teléfono Casa</td>
+                    <td> :</td>
+                    <td><input type="text" value="53634488"></a></td>
+                </tr>
+                
+				<tr>
+                    <td>Email</td>
+                    <td> :</td>
+                    <td><a href="info@gmail.com"><input type="text" value="info@email.com"></a></td>
+				</tr>
+                
+                <tr>
+                    <td>Contraseña</td>
+                    <td> :</td>
+                    <td><input type="text" value="********"></td>
+                </tr>
+                
+                <tr>
+                    <td>Perfil</td>
+                    <td>:</td>
+                    <td>admin</td>
+                </tr>
+                
+                <tr>
+                    <td height="60"><p style="color:#000000;font-size:16px">Dirección</p></td>
+                </tr>
+                
+                <tr>
+                    <td>Calle</td>
+                    <td> :</td>
+                    <td><input type="text" value="Sta Clara"></td>
+                </tr>
+                
+                <tr>
+                    <td># Exterior</td>
+                    <td> :</td>
+                    <td><input type="text" value="45A"></td>
+                </tr>
+                
+                <tr>
+                    <td># Interior</td>
+                    <td> :</td>
+                    <td><input type="text" value=""></td>
+                </tr>
+                <tr>
+                    <td>Colonia</td>
+                    <td> :</td>
+                    <td><input type="text" value="Vista del Valle"></td>
+                </tr>
+                <tr>
+                    <td>CP</td>
+                    <td> :</td>
+                    <td><input type="text" value="58000"></td>
+                </tr>
+                <tr>
+                    <td>Ciudad</td>
+                    <td> :</td>
+                    <td><input type="text" value=""></td>
+                </tr>
+                <tr>
+                    <td>Delegación/Municipio</td>
+                    <td> :</td>
+                    <td><input type="text" value="Naucalpan de Juárez"></td>
+                </tr>
+                <tr>
+                    <td>Estado</td>
+                    <td> :</td>
+                    <td><input type="text" value="Estado de México"></td>
+                </tr>
+				</table>
+                
+			</div>
+			<div class="clearfix"></div>
+			</div>
+            
+			<!--<div class="profile-bottom-bottom">
+                <div class="col-md-4 profile-fo">
+                    <h4>23,5k</h4>
+                    <p>Followers</p>
+                    <a href="#" class="pro"><i class="fa fa-plus-circle"></i>Follow</a>
+                </div>
+                <div class="col-md-4 profile-fo">
+                    <h4>348</h4>
+                    <p>Following</p>
+                    <a href="#" class="pro1"><i class="fa fa-user"></i>View Profile</a>
+                </div>
+                <div class="col-md-4 profile-fo">
+                    <h4>23,5k</h4>
+                    <p>Snippets</p>
+                    <a href="#"><i class="fa fa-cog"></i>Options</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>-->
+			<div class="profile-btn">
+                <button type="button" href="#" class="btn bg-red">Guardar Cambios</button>
+                <div class="clearfix"></div>
+            </div>
+			 
+			
+		</div>
+	</div>
+	<!--//gallery-->
+		<!---->
+<div class="copy">
+            <p> &copy; 2016 LONCH</p>	    </div>
+		</div>
+		</div>
+		<div class="clearfix"> </div>
+       </div>
+     
+<!---->
+
+<!--scrolling js-->
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
+	<!--//scrolling js-->
+
+</body>
+</html>
+
+
+

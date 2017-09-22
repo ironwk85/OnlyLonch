@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
+		<script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="./javascripts/jquery.scrollify.min.js"></script>
+        <script type="text/javascript">
+        	$.scrollify({
+		        section : ".example-classname",
+		        sectionName : "section-name",
+		        interstitialSection : "",
+		        easing: "easeOutExpo",
+		        scrollSpeed: 1000,
+		        offset : 0,
+		        scrollbars: true,
+		        standardScrollElements: "",
+		        setHeights: false,
+		        overflowScroll: true,
+		        before:function() {},
+		        after:function() {},
+		        afterResize:function() {},
+		        afterRender:function() {}
+		    });
+        	$(function() {
+                $.scrollify({
+                    section : ".example-classname",
+                });
+            });
+
+        	function goToMainRow2(){
+        		scrollToElement( $(this).attr('main_row_2'), 2000 );
+        	}
+        	var scrollToElement = function(el, ms){
+			    var speed = (ms) ? ms : 500;
+			    $('html,body').animate({
+			        scrollTop: $(el).offset().top
+			    }, speed);
+			}
+
+			/****************************Facebook***********************************/
+			
+
+			window.fbAsyncInit = function() {
+			  FB.init({
+			    appId      : '1455109611172384',
+			    cookie     : true,  // enable cookies to allow the server to access 
+			                        // the session
+			    xfbml      : true,  // parse social plugins on this page
+			    version    : 'v2.5' // use graph api version 2.5
+			  });
+			};
+
+			(function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+
+			function loginFacebook() {
+			    FB.login(function(response) {
+   					if (response.status === 'connected') {
+
+   						email = null;
+   						picture = null;
+
+   						FB.api('/me', {fields: 'email,picture.width(100).height(100)'}, function(response) {
+							console.log(response);
+							email = response.email;
+							picture = response.picture.data.url;
+							console.log(email);
+							console.log(picture);
+
+	   						var sendInfo = {
+	   							email: email,
+	   							foto: picture
+						    };
+
+							$.ajax({
+						        type: "POST",
+						        url: './loginFacebook',
+						        dataType: 'json',
+						        
+						        beforeSend: function(){
+						        },
+						        success: function(json) {
+						            if (json.status == "SUCCESS"){
+						                console.log(json);
+						                window.location.replace("./123456.html");
+						            }
+						            else{
+						                $('#errorMsg').show();
+						            }
+						        },
+						        data: sendInfo
+						    }); 
+
+					    });
+					} else if (response.status === 'not_authorized') {
+						$('#errorMsg').show();
+					    console.log("not authorized");
+					} else {
+						$('#errorMsg').show();
+					    console.log("not logged onto Facebook");
+					}
+ 				}, {scope: 'public_profile,email,user_birthday'});
+			  }
+
+			/****************************Facebook***********************************/
+
+
+        </script>
+        <style type="text/css">
+        	@font-face {
+			    font-family: HelveticaNeue;
+			    src: url("./fonts/HelveticaNeueLTStd Lt.otf") format("opentype");
+			}
+        	html, body{
+			    height:100%;
+			    font-size: 6px;
+			    font-family: Raleway, Helvetica, Arial, sans-serif;
+			}
+
+			.xs_dissapear{
+				visibility: hidden;
+			}
+			.xs_no-dissapear{
+				font-size: 16px;
+			}
+			.xs_t-dissapear{
+				visibility: hidden;
+			}
+			.vertical_align_bottom{
+			    display: flex;
+    			align-items: flex-end;
+			}
+			.vertical_align_center{
+			    display:flex;
+ 				align-items: center;
+			}
+			.whiteiconcolor {
+				color:white;
+			}
+			.centered-text {
+    			text-align:center
+			}
+			.oval_class{
+				width: 15%;
+				height: 15%;
+				min-width: 70px;
+				min-height: 70px;
+			}
+			.middle_text{
+				font-size: 14px;
+			}
+			.big_text{
+				font-size: 24px;
+			}
+			#sesion_logo{
+				padding-top:10px;
+				margin-left: -10px;
+				height: 15%;
+				width: 15%;
+			}
+			#main_container{
+				height: 100%;
+			}
+			#main_row_1{
+				height: 100%;
+			    background:url('./img/back2.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_col_1_1{
+			    height: 100%;
+			}
+			#main_row_1_1{
+				height: 20%;
+			}
+			#main_row_1_2{
+				height: 60%;
+				text-align: center;
+			}
+			#main_row_1_3{
+				height: 20%;
+				text-align: center;
+			}
+			#iniciar_sesion_text{
+				display:inline;
+				padding-top:25px;
+				padding-left:2px;
+			}
+
+			.form-control{
+				-webkit-border-radius: 60px ;
+				-moz-border-radius: 60px ;
+				border-radius: 60px ;
+			}
+			.btn-default{
+				-webkit-border-radius: 60px ;
+				-moz-border-radius: 60px ;
+				border-radius: 60px ;
+				width:50%;
+			}
+			.line {
+				overflow: hidden;
+				text-align: center;
+				color: #E7B100;
+			}
+			.line:before,
+			.line:after {
+				background-color: #FFF;
+				content: "";
+				display: inline-block;
+				height: 1px;
+				position: relative;
+				vertical-align: middle;
+				width: 50%;
+			}
+			.line:before {
+				right: 0.5em;
+				margin-left: -50%;
+			}
+			.line:after {
+				left: 0.5em;
+				margin-right: -50%;
+			}
+
+			@media (min-width: 440px) {
+				html, body {
+					font-size: 7px;
+			  	}
+
+			  	.xs_dissapear{
+					visibility: hidden;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					visibility: hidden;
+				}
+			  	.middle_text{
+					font-size: 15px;
+				}
+				.big_text{
+					font-size: 25px;
+				}
+			  	#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+			}
+
+			@media (min-width: 600px) {
+				html, body {
+					font-size: 8px;
+			  	}
+
+			  	.middle_text{
+					font-size: 16px;
+				}
+				.big_text{
+					font-size: 26px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+			  	#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: hidden;
+				}
+			}
+
+			@media (min-width: 768px) {
+				html, body {
+					font-size: 9px;
+			  	}
+
+			  	.middle_text{
+					font-size: 17px;
+				}
+				.big_text{
+					font-size: 27px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+			  	#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+			  	.xs_dissapear{
+					visibility: hidden;
+			  	}
+			}
+
+			@media (min-width: 992px) {
+			  	html, body {
+				    font-size: 11px;
+			  	}
+
+			  	.middle_text{
+					font-size: 19px;
+				}
+				.big_text{
+					font-size: 29px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+				#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visible;
+				}
+			}
+
+			@media (min-width: 1200px) {
+			  	html, body {
+			    	font-size: 13px;
+			  	}
+
+			  	.middle_text{
+					font-size: 21px;
+				}
+				.big_text{
+					font-size: 31px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+				#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visile;
+				}
+			}
+        </style>
+		<title>Lonch</title>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<div class="container-fluid" id="main_container">
+			<div id="main_row_1" class="row example-classname">
+				<div id="main_col_1_1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div id="main_row_1_1" class="row">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<img id="sesion_logo" src="./img/logo_lonch.png">
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						</div>
+					</div>
+					<div id="main_row_1_2" class="row">
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-block">
+							<div></div>
+							<div >
+								<div style="color:#E7B100;">
+									Vive una experiencia única, recibe alimentos preparados por cocineros profesionales a bajo costo.
+								</div>
+								<form role="form" style="width:30%;margin-left:auto;margin-right:auto;">
+									<div class="form-group">
+										<div style="margin-top:10px;text-align:center;">
+								    		<a href="#" onclick="loginFacebook()" ><img style="width:100%;height:100%;" src="./img/loginFb.png"></a>
+								    	</div>
+										<div>
+											<h4 class="line">ó</h4>
+										</div>
+										<div style="margin:10px;">
+								    		<input type="email" class="form-control" id="usuario" placeholder="Usuario">
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="password" class="form-control" id="password" placeholder="Contraseña">
+								    	</div>
+								    	<button style="background-color:#E7B100;border-color:#E7B100;color:white;" type="button" class="btn btn-default">ENTRAR</button>
+								    	<div id="errorMsg" style="margin:5px;display:none;">
+											<h4 style="color:#FE2E2E;">No fue posible ingresar.</h4>
+										</div>
+								  	</div>
+								  	<div style="display:block;">
+										<a href="./registro.html"><p style="font-size:10px;float:left;color:white;">Registrarme</p></a>
+										<p style="font-size:10px;float:right;color:white;">Olvidé mi contraseña</p>
+									</div>
+								</form>
+							</div>
+							<div>
+							</div>
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						</div>
+					</div>
+					<div id="main_row_1_3" class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<!--<div>
+								<p style="color:white;">Descubre nuestra Historia</p>
+								<a href="#" onclick=""><i class="fa fa-angle-down fa-5x whiteiconcolor"></i></a>
+							</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

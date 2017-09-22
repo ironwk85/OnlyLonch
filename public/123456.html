@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html ng-app="sessionApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+		<script src="./javascripts/materialize.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="javascripts/components/core-min.js"></script>
+		<script src="javascripts/components/sha1-min.js"></script>
+		<script src="https://use.fontawesome.com/fb6b07209f.js"></script>
+		<script src="./lib/angular/angular.min.js"></script>
+		<script src="javascripts/angular-app.js"></script>
+		<script src="javascripts/sessionControllers.js"></script>
+		<script src="javascripts/indexControllers.js"></script>
+		<script src="javascripts/facebook.js"></script>
+		<link rel="stylesheet" href="./stylesheets/materialize.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
+		<link rel="stylesheet" href="./stylesheets/general.css">
+        <script type="text/javascript">
+				//checkLoginState();
+
+			/*$(function(){
+			    $.ajax({
+			       type: "GET",
+			       url: './authorization',
+			       dataType: 'json',
+			       success: function (json) {
+			            if (json.data.nombre && json.data.nombre!='' && json.data.perfil && json.data.perfil=="user"){
+			            	$(fotoUsuario).attr("src",json.data.foto);
+			            	$(imgPerfilBarra).attr("src",json.data.foto);
+			            	$('[name=imagenUsuario]').show();
+			            }
+			            else
+			            	$('[name=iniciaSesion]').show();
+			        },
+			        complete: function (){
+			            
+			        }
+			   }); 
+			});*/
+
+			function remove_nuevo(){
+				$("#nuevo_boton").removeClass("orange_underline");
+				$("#viejo_boton").addClass("orange_underline");
+			}
+
+			function remove_viejo(){
+				$("#viejo_boton").removeClass("orange_underline");
+				$("#nuevo_boton").addClass("orange_underline");
+			}
+
+			/*function registro(){
+
+	            var nombre = $("#nombre").val();
+	            var apellido = $("#apellido").val();
+	            var email = $("#email").val();
+	            var celular = $("#celular").val();
+	            var contra = $("#contra").val();
+	            var photo = $("#photo").val();
+
+	            var sendInfo = {
+	               nombre: nombre,
+	               apellido: apellido,
+	               email: email,
+	               celular: celular,
+	               contra: contra,
+	               photo: photo
+	           };
+
+				$.ajax({
+			       type: "POST",
+			       url: './register',
+			       dataType: 'json',
+			       success: function (json) {
+			            /*if (json.data.nombre && json.data.nombre!='' && json.data.perfil && json.data.perfil=="user"){
+			            	$(fotoUsuario).attr("src",json.data.foto);
+			            	$(imgPerfilBarra).attr("src",json.data.foto);
+			            	$('[name=imagenUsuario]').show();
+			            }
+			            else
+			            	$('[name=iniciaSesion]').show();*//*
+			        },
+			        data: sendInfo,
+			        success: function (json){
+			        	if (json.stat == "ERROR"){
+			        		if (json.data == "ER_DUP_ENTRY"){
+			        			alert("El correo que has ingresado ya se encuentra registrado.");
+			        		}
+			        		else
+			        			alert("Ha ocurrido un error, por favor intenta registrarte de nuevo.");
+			        	}
+			        	else
+			        		$(registrarseModal).modal('hide');
+			        }
+			   });
+			}*/
+
+			/*function checkRegister() {
+
+				var allowed = true;
+
+				if ($(contra).val().length < 8){
+					alert("La longitud de la contraseña debe ser de mínimo 8 dígitos");
+					allowed = false;
+				}
+				if ($(contra).val() != $(contra2).val()){
+					alert("Las contraseñas deben ser iguales");
+					allowed = false;
+				}
+				if (allowed === true)
+					registro();
+			}*/
+
+        </script>
+		<title>Lonch</title>
+	</head>
+	<body ng-controller="mainController" ng-init="isLogged()">
+		<ul id="slide-out" class="side-nav default-side-nav light-side-nav" 
+			style="background-color:#1B1E39;opacity:1;font-family:HelveticaNeue;font-weight:100;padding:0;margin:0;height:100%;">
+			<div class="logo-wrapper waves-light" style="text-align:center;height:25%;display:flex;align-items:center">
+				<div style="width:100%">
+					<img id="imgPerfilBarra" class="img-circle" style="width:100px;height:100px;" ng-src="{{photo}}"/>
+					<div class="white_text" style="margin:0;padding:0;color:#E8B81A;">
+						{{nombre}}&nbsp;&nbsp;&nbsp;&nbsp;{{apellido}}
+					</div>
+				</div>
+			</div>
+			<ul id="Menu" class="collapsible collapsible-accordion" style="height:55%;">
+				<li>
+					<div class="collapsible-header leftbar_div" style="xtop:1px;">
+						<a href="123456.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Inicio</a>
+					</div>
+            	</li>
+            	<li>
+					<div class="collapsible-header leftbar_div">
+						<a href="cobertura.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Cobertura</a>
+					</div>
+            	</li>
+            	<li>
+					<div class="collapsible-header leftbar_div">
+						<a href="foodlists.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Foodlists</a>
+					</div>
+            	</li>
+				<li>
+					<div class="collapsible-header leftbar_div">
+						Mi Perfil
+					</div>
+            		<div class="collapsible-body leftbar_div" style="padding-left:70px;">
+            			Mis Ubicaciones
+            		</div>
+            		<div class="collapsible-body leftbar_div" style="padding-left:70px;">
+            			<a href="ordenes.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Mis Órdenes - Factura</a>
+            		</div>
+            		<div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                        <a href="formas_pago.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Formas de Pago</a>
+            		</div>
+            	</li>
+            	<li>
+					<div class="collapsible-header leftbar_div">
+                        <a href="invita.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">¡Invita y come gratis!</a>
+					</div>
+            	</li>
+            	<li>
+					<div class="collapsible-header leftbar_div">
+						Canjea tus Códigos
+					</div>
+            	</li>
+            	<li>
+					<div class="collapsible-header leftbar_div">
+						Blog
+					</div>
+            	</li>
+			</ul>
+			<div style="text-align:center;">
+				<img src="img/img/instagram_icon.png" style="max-width:10%;margin:1%;">
+				<img src="img/img/facebook_icon.png" style="max-width:10%;margin:1%;">
+				<img src="img/img/email_icon.png" style="max-width:10%;margin:1%;">
+			</div>
+			<hr class="white_opacity_full" style="margin-top:10%;margin-bottom:0;padding:0;">
+			<div style="text-align:center;">
+				<a href="#" class="white_ref_simple" style="align:center">Cerrar Sesión</a>
+				<a href="#" class="white_ref_simple" style="align:center;font-size:8pt;">Reportar un problema</a>
+			</div>
+		</ul>
+		<nav class="navbar navbar-default navbar-fixed-top customNavBar" style="z-index:10;margin-bottom:0px;">
+			<div class="container-fluid" style="height:100%;width:100%;">
+				<div class="navbar-header" style="width:5%;">
+					<a class="navbar-brand"></a>
+				</div>
+				<div class="navbar-header" style="height:100%;width:95%;">
+					<ul class="nav navbar-nav" style="height:100%;">
+						<li class="active" style="background-color:transparent;height:100%;">
+							<a class="button-collapse" style="background:transparent;height:100%;margin:0;" href="#" data-activates="slide-out" data-transition="slidedown">
+								<img class="navBar_icon" style="max-height:20px;" src="img/img/menu_icon.png">
+							</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav" style="height:100%;float:right;">
+						<li style="background-color:transparent;height:100%;">
+							<a style="background:transparent;height:100%;padding:0;" href="#">
+								<img class="navBar_icon" style="width:80%;margin:10%;" src="img/img/checkout_icon.png">
+							</a>
+						</li>
+						<li style="background-color:transparent;height:100%;text-align:center;">
+							<a class="white-text" style="background:transparent;height:1px;font-size:small;" href="#registrarseModal" data-toggle="modal" onclick="$(nombre).val('');$(apellido).val('');$('#email').val('');$(celular).val('');$(contra).val('');$(contra2).val('');" ng-show="showRegister">
+								Registrarse
+							</a>
+							<img ng-src="{{photo}}" class="img-circle" style="width:40%;margin-bottom:10%;" ng-show="userImage">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid main_container">
+			<div class="modal fade" id="registrarseModal" role="dialog">
+            	<div class="modal-dialog">
+                	<div class="container-fluid modal-content">
+                    	<div class="modal-header">
+                        	<button type="button" class="close close-x" data-dismiss="modal" aria-label="Close">
+                            	<span aria-hidden="true">&times;</span>
+                        	</button>
+                    	</div>
+                    	<div class="modal-body">
+                        	<div class="row row_30 not_materialize_row light_underline">
+                            	<div id="nuevo_boton" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 orange_underline letters_hover3" style="cursor:pointer;right:10px;" ng-click="open=false;" onclick="remove_viejo();">
+                                	<span class="letters_hover">NUEVO USUARIO</span><br>
+                                	<span class="letters_hover2">&iquest;Tu primera vez por aqu&iacute;?</span>
+                            	</div>
+                            	<div id="viejo_boton" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 right_content letters_hover3" style="text-align:right;cursor:pointer;left:10px;" ng-click="open=true;" onclick="remove_nuevo();">
+                                	<span class="letters_hover">USUARIO CON REGISTRO</span><br>
+                                	<span class="letters_hover2">&iexcl;Un gusto volverte a recibir!</span>
+                            	</div>
+                        	</div>
+                        	<div class="row row_50 not_materialize_row light_underline" style="padding-top: 3%;padding-bottom: 4%;" ng-show="open">
+                            	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content" style="padding-right:0;padding-left:0px;">
+                                	<form>
+	                                    <div style="padding-top:8%;">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Email/Celular">
+	                                    </div>
+	                                    <div style="padding-top:4%; display: flex; align-items: center;">
+	                                        <div style="margin-right: 2%;">
+	                                            <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Contrase&ntilde;a" style="width: 100%;">
+	                                        </div>
+	                                        <div style="width: 50%">
+	                                            <button class="ob_hover ellipse_input ellipse_button orange_button" type="button" style="width: 100%;">INGRESAR</button>
+	                                        </div>
+	                                    </div>
+	                                    <div style="text-align: right; padding-top:1.5%;padding-right:3%;">
+	                                        <a href="" style="color:rgba(0,0,0,0.5);"><u>Olvid&eacute; mi contrase&ntilde;a</u></a>
+	                                    </div>
+                                	</form>
+                            	</div>
+                        	</div>
+                        	<div class="row row_50 not_materialize_row light_underline" style="padding-top: 3%;padding-bottom: 2.5%;" ng-hide="open">
+                        		<form id="formaRegistro">
+                            		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
+                                    	<div>
+                                        	<input type="text" class="ellipse_button ellipse_input" id="nombre" placeholder="Nombre" required ng-model="nombreInput">
+                                    	</div>
+                                    	<div style="padding-top:4%;">
+                                        	<input type="email" class="ellipse_button ellipse_input" id="email" placeholder="Email" required ng-model="emailInput">
+                                    	</div>
+                                    	<div style="padding-top:4%; display: flex; align-items: center;">
+                                        	<div style="margin-right: 2%;">
+                                            	<input type="password" class="ellipse_button ellipse_input" id="contra" placeholder="Contrase&ntilde;a" style="width: 100%;" required ng-model="contra">
+                                        	</div>
+                                        	<div>
+                                            	<input type="password" class="ellipse_button ellipse_input" id="contra2" placeholder="Confirmar" style="width: 100%; padding-left:10%" required ng-model="contra2">
+                                        	</div>
+                                    	</div>
+                            		</div>
+                            		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    	<div>
+                                    		<input type="hidden" id="photo" value="" ng-model="photoInput">
+                                        	<input type="text" class="ellipse_button ellipse_input" id="apellido" placeholder="Apellido" required ng-model="apellidoInput">
+                                    	</div>
+                                    	<div style="padding-top:4%;">
+                                        	<input type="tel" class="ellipse_button ellipse_input" id="celular" placeholder="Celular" pattern="[0-9]*" required ng-model="celular">
+                                    	</div>
+                                    	<div style="padding-top:4%; display: flex; align-items: center;">
+                                        	<div style="width:35%; height:50%">
+                                            	<span style="color:rgba(0,0,0,0.5);"><u>&iquest;Tienes un c&oacute;digo de invitaci&oacute;n?</u></span>
+                                        	</div>
+                                        	<div style="width:70%; height:50%; padding-left:4%">
+                                            	<!--<input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Confirmar" style="width: 100%;">-->
+                                            	<button type="submit" class="ob_hover ellipse_input ellipse_button orange_button" style="width: 100%;" ng-click="reg()">REGISTRARME</button>
+                                        	</div>
+                                    	</div>
+                            		</div>
+                            	</form>
+                        	</div>
+                    	</div>
+                    	<div class="row row_12 not_materialize_row" style="margin-left:0;margin-right:20%;">
+                        	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3                          col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content">
+                            	<div style="padding-top:0;">
+                                	<img ng-click="registroFacebook();" style="cursor: pointer;" src="img/img/boton_face.png">
+                            	</div>
+                        	</div>
+                    	</div>
+                    	<div class="row row_10 not_materialize_row" style="text-align:center;">
+                        	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top:1.8%;">
+                            	<span style="font-size:12px; color:rgba(0,0,0,0.5); vertical-align:top">Al ingresar tus datos confirmas ser mayor de edad y aceptar los <u>T&eacute;rminos y Condiciones</u> y el <u>Aviso de Privacidad</u> de LONCH&reg;</span>
+                        	</div>
+                    	</div>
+                	</div>
+            	</div>
+        	</div> 
+			<div id="row_1" class="row row_30 not_materialize_row">
+			</div>
+			<div id="row_2" class="row row_45 not_materialize_row">
+				<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content">
+					<img class="img-responsive" src="./img/img/logo.png">
+					<div id="buttons" style="margin-top:40px;">
+						<button class="btn ellipse_button transparent_button" type="button" onclick="location.href = 'foodlists.html';" style="width:35%;margin-right:10px;">EXPLORA</button>
+						<button class="btn ellipse_button orange_button" type="button" style="width:35%;margin-left:10px;" data-target="#registrarseModal" data-toggle="modal">REGISTRARSE</button>
+					</div>
+				</div>
+			</div>
+			<div id="row_3" class="row row_25 center_content not_materialize_row">
+				<img src="img/img/puntoverde_icon.png" style="max-width:15px;">
+				<span class="white_text">
+					Entregas Lu-Vi de 11 a 16h. en: <a href="#" class="white_ref_simple">POLANCO</a> 
+				</span>
+			</div>
+		</div>
+		<div class="container-fluid second_container">
+			<div id="row_4" class="row row_15 right_content not_materialize_row" style="height:15%;display:flex;align-items:flex-end;padding-bottom:10px;">
+				<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:1%;">
+					<div>
+						<img class="small_icon" style="margin-bottom:1%;" src="./img/img/redquestionmark_icon.png">
+						<h2 class="white_text" style=" display:inline">¿CÓMO FUNCIONA?</h2>
+					</div>
+				</div>
+			</div>
+			<div id="row_5" class="row row_10 center_content not_materialize_row" style="display:flex;align-items:flex-end;height:10%;">
+				<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<span id="registrate_span" class="white_text">
+						<a id="registrate_link" class="white_ref_no_underline" href="#" 
+							onclick="event.preventDefault();
+							$(registrate_link).removeClass().addClass('white_ref_no_underline_actual');
+							$(explora_link).removeClass().addClass('white_ref_no_underline');
+							$(programa_link).removeClass().addClass('white_ref_no_underline');
+							$(disfruta_link).removeClass().addClass('white_ref_no_underline');
+							$(registrate_span).addClass('orange_underline');
+							$(eplora_span).removeClass('orange_underline');
+							$(programa_span).removeClass('orange_underline');
+							$(disfruta_span).removeClass('orange_underline');
+							$(row_6_0).show();
+							$(row_6).hide();
+							$(row_6_2).hide();
+							$(row_6_3).hide();">REGÍSTRATE</a>
+					</span>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<span id="eplora_span" class="white_text orange_underline">
+						<a id="explora_link" class="white_ref_no_underline_actual" href="#" 
+							onclick="event.preventDefault();
+							$(explora_link).removeClass().addClass('white_ref_no_underline_actual');
+							$(registrate_link).removeClass().addClass('white_ref_no_underline');
+							$(programa_link).removeClass().addClass('white_ref_no_underline');
+							$(disfruta_link).removeClass().addClass('white_ref_no_underline');
+							$(eplora_span).addClass('orange_underline');
+							$(registrate_span).removeClass('orange_underline');
+							$(programa_span).removeClass('orange_underline');
+							$(disfruta_span).removeClass('orange_underline');
+							$(row_6).show();
+							$(row_6_0).hide();
+							$(row_6_2).hide();
+							$(row_6_3).hide();">EXPLORA LAS FOODLISTS</a>
+					</span>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<span id="programa_span" class="white_text">
+						<a id="programa_link" class="white_ref_no_underline" href="#"
+						onclick="event.preventDefault();
+							$(programa_link).removeClass().addClass('white_ref_no_underline_actual');
+							$(explora_link).removeClass().addClass('white_ref_no_underline');
+							$(registrate_link).removeClass().addClass('white_ref_no_underline');
+							$(disfruta_link).removeClass().addClass('white_ref_no_underline');
+							$(programa_span).addClass('orange_underline');
+							$(eplora_span).removeClass('orange_underline');
+							$(registrate_span).removeClass('orange_underline');
+							$(disfruta_span).removeClass('orange_underline');
+							$(row_6_2).show();
+							$(row_6).hide();
+							$(row_6_0).hide();
+							$(row_6_3).hide();">PROGRAMA UNA O VARIAS ÓRDENES</a>
+					</span>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<span id="disfruta_span">
+						<a id="disfruta_link" class="white_ref_no_underline" href="#"
+						onclick="event.preventDefault();
+							$(disfruta_link).removeClass().addClass('white_ref_no_underline_actual');
+							$(explora_link).removeClass().addClass('white_ref_no_underline');
+							$(registrate_link).removeClass().addClass('white_ref_no_underline');
+							$(programa_link).removeClass().addClass('white_ref_no_underline');
+							$(disfruta_span).addClass('orange_underline');
+							$(eplora_span).removeClass('orange_underline');
+							$(registrate_span).removeClass('orange_underline');
+							$(programa_span).removeClass('orange_underline');
+							$(row_6_3).show();
+							$(row_6).hide();
+							$(row_6_0).hide();
+							$(row_6_2).hide();">DISFRUTA</a>
+					</span>
+				</div>
+			</div>
+			<hr class="white_opacity_full" style="margin-left:-13px;width:102%;">
+			<div id="row_6_0" class="row row_80 right_content not_materialize_row" style="display:none;height:71%">
+				<div class="col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 center_content" style="height:100%;">
+					<div class="row not_materialize_row" style="width:100%;height:20%;">
+					</div>
+					<div class="row not_materialize_row" style="width:100%;height:70%;">						
+						<img style="padding:5px;" src="img/img/cobertura.png">
+						<p class="white_text" >
+							Consulta las zonas de <u>cobertura*</u> e ingresa tus datos para programara tu primer orden
+						</p>
+						<button class="btn ellipse_button orange_button" type="button" style="height:30px;width:35%;" data-target="#registrarseModal" data-toggle="modal">REGISTRARSE</button>
+					</div>
+					<div class="row not_materialize_row white_text" style="width:100%;height:70%;font-size:8pt;">
+						*Poco a poco añadiremos más zonas, ¡te invitamos a registrate para mantenerte informado sobre el servicio y acumular beneficios!
+					</div>
+				</div>
+			</div>
+			<div id="row_6" class="row row_80 right_content not_materialize_row" style="height:71%;">
+				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="height:100%;">
+					<div class="row row_100 not_materialize_row" style="height:100%">
+						<div style="width:100%;height:100%;overflow:hidden;text-align:left;display:flex;align-items:center">
+							<img src="./img/img/como_funciona.png" style="max-height:85%;max-width:90%;">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text_right" style="height:100%;display:flex;align-items:center;">
+					<div>
+						<h4 class="white_text" style="line-height: 150%;">
+							Un <strong>foodlist</strong> es un menú semanal o mensual
+							temático que te permite tener una experiencia
+							gourmet diaria al mejor precio
+						</h4>
+						<button class="btn ellipse_button transparent_button" type="button" style="width:35%;margin-right:10px;" onclick="location.href = 'foodlists.html';">EXPLORA</button>
+					</div>
+				</div>
+			</div>
+			<div id="row_6_2" class="row row_80 right_content not_materialize_row" style="display:none;height:73.5%;margin-top:-20px;">
+				<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content" style="height:100%;">
+					<div class="row not_materialize_row" style="width:100%;height:10%;">
+					</div>
+					<div class="row not_materialize_row" style="width:100%;height:80%;">
+						<div class="white_text text-left" style="padding:1%;font-size:14pt;">
+							¡Confíguralo todo! Desde los acompañamientos hasta las salsas, el horario y el lugar de entrega de cada orden*.
+						</div>
+						<div class="white_text" style="padding:3% 0 2% 0;font-size:14pt;">
+							<table style="font-size:10pt;">
+								<tr class="text-left">
+									<th style="padding:5% 0 5% 0;text-align:left;font-size:14pt;" colspan="3">
+										Ejemplos de uso
+									</th>
+								</tr>
+								<tr style="border-top:thin solid white;">
+									<td style="padding:3% 5% 3% 5%;text-align:left;font-size:14pt;">Individual</td>
+									<td style="padding:3% 5% 3% 5%;text-align:center;width:40%;">Desde MX$70.00</td>
+									<td style="padding:3% 5% 3% 5%;text-align:right;">Órdenes Únicas</td>
+								</tr>
+								<tr style="border-top:thin solid white;">
+									<td style="padding:3% 5% 3% 5%;text-align:left;font-size:14pt;">Semanal</td>
+									<td style="padding:3% 5% 3% 5%;text-align:center;">10% de Descuento**</td>
+									<td style="padding:3% 5% 3% 5%;text-align:right;">3 o más órdenes a entregarse durante una misma semana</td>
+								</tr>
+								<tr style="border-top:thin solid white;">
+									<td style="padding:3% 5% 3% 5%;text-align:left;font-size:14pt;">Grupal</td>
+									<td style="padding:3% 5% 3% 5%;text-align:center;">10-30% de Descuento**</td>
+									<td style="padding:3% 5% 3% 5%;text-align:right;">5 o más órdenes a entregarse un mismo día y lugar</td>
+								</tr>
+							</table>
+						</div>
+						<div class="white_text text-left" style="font-size:10pt;padding:4%;">
+							<p style="margin:-5px;">*Todas las órdenes incluyen agua y postre del día.</p>
+							<p>**El descuento aplica automáticamente en la confirmación de cada orden.</p>
+						</div>
+					</div>
+					<div class="row not_materialize_row" style="width:100%;height:10%;">
+					</div>
+				</div>
+				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 center_content" style="height:100%;">
+					<div class="row not_materialize_row right_content" style="width:100%;height:100%;margin-left:15px;margin-top-20px;">
+						<img src="img/img/smartphones.png" style="max-width:100%;max-height:100%">
+					</div>
+				</div>
+			</div>
+			<div id="row_6_3" class="row row_80 right_content not_materialize_row" style="display:none;height:71%;align-items:center;">
+				<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-5 col-sm-5 col-md-5 col-lg-5 center_content" style="height:100%;display:flex;align-items:center;">
+					<div class="row not_materialize_row" style="width:100%;height:50%;border: 3px solid rgba(255,255,255,1);display:flex;align-items:center;">
+						<div class="white_text" style="width:100%;">
+							<img src="img/img/tapa_comida.png" style="max-width:20%;max-height:20%;padding:3%;">
+							<p style="font-size:15pt;">¡Come cuando estés listo!</p>
+							<p>Tu orden es entregada precalentada en un <u>empaque hermético reciclable</u> que puedes calentar en un horno de microondas.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 center_content" style="height:100%;display:flex;align-items:center;">
+					<div style="width:100%;height:50%;border: 3px solid rgba(255,255,255,1);display:flex;align-items:center;">
+						<div class="white_text" style="width:100%;">
+							<img src="img/img/mano_corazon.png" style="max-width:20%;max-height:20%;padding:3%;">
+							<p style="font-size:15pt;">Diez órdenes, un <u>LONCH escolar</u> para ellos</p>
+							<p>A través de nuestro <u>com promiso con la ASOCIACIÓN A.C.</u> organizamos desayunos y cátedras escolares. Revisa también nuestra política <u>0 DESPERDICIO</u>.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 center_content" style="height:100%;">
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid third_container">
+			<div id="row_7" class="row row_70 center_content not_materialize_row">
+				<div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-3 col-sm-3 col-md-3 col-lg-3" style="height:100%;">
+					<div class="row not_materialize_row" style="height:20%;"></div>
+					<div class="row not_materialize_row" style="height:65%;">
+						<span class="black_far_underline" style="font-style:italic;">Foodlists por:</span>
+						<h1>ALBERTO</h1>
+						<h1 style="margin-bottom:30px;margin-top:10px;"><strong>OLVERA</strong></h1>
+						<p style="margin-bottom:10px;">"Soy un coleccionista de sabores y los transmito en cada platillo para inspirar el alma."</p>
+					</div>
+					<div class="row not_materialize_row" style="height:15%;">
+						<a class="black_ref" href="#">Conoce mi historia</a>
+					</div>
+				</div>
+				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="height:100%;">
+				</div>
+			</div>
+			<div id="row_8" class="row row_30 not_materialize_row"style="background-color:#2F2F2F;font-size:8pt;font-weight:lighter;">
+				<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-3 col-sm-3 col-md-3 col-lg-3 left_content" style="margin-top:5%;">
+					<div>
+						<span class="white_text">DERECHOS RESERVADOS</span>
+					</div>
+					<div>
+						<span class="white_text">LONCH &copy; es una marca registrada de EMPRESA S.A. de C.V.</span>
+					</div>
+					<div style="margin-top:10px;margin-bottom:10px;">
+						<span class="white_text">AVISO DE PRIVACIDAD</span>
+					</div>
+					<div>
+						<img src="img/img/instagram_icon.png" style="max-width:20px;margin:5px;">
+						<img src="img/img/facebook_icon.png" style="max-width:20px;margin:5px;">
+						<img src="img/img/email_icon.png" style="max-width:20px;margin:5px;">
+					</div>
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 center_content" style="margin-top:5%;">
+					<img src="img/img/visa_icon.png" style="max-width:50px;margin:10px;">
+					<img src="img/img/mastercard_icon.png" style="max-width:50px;margin:10px;">
+					<img src="img/img/paypal_icon.png" style="max-width:50px;margin:10px;">
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 center_content" style="margin-top:2%;">
+					<img class="stores_badge" src="./img/img/apple.svg">
+					<img class="stores_badge" src="./img/img/google_borderless.png">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

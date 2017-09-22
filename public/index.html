@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
+		<script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <style type="text/css">
+        	@font-face {
+			    font-family: HelveticaNeue;
+			    src: url("./fonts/HelveticaNeueLTStd Lt.otf") format("opentype");
+			}
+        	html, body{
+			    height:100%;
+			    font-size: 6px;
+			    font-family: Raleway, Helvetica, Arial, sans-serif;
+			}
+
+			.xs_dissapear{
+				visibility: hidden;
+			}
+			.xs_no-dissapear{
+				font-size: 16px;
+			}
+			.xs_t-dissapear{
+				visibility: hidden;
+			}
+			.vertical_align_bottom{
+			    display: flex;
+    			align-items: flex-end;
+			}
+			.vertical_align_center{
+			    display:flex;
+ 				align-items: center;
+			}
+			.whiteiconcolor {
+				color:white;
+			}
+			.centered-text {
+    			text-align:center
+			}
+			.oval_class{
+				width: 15%;
+				height: 15%;
+				min-width: 70px;
+				min-height: 70px;
+			}
+			.middle_text{
+				font-size: 14px;
+			}
+			.big_text{
+				font-size: 24px;
+			}
+
+			#cdmx_logo{
+				width: 50%;
+				height: 50%;
+				visibility: hidden;
+			}
+			#sesion_logo{
+				padding-top:10px;
+				margin-left: -10px;
+				height: 15%;
+				width: 15%;
+				min-height: 30px;
+				min-width: 30px;
+			}
+			#main_container{
+				height: 100%;
+			}
+			#main_row_1{
+				height: 100%;
+			    background:url('./img/back1.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_col_1_1{
+			    height: 100%;
+			}
+			#main_row_1_1, #main_row_1_2, #main_row_1_3{
+				height: 33%;
+			}
+			#iniciar_sesion_text{
+				display:inline;
+				padding-top:25px;
+				padding-left:2px;
+			}
+			#main_row_2{
+				height: 100%;
+			    background:url('./img/back2.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_col_2_1{
+			    height: 100%;
+			}
+			#main_row_3{
+				height: 100%;
+			    background:url('./img/back3.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_row_4{
+				height: 50%;
+			    background:url('./img/back4.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			
+			@media (min-width: 440px) {
+				html, body {
+					font-size: 7px;
+			  	}
+
+			  	.xs_dissapear{
+					visibility: hidden;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					visibility: hidden;
+				}
+			  	.middle_text{
+					font-size: 15px;
+				}
+				.big_text{
+					font-size: 25px;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: hidden;
+				}
+				#sesion_logo{
+					height: 15%;
+					width: 15%;
+					min-height: 35px;
+					min-width: 35px;
+					margin-left: 10px;
+				}
+			}
+
+			@media (min-width: 600px) {
+				html, body {
+					font-size: 8px;
+			  	}
+
+			  	.middle_text{
+					font-size: 16px;
+				}
+				.big_text{
+					font-size: 26px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: visible;
+				}
+				#sesion_logo{
+					height: 15%;
+					width: 15%;
+					min-height: 40px;
+					min-width: 40px;
+					margin-left: 35px;
+				}
+				.xs_dissapear{
+					visibility: hidden;
+				}
+			}
+
+			@media (min-width: 768px) {
+				html, body {
+					font-size: 9px;
+			  	}
+
+			  	.middle_text{
+					font-size: 17px;
+				}
+				.big_text{
+					font-size: 27px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+			  		width: 70%;
+					height: 70%;
+					visibility: visible;
+			  	}
+			  	#sesion_logo{
+			  		height: 15%;
+					width: 15%;
+			  		min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+			  	}
+			  	.xs_dissapear{
+					visibility: hidden;
+			  	}
+			}
+
+			@media (min-width: 992px) {
+			  	html, body {
+				    font-size: 11px;
+			  	}
+
+			  	.middle_text{
+					font-size: 19px;
+				}
+				.big_text{
+					font-size: 29px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 60%;
+					height: 60%;
+					visibility: visible;
+				}
+				#sesion_logo{
+					height: 15%;
+					width: 15%;
+					min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visible;
+				}
+			}
+
+			@media (min-width: 1200px) {
+			  	html, body {
+			    	font-size: 13px;
+			  	}
+
+			  	.middle_text{
+					font-size: 21px;
+				}
+				.big_text{
+					font-size: 31px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: visible;
+				}
+				#sesion_logo{
+					height: 15%;
+					width: 15%;
+					min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visile;
+				}
+			}
+        </style>
+		<title>Lonch</title>
+	</head>
+	<body>
+		<div class="container-fluid" id="main_container">
+			<div id="main_row_1" class="row example-classname vertical_align_center">
+				<div id="main_col_1_1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div id="main_row_1_1" class="row vertical_align_center">
+					</div>
+					<div id="main_row_1_2" class="row vertical_align_center">
+						<div class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+						</div>
+						<div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 centered-text">
+							<p class="whiteiconcolor big_text" >PRÓXIMAMENTE</p>
+							<br><br><br><br>
+							<img src="./img/logo_lonch.png" class="img-responsive">
+						</div>
+						<div class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+						</div>
+					</div>
+					<div id="main_row_1_3" class="row vertical_align_bottom">
+						<div class="col-xs-9 col-sm-10 col-md-10 col-lg-10">
+						</div>
+						<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 ">
+							<img id="cdmx_logo" src="./img/cdmx_logo.png" class="pull-right">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

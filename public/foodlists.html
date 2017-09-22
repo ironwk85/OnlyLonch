@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html ng-app="lonchApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+		<script src="./javascripts/materialize.js"></script>
+		<script src="./lib/angular/angular.min.js"></script>
+		<script src="/javascripts/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="javascripts/angular-app.js"></script>
+		<script src="javascripts/controllers.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./stylesheets/materialize.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
+		<link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
+		<link rel="stylesheet" href="/stylesheets/jquery.mCustomScrollbar.css" />
+		<link rel="stylesheet" href="./stylesheets/general.css">
+        <script type="text/javascript">
+
+        	$(window).bind("mousewheel", function() {
+			    $("html, body").stop();
+			});
+
+        	function goToMainRow1(){
+        		scrollToElement( $(this).attr('main_row_1_4'), 1000 );
+        	}
+        	var scrollToElement = function(el, ms){
+			    var speed = (ms) ? ms : 500;
+			    $('html,body').animate({
+			        scrollTop: $(el).offset().top - 80
+			    }, speed);
+			}
+
+			$(function(){
+			    $.ajax({
+			       type: "GET",
+			       url: './authorization',
+			       dataType: 'json',
+			       success: function (json) {
+			            if (json.data.nombre && json.data.nombre!='' && json.data.perfil && json.data.perfil=="user"){
+			            	$(fotoUsuario).attr("src",json.data.foto);
+			            	$(imgPerfilBarra).attr("src",json.data.foto);
+			            	$('[name=imagenUsuario]').show();
+			            }
+			            else
+			            	$('[name=iniciaSesion]').show();
+			        },
+			        complete: function (){
+			            
+			        }
+			   }); 
+			});
+
+			$(document).ready(function(){
+				var helperShow = -1;
+				//$("#text1").hide();
+				$("#text2").hide();
+				$("#text3").hide();
+				$("#text4").hide();
+				$("#text5").hide();
+				$("#text6").hide();
+				$("#text7").hide();
+				$("#text8").hide();
+				$("#text9").hide();
+				$("#text10").hide();
+
+				
+			    $("#A12").hover(function(){
+			        $("#text2").show();
+			    }, function(){ 
+			        $("#text2").hide();
+			    });
+			    $("#A13").hover(function(){
+			        $("#text3").show();
+			    }, function(){ 
+			        $("#text3").hide();
+			    });
+			    $("#A14").hover(function(){
+			        $("#text4").show();
+			    }, function(){ 
+			        $("#text4").hide();
+			    });
+			    $("#A15").hover(function(){
+			        $("#text5").show();
+			    }, function(){ 
+			        $("#text5").hide();
+			    });
+			    $("#A16").hover(function(){
+			        $("#text6").show();
+			    }, function(){ 
+			        $("#text6").hide();
+			    });
+			    $("#A17").hover(function(){
+			        $("#text7").show();
+			    }, function(){ 
+			        $("#text7").hide();
+			    });
+			    $("#A18").hover(function(){
+			        $("#text8").show();
+			    }, function(){ 
+			        $("#text8").hide();
+			    });
+			    $("#A19").hover(function(){
+			        $("#text9").show();
+			    }, function(){ 
+			        $("#text9").hide();
+			    });
+			    $("#A20").hover(function(){
+			        $("#text10").show();
+			    }, function(){ 
+			        $("#text10").hide();
+			    });
+			});
+
+			function muestraMenu(i){
+					goToMainRow1();
+			}
+
+			function changeCircle(element) {
+				$(element).find('li').toggleClass("oval_full2");
+			    
+			}
+        </script>
+        <style type="text/css">
+
+        	.oval_full{
+        		list-style: none;
+        	}
+        	.oval_full:before{
+        		position: absolute;
+				display: block;
+				content: '\2022'; /* bullet point, for screen readers */
+				text-indent: -999999px; /* move the bullet point out of sight */
+				left: -.2em;
+				width: 1em; /* desired width of the image */
+				height: 1.2em; /* unrelated to image height; this is so it gets snipped */
+				background-repeat: no-repeat;
+				background-image: url('./img/oval2.png');
+				background-size: 1em 1em;
+				background-position: 0 .2em;
+
+        	}
+
+        	.oval_empty{
+        		list-style: none;
+        	}
+        	.oval_empty:before{
+        		position: relative;
+				display: -webkit-inline-box;
+				content: '\2022'; /* bullet point, for screen readers */
+				text-indent: -999999px; /* move the bullet point out of sight */
+				width: 1.4em; /* desired width of the image */
+				height: 1.2em; /* unrelated to image height; this is so it gets snipped */
+				background-repeat: no-repeat;
+				background-image: url('./img/oval1.png');
+				background-size: 1em 1em;
+				background-position: 0 .2em;
+
+        	}
+        	.oval_full2{
+        		list-style: none;
+        	}
+        	.oval_full2:before{
+        		position: relative;
+				display: -webkit-inline-box;
+				content: '\2022'; /* bullet point, for screen readers */
+				text-indent: -999999px; /* move the bullet point out of sight */
+				width: 1.4em; /* desired width of the image */
+				height: 1.2em; /* unrelated to image height; this is so it gets snipped */
+				background-repeat: no-repeat;
+				background-image: url('./img/oval2.png');
+				background-size: 1em 1em;
+				background-position: 0 .2em;
+
+        	}
+
+        	.badge {
+			  padding: 1px 9px 2px;
+			  font-size: 12.025px;
+			  font-weight: bold;
+			  white-space: nowrap;
+			  color: #ffffff;
+			  background-color: #999999;
+			  -webkit-border-radius: 9px;
+			  -moz-border-radius: 9px;
+			  border-radius: 9px;
+			}
+
+			.badge:hover {
+			  color: #ffffff;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+
+			.badge-error {
+			  background-color: #b94a48;
+			}
+
+			.badge-error:hover {
+			  background-color: #953b39;
+			}
+
+        	.orange_upperline 
+			{
+				padding-top: 1vh !important;
+			    border-top: 4px solid #E7B100 !important;
+			    display:block !important;
+			    margin-top:-3vh !important;
+			}         
+
+			/*agregado por karen*/
+            /*Texts*/
+            .white_text {
+                color: white;
+            }
+            .orange_underline
+            {
+                padding-bottom: 5px;
+                border-bottom: 4px solid #E7B100;
+                display:block;
+                margin-bottom:-7px;
+            }
+            .black_far_underline
+            {
+                padding-bottom: 5px;
+                border-bottom: 1px solid #000;
+            }
+            /*Refs*/
+            .white_ref_simple, .white_ref_simple:visited, .white_ref_simple:link, .white_ref_simple:hover, .white_ref_simple:active {
+                color: white;
+                text-decoration: underline;
+            }
+        
+            .white_ref:hover {
+                color: white;
+            }
+            /*fin agregado por karen*/
+
+
+			/*NavBar*/
+			.customNavBar{
+				height: 50px;
+				background-color: rgba(30,35,75,0.4);
+				border: none;
+				box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.2);
+			}
+			/*Buttons*/
+			.ellipse_button {
+				-webkit-border-radius: 60px ;
+				-moz-border-radius: 60px ;
+				border-radius: 60px ;
+			}
+			.ellipse_button:hover {
+				background-color:#FFF;
+			}
+			.orange_button {
+				background-color:#E7B100;
+				box-shadow: 0px 0px 0px #888888;
+				color:white;
+				border: none;
+			}
+			.orange_button:focus {
+				background-color:#E7B100 !important;
+				color: white !important;
+			}
+			.transparent_button:focus {
+				background-color:none !important;
+			}
+			.transparent_button {
+				border-color:#FFF;
+				box-shadow: 0px 0px 0px #888888;
+				color:white;
+				background:none;
+				border-width: 2px;
+			}
+			/*Left Bar*/
+			.leftbar_div{
+				color:#FFF;
+				margin-left:10px;
+				background-color:#1B1E39;
+				-webkit-transition: background-color ease 0.8s;
+				-moz-transition: background-color ease 0.8s;
+				transition: background-color ease 0.8s;
+			}
+			.leftbar_div:hover{
+				border-left:7px solid #E7B100;
+				background-color: #111524;
+			}
+			.side-nav li{
+				line-height: 35px;
+			}
+			.side-nav a{
+				line-height: 20px;
+				height: 20px;
+			}
+			.underline 
+			{
+			    color: white;
+			    border-bottom: 3px solid #E8B81A;
+			}
+			.btn-custom {
+				background-color: #E8B81A;
+			}
+			ul.no_bullet {
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+			}
+			li.leaf {
+				background: url('img/bulletpoint.png') no-repeat left top;
+				height: 40px;
+				padding-left: 30px;
+				padding-top: 3px;
+				color:#FFF;
+			}
+			.xs_dissapear{
+				visibility: hidden;
+			}
+			.xs_no-dissapear{
+				font-size: 16px;
+			}
+			.xs_t-dissapear{
+				visibility: hidden;
+			}
+			.vertical_align_top{
+			    display: flex;
+    			align-items: flex-start;
+			}
+			.vertical_align_bottom{
+			    display: flex;
+    			align-items: flex-end;
+			}
+			.vertical_align_center{
+			    display:flex;
+ 				align-items: center;
+			}
+			.whiteiconcolor {
+				color:white;
+			}
+			.centered-text {
+    			text-align:center
+			}
+			.oval_class{
+				width: 15%;
+				height: 15%;
+				min-width: 70px;
+				min-height: 70px;
+			}
+			.middle_text{
+				font-size: 14px;
+			}
+			.big_text{
+				font-size: 24px;
+			}
+
+			#cdmx_logo{
+				width: 50%;
+				height: 50%;
+				visibility: hidden;
+			}
+			#sesion_logo, #fotoUsuario{
+				padding-top:8px;
+				margin-left: -10px;
+				height: 15%;
+				width: 15%;
+				min-height: 30px;
+				min-width: 30px;
+			}
+			#main_container{
+				height: 100%;
+			}
+			#main_row_1{
+				height:100%;
+			}
+			#main_col_1_1{
+			    height: 100%;
+			}			
+			#iniciar_sesion_text{
+				display:inline;
+				padding-top:25px;
+				padding-left:2px;
+			}
+			#main_row_2, #main_row_3{
+			}
+			
+		    #Menu a
+		    {
+		        color:white;
+		        text-decoration:none;
+		    }
+
+		    #Menu a:link
+		    {
+		        color:white;
+		        text-decoration:none;
+		    }
+
+		    #Menu a:hover
+		    {
+		        color:white;
+		    }
+
+		    .AA:hover > .shadow{
+		    	filter: none;
+				-webkit-filter: brightness(15%);
+				transition: all .3s ease-in-out;
+				-moz-transition: all .3s ease-in-out;
+				-webkit-transition: all .3s ease-in-out;
+		    }
+
+		    .inside_image{
+		    	display:none;
+		    }
+
+		    .show_hide {
+				display:none;
+			}
+			/*Lines*/
+			.white_opacity_full{
+				width: 100%;
+				margin-top: 7px;
+				border-color: white;
+				border-width: 3px;
+				opacity:0.3;
+				filter:alpha(opacity=30);
+			}
+
+
+
+			#content-1::-webkit-scrollbar-track
+			{
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+				background-color: #999;
+			  	border-radius: 10px;
+			}
+
+			#content-1::-webkit-scrollbar
+			{
+				width: 6px;
+				background-color: #999;
+				border-radius: 10px;
+			}
+
+			#content-1::-webkit-scrollbar-thumb
+			{
+				background-color: #FFFFFF;
+			  border-radius: 10px;
+			}
+
+			@media (min-width: 440px) {
+				html, body {
+					font-size: 7px;
+			  	}
+
+			  	.xs_dissapear{
+					visibility: hidden;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					visibility: hidden;
+				}
+			  	.middle_text{
+					font-size: 15px;
+				}
+				.big_text{
+					font-size: 25px;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: hidden;
+				}
+				#sesion_logo, #fotoUsuario{
+					height: 15%;
+					width: 15%;
+					min-height: 35px;
+					min-width: 35px;
+					margin-left: 10px;
+				}
+				#fotoUsuario{
+					width: 70%;
+					height: 70%;
+				}
+			}
+
+			@media (min-width: 600px) {
+				html, body {
+					font-size: 8px;
+			  	}
+
+			  	.middle_text{
+					font-size: 16px;
+				}
+				.big_text{
+					font-size: 26px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: visible;
+				}
+				#sesion_logo, #fotoUsuario{
+					height: 15%;
+					width: 15%;
+					min-height: 40px;
+					min-width: 40px;
+					margin-left: 35px;
+				}
+				.xs_dissapear{
+					visibility: hidden;
+				}
+			}
+
+			@media (min-width: 768px) {
+				html, body {
+					font-size: 9px;
+			  	}
+
+			  	.middle_text{
+					font-size: 17px;
+				}
+				.big_text{
+					font-size: 27px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+			  		width: 70%;
+					height: 70%;
+					visibility: visible;
+			  	}
+			  	#sesion_logo, #fotoUsuario{
+			  		height: 15%;
+					width: 15%;
+			  		min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+			  	}
+			  	.xs_dissapear{
+					visibility: hidden;
+			  	}
+			}
+
+			@media (min-width: 992px) {
+			  	html, body {
+				    font-size: 11px;
+			  	}
+
+			  	.middle_text{
+					font-size: 19px;
+				}
+				.big_text{
+					font-size: 29px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 60%;
+					height: 60%;
+					visibility: visible;
+				}
+				#sesion_logo, #fotoUsuario{
+					height: 15%;
+					width: 15%;
+					min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visible;
+				}
+			}
+
+			@media (min-width: 1200px) {
+			  	html, body {
+			    	font-size: 13px;
+			  	}
+
+			  	.middle_text{
+					font-size: 21px;
+				}
+				.big_text{
+					font-size: 31px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: visible;
+				}
+				#sesion_logo, #fotoUsuario{
+					height: 15%;
+					width: 15%;
+					min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visile;
+				}
+			}
+
+
+			.carousel-inner > .item > img,
+			.carousel-inner > .item > a > img {
+				width: 100%;
+				margin: auto;
+			}
+
+			.carousel-inner > .item {
+			}
+
+			.carousel-control .icon-prev, .carousel-control .icon-next {
+			    font-size: 100px; 
+			    margin-top: -50px;
+			    color: #fff;
+			}
+			.full-width-row {
+			  padding: 0 !important;
+			}
+
+
+
+			a.white_links, a.white_links:hover, a.white_links:active, a.white_links:visited{
+				color: white;
+				cursor: pointer; 
+				cursor: hand;
+			}
+
+			.modal-dialog2{
+	            /*position: absolute;
+                 left: 24%;
+                 margin-left: -312px;
+                 top: 50%;
+                 margin-top: -340px;*/
+                width:1350px;
+                min-width: 1350px;
+                max-width: 1350px;
+                height:900px;
+                min-height: 900px;
+                max-height: 900px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;	       
+	        }
+	        .modal-content2 {
+	            width: 100%;
+                height: 100%;
+                background-color: #f9fafb;
+                border-radius: 8px;
+	        }
+	        .close-x2 {
+	            opacity:.4;
+	            font-weight:lighter;
+	            font-size:35pt;
+	            font-family: BlinkMacSystemFont;
+	        }
+	        .close-x-mini2 {
+	            opacity:.4;
+	            font-weight:lighter;
+	            font-size:30pt;
+	            font-family: BlinkMacSystemFont;
+	        }
+	    
+	        .modal-header2 {
+	            margin: 0 0 0;
+	            padding-top: 5%;
+	            padding-right: 0;
+	            padding-bottom:0.5%;
+	            padding-top: 0;
+	            border-bottom: 0;
+	        }
+	    
+	        .modal-body2 {
+	            padding-top: 0px;
+	        }
+	    
+	        .modal-footer2 {
+	            padding: 19px 22px 20px;
+	            margin-top: 0;
+	            border-top: none;
+	            border-radius: 0 0 7px 7px;
+	        }
+
+	        /*Style karen*/
+            .row_30 {
+                height: 30%;
+            }
+            .row_25 {
+                height: 25%;
+            }
+            .row_20 {
+                height: 20%;
+            }
+            .row_10 {
+                height: 10%;
+            }
+            .row_5 {
+                height: 5%;
+            }
+            .row_12 {
+                height: 12%;
+            }
+            .row_15 {
+                height: 15%;
+            }
+            .not_materialize_row{
+                margin-bottom: 0px;
+            }
+            .orange_underline
+            {
+                padding-bottom: 10px;
+                border-bottom: 3px solid #E8B81A;
+            }
+            .light_underline
+            {
+                border-bottom: 1px solid rgba(0,0,0,.2);
+                padding-bottom: 22px;
+            }
+            .ellipse_input {
+                /*font-family: Helvetica;*/
+                border: 1px solid rgba(0,0,0,.5);
+                width: 100%;
+                height: 60px;
+                font-size: 20px;
+                font-weight: lighter;
+                padding-left: 6%;
+            }
+            .cobertura-dialog{
+                /*position: absolute;
+                 left: 35%;
+                 margin-left: -18%;
+                 top: 40%;
+                 margin-top: -14%;*/
+                width:960px;
+                min-width: 960px;
+                max-width: 960px;
+                height:580px;
+                min-height: 580px;
+                max-height: 580px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+            }
+            .cobertura-content {
+                /*width: 960px;
+                 height: 580px;
+                 background-color: #f9fafb;
+                 border-radius: 8px;*/
+                width: 100%;
+                height: 100%;
+                background-color: #f9fafb;
+                border-radius: 8px;
+                border:1px solid #e5e5e5;
+            }
+            .white_button {
+                background-color:#FFFFFF;
+                color:black;
+                opacity: .4;
+            }
+            .nopadding {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .buttonGo{
+                background:url(./img/compass.png) no-repeat 0 17px;
+                background-color: #FFFFFF;
+                cursor:pointer;
+                border:none;
+                width:50px;
+                border-top-right-radius:30px;
+                border-bottom-right-radius:30px;
+                height:60px;
+                border:1px solid rgba(0,0,0,.5);
+                border-left:inherit;
+                display: inline-block;
+                text-decoration: none;
+            }
+            .searchadd{
+                border:1px solid rgba(0,0,0,.5);
+                border-top-left-radius:30px;
+                border-bottom-left-radius:30px;
+                border-right:hidden;
+                font-size: 20px;
+                padding-left:20px;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                height:60px;
+            }
+            .form-control:focus {
+                border:1px solid rgba(0,0,0,.5);
+                border-right:hidden;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+            .gracias-dialog{
+                /*position: absolute;
+                 left: 45%;
+                 margin-left: -18%;
+                 top: 50%;
+                 margin-top: -14%;*/
+                width:650px;
+                min-width: 650px;
+                max-width: 650px;
+                height:320px;
+                min-height: 320px;
+                max-height: 320px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+            }
+            .gracias-content {
+                /*width: 650px;
+                 height: 320px;
+                 background-color: #f9fafb;
+                 border-radius: 8px;*/
+                width: 100%;
+                height: 100%;
+                background-color: #f9fafb;
+                border-radius: 8px;
+            }
+        
+            /*fin style karen*/
+        </style>
+		<title>Lonch</title>
+	</head>
+	<body ng-controller="FoodlistsController">
+		<div ng-controller="mainController" ng-init="isLogged()">
+			<div class="modal fade" id="myFoodList" role="dialog" style="overflow: auto !important;">
+	            <div class="modal-dialog2">
+	                <div class="container-fluid modal-content2">
+	                    <div class="modal-header2" style="padding-bottom: 15px;">
+	                        <button type="button" class="close close-x2" data-dismiss="modal" aria-label="Close">
+	                            <img src="img/cancel.png" style="width:18px; height:18px;" aria-hidden="true">
+	                        </button>
+	                    </div>
+	                    <div class="modal-body2">
+	                        <div class="row not_materialize_row">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 80px;">
+	                                <span style="font-size: 25px; font-weight:500; font-stretch: ultra-expanded;">
+	                                	MIS FOODLISTS
+	                                </span>
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row" style="padding-left:5%;padding-right:5%;padding-top:2%;">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                                <img src="img/Lineh.png" style="width: 100%; height: 1px;">
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 110px; padding-top: 5px;">
+	                                <span style="font-size: 20px; font-weight:500;">VIERNES 8 DE SEPTIEMBRE</span>
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row" style="padding-top: 15px;">
+	                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 radio" style="padding-left: 70px; padding-top: 12px;">
+	                                <label style="font-size: 20px; padding-bottom:10px; color: #000000">1x</label>
+	                            </div>
+	                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding-left: 70px; padding-top: 25px;">
+	                                <div style="padding-bottom:10px;">
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                                    	&iexcl;VIVA M&Eacute;XICO!
+	                                    </span>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-top: 25px;">
+	                                <div style="padding-bottom:4%;">
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">Pozole</span>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="padding-top: 25px;">
+	                                <div style="padding-bottom:10px;">
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">$100.-</span>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding-top: 12px;">
+	                                <button class="btn btn-default dropdown-toggle ellipse_input ellipse_button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:20px; font-weight:light; opacity:.4; border: 1px solid #000000;width:250px; text-align:left;text-transform: none;font-family: HelveticaNeue, Arial, sans-serif;">
+	                                    Elegir ubicaci&oacute;n
+	                                    <span class="caret"></span>
+	                                </button>
+	                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	                                    <li><a href="#">Ubicaci&oacute;n 1</a></li>
+	                                    <li><a href="#">Ubicaci&oacute;n 2</a></li>
+	                                    <li><a href="#">Ubicaci&oacute;n 3</a></li>
+	                                    <li role="separator" class="divider"></li>
+	                                    <li><a href="#">Ubicaci&oacute;n 4</a></li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                                <div class="row not_materialize_row">
+	                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-left: 220px;">
+	                                        <p style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;opacity:.4;">	<i>eliminar</i>
+	                                        </p>
+	                                    </div>
+	                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+	                                        <div style="padding-bottom:10%; padding-left:40px;">
+	                                            <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">		Crema y queso
+	                                            </span>
+	                                            <br>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-left: 10%; padding-top: 5px; padding-bottom:7%;">
+	                                        <a href="#" data-toggle="modal" data-target="#myDireccion" style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;opacity:.4; color:#000000;"><i>Agregar nueva direcci&oacute;n</i></a>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row" style="padding-left:5%;padding-right:5%;">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                                <img src="img/Lineh.png" style="width: 100%; height: 1px;">
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row" style="padding-top: 1.5%;">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-6 col-sm-offset-6 col-md-offset-6 col-lg-offset-6" style="padding-top:25px;">
+	                                <div class="row not_materialize_row" style="padding-top: 5px;">
+	                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+	                                        <div>
+	                                            <span style="font-size: 20px;">TOTAL</span>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-º">
+	                                        <div>
+	                                            <span style="font-size: 20px;">$200.-</span>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row" style="padding-top: 15px;">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-9 col-sm-offset-9 col-md-offset-9 col-lg-offset-9" style="padding-top:0.5%;">
+	                                <div style="width:20%; padding-left:4%;">
+	                                    <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 100%;border: none;" data-toggle="modal" data-dismiss="modal" data-target="#myFormasPago">PAGAR</button>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div> 
+	                </div>
+	            </div>
+	        </div>
+	        <div class="modal fade" id="myFormasPago" role="dialog" style="overflow: auto !important;">
+	            <div class="modal-dialog2">
+	                <div class="container-fluid modal-content2">
+	                    <div class="modal-header2" style="padding-bottom: 15px; padding-top:1%;">
+	                        <button type="button" class="close close-x" data-dismiss="modal" aria-label="Close">
+	                            <img src="img/cancel.png" style="width:18px; height:18px;" aria-hidden="true">
+	                        </button>
+	                    </div>
+	                    <div class="modal-body">
+	                        <div class="row not_materialize_row" style="padding-top:0.5%;">
+	                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding-left: 80px;">
+	                                <span style="font-size: 25px; font-weight:500; font-stretch: ultra-expanded;">
+	                                	MIS FORMAS DE PAGO
+	                                </span>
+	                            </div>
+	                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:right;padding-right: 80px;">
+	                                <span style="font-size: 25px; font-weight:200; font-stretch: expanded;">
+	                                	TOTAL $200.-
+	                                </span>
+	                            </div>
+	                        </div>
+	                        <div class="row row_10 not_materialize_row" style="padding-top: 15px;">
+	                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="padding-left:80px;">
+	                                <img src="img/Lineh.png" style="width: 1150px; height: 1px;">
+	                            </div>
+	                        </div>
+	                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 110px; padding-top: 5px;">
+	                            <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                            	TARJETAS GUARDADAS
+	                            </span>
+	                        </div>
+	                        <div class="row row_30 not_materialize_row" style="padding-top:5%;">
+	                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 radio" style="padding-left: 90px;">
+	                                <div style="padding-bottom:5%;">
+	                                    <input type="radio" name="optradio" style="font-size: 30px;">
+	                                    <label style="font-size: 20px; color:#000000;">AMEX</label>
+	                                </div>
+	                                <div style="padding-bottom:5%;">
+	                                    <input type="radio" name="optradio" style="font-size: 30px;">
+	                                    <label style="font-size: 20px; color:#000000;">VISA</label>
+	                                </div>
+	                                <div>
+	                                    <input type="radio" name="optradio" style="font-size: 30px;">
+	                                    <label style="font-size: 20px; color:#000000;">MASTERCARD</label>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding-left: 5%;">
+	                                <div style="padding-bottom:5%;">
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                                    	xxxxx xxxxxx1009
+	                                    </span>
+	                                </div>
+	                                <div style="padding-bottom:5%;">
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                                    	xxxxx xxxxxx1009
+	                                    </span>
+	                                </div>
+	                                <div>
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                                    	xxxxx xxxxxx1009
+	                                    </span>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+	                                <div style="padding-bottom:5%;">
+	                                    <p style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">10/19</p>
+	                                </div>
+	                                <div style="padding-bottom:5%;">
+	                                    <p style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">10/19</p>
+	                                </div>
+	                                <div>
+	                                    <p style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">10/19</p>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	                                <div style="padding-bottom:5%;">
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                                    	c&oacute;digo de seguridad
+	                                    </span>
+	                                </div>
+	                                <div style="padding-bottom:5%;">
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                                    	c&oacute;digo de seguridad
+	                                    </span>
+	                                </div>
+	                                <div>
+	                                    <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                                    	c&oacute;digo de seguridad
+	                                    </span>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+	                                <div style="padding-top:3%;">
+	                                    <button type="button" class="close close-x-mini" aria-label="Close" style="margin-right: 150px;">
+	                                        <img src="img/cancel.png" style="width:18px; height:18px;">
+	                                    </button>
+	                                </div>
+	                                <div style="padding-top:53%;">
+	                                    <button type="button" class="close close-x-mini" aria-label="Close" style="margin-right: 150px;">
+	                                        <img src="img/cancel.png" style="width:18px; height:18px;">
+	                                    </button>
+	                                </div>
+	                                <div style="padding-top:53%;">
+	                                    <button type="button" class="close close-x-mini" aria-label="Close" style="margin-right: 150px;">
+	                                        <img src="img/cancel.png" style="width:18px; height:18px;">
+	                                    </button>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row row_10 not_materialize_row">
+	                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="padding-left:80px; margin-top:2%;">
+	                                <img src="img/Lineh.png" style="width: 1150px; height: 1px;">
+	                            </div>
+	                        </div>
+	                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 110px; padding-top: 5px;">
+	                            <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;">
+	                            	NUEVA FORMA DE PAGO
+	                            </span>
+	                        </div>
+	                        <div class="row row_10 not_materialize_row" style="padding-left:5.5%; padding-top: 4%;">
+	                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	                                <form>
+	                                    <div>
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Direcci&oacute;n" style="width:510px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 radio">
+	                                <div style="padding-left: 4%; padding-top:1%;">
+	                                    <input type="radio" name="optradio" style="font-size: 30px;">
+	                                    <label style="font-size: 20px; color:#000000;">D&eacute;bito</label>
+	                                    <input type="radio" name="optradio" style="font-size: 30px;">
+	                                    <label style="font-size: 20px; color:#000000; margin-left:15%;">Cr&eacute;dito</label>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row row_10 not_materialize_row" style="padding-left:5.5%; padding-top: 2.5%;">
+	                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	                                <form>
+	                                    <div>
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Direcci&oacute;n" style="width:510px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	                                <form>
+	                                    <div style="padding-left: 4%;">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="N&uacute;mero de tarjeta" style="width:510px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                        </div>
+	                        <div class="row row_10 not_materialize_row" style="padding-left:5.5%; padding-top: 2.5%;">
+	                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	                                <form>
+	                                    <div>
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Direcci&oacute;n" style="width:510px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+	                                <form>
+	                                    <div style="padding-left: 35%;">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="" style="width:108px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+	                                <div style="padding-left: 60%; padding-top:9%;">
+	                                    <img src="img/Line_diagonal.png">
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="padding-left: 0%;">
+	                                <form>
+	                                    <div>
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="" style="width:108px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+	                                <form>
+	                                    <div style="padding-left:15%;">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="CSV" style="padding-left: 30px; width:193px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                        </div>
+	                        <div class="row row_10 not_materialize_row" style="padding-left:5.5%; padding-top: 2.5%;">
+	                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	                                <form>
+	                                    <div>
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Estado" style="width:300px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	                                <form>
+	                                    <div style="padding-left:2.5%;">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="C&oacute;digo Postal" style="width:193px">
+	                                    </div>
+	                                </form>
+	                            </div>
+	                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 radio">
+	                                <div style="padding-left: 4%; padding-top:2.5%;">
+	                                    <input type="radio" name="optradio" style="font-size: 30px;">
+	                                    <label style="font-size: 20px; color:#000000;">Guardar forma de pago</label>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row row_10 not_materialize_row">
+	                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="padding-left:80px; margin-top:30px;">
+	                                <img src="img/Lineh.png" style="width: 1150px; height: 1px;">
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row" style="padding-top: 15px;">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-9 col-sm-offset-9 col-md-offset-9 col-lg-offset-9" style="padding-top:0.5%;">
+	                                <div style="width:20%; padding-left:4%;">
+	                                    <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 100%;border: none;" data-toggle="modal" data-dismiss="modal" data-target="#myGracias">
+	                                    	PAGAR
+	                                    </button>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="modal fade" id="myCobertura" role="dialog" onfocus="initMap();">
+	            <div class="cobertura-dialog">
+	                <div class="container-fluid cobertura-content">
+	                    <div class="row not_materialize_row">
+	                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 nopadding">
+	                            <div id="map" style="width:380px;height:549px;margin-top:15px;background:#FBF8EF;margin-left: 5%;">
+	                            </div>
+	                        </div>
+	                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="padding-top:1%;">
+	                            <button type="button" class="close close-x" data-dismiss="modal" aria-label="Close">
+	                                <img src="img/cancel.png" style="width:18px; height:18px;" aria-hidden="true">
+	                            </button>
+	                            <div class="row row_10 not_materialize_row">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                                    <span style="font-size: 25px; font-weight:500; font-stretch: ultra-expanded;">
+	                                    	COBERTURA
+	                                    </span>
+	                                    <br>
+	                                    <span style="font-size: 19px; font-weight:lighter;">
+	                                    	Escribe tu direcci&oacute;n y ve el mapa para confirmar cobertura.
+	                                    </span>
+	                                </div>
+	                            </div>
+	                            <div class="row row_10 not_materialize_row">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                                    <img src="img/Lineh.png" style="width: 100%; height: 1px;">
+	                                </div>
+	                            </div>
+	                            <div class="row row_10 not_materialize_row nopadding">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+	                                    <div class="input-group" style="padding-top:25px;">
+	                                        <input type="text" id="dir" class="form-control searchadd" placeholder="Direcci&oacute;n">
+	                                        <span class="input-group-btn">
+	                                            <button type="submit" class="buttonGo" onclick="initMap();" />
+	                                        </span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row row_10 not_materialize_row nopadding">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+	                                    <div style="padding-top:90px;">
+	                                        <span style="font-size: 16px; font-weight:lighter;font-stretch: ultra-expanded;">
+	                                        	&iexcl;LO LAMENTAMOS! /&iexcl;DISPONIBLE EN TU ZONA!
+	                                        </span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row row_10 not_materialize_row nopadding">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+	                                    <div style="padding-top:18px;">
+	                                        <p style="font-size: 16px; font-weight:lighter;font-stretch: ultra-expanded;line-height: 16px;">Nos encantar&iacute;a atenderte pero por ahora no tenemos cobertura en tu zona; aun as&iacute; te invitamos a registrarte para acumular beneficios. / Ser&aacute; un placer atenderte, programa tu foodlist hoy mismo y programa una entrega con 30 minutos o hasta 2 semanas de antelaci&oacute;n.</p>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row row_10 not_materialize_row nopadding">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+	                                    <div style="padding-top:10px;">
+	                                        <input type="text" class="ellipse_button ellipse_input form-control" id="usr" placeholder="Email" style="width:100%; height:60px;">
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row row_20 not_materialize_row nopadding">
+	                                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 nopadding">
+	                                    <div style="width: 90%; padding-top:14px;">
+	                                        <button class="ellipse_input ellipse_button white_button" type="button" style="width: 100%;">NOTIFICAR COBERTURA</button>
+	                                    </div>
+	                                </div>
+	                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 nopadding">
+	                                    <div style="width: 100%; padding-top:14px;">
+	                                        <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 100%; border: none;">REGISTRAR</button>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="modal fade" id="myDireccion" role="dialog">
+	            <div class="cobertura-dialog">
+	                <div class="container-fluid cobertura-content">
+	                    <div class="row not_materialize_row">
+	                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 nopadding">
+	                            <div style="width:380px;height:549px;background:#FBF8EF;margin-top:15px;border-color:#FBF8EF; margin-left: 5%;"></div>
+	                        </div>
+	                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="padding-top: 1%;">
+	                            <button type="button" class="close close-x" data-dismiss="modal" aria-label="Close">
+	                                <img src="img/cancel.png" style="width:18px; height:18px;" aria-hidden="true">
+	                            </button>
+	                            <div class="row row_10 not_materialize_row">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                                    <span style="font-size: 25px; font-weight:500; font-stretch: ultra-expanded;">
+	                                    	ANTES DE CONTINUAR...
+	                                    </span>
+	                                    <br>
+	                                    <span style="font-size: 19px; font-weight:lighter;">
+	                                    	Escribe tu direcci&oacute;n y ve el mapa para confirmar cobertura.
+	                                    </span>
+	                                </div>
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                                    <img src="img/Lineh.png" style="width: 100%; height: 1px;">
+	                                </div>
+	                            </div>
+	                            <div class="row row_10 not_materialize_row nopadding">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+	                                    <div class="input-group" style="padding-top:25px;">
+	                                        <input type="text" class="form-control searchadd" placeholder="Direcci&oacute;n">
+	                                            <span class="input-group-btn">
+	                                                <button type="submit" class="buttonGo" />
+	                                            </span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row row_20 not_materialize_row nopadding">
+	                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-4 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">
+	                                    <div style="padding-top:30px;">
+	                                        <p style="line-height: 14px; padding-left:20px;">Recordar como:</p>
+	                                    </div>
+	                                </div>
+	                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	                                    <div style="padding-top:15px;">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Direcci&oacute;n 1" style="width:197px; height:60px; padding-left:25px;">
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row row_30 not_materialize_row nopadding">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+	                                    <div style="padding-top:90px;">
+	                                        <span style="font-size: 16px; font-weight:lighter;font-stretch: ultra-expanded;">
+	                                        	&iexcl;LO LAMENTAMOS! /&iexcl;DISPONIBLE EN TU ZONA!
+	                                        </span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row row_20 not_materialize_row nopadding">
+	                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+	                                    <div style="padding-top:18px;">
+	                                        <p style="font-size: 16px; font-weight:lighter;font-stretch: ultra-expanded;line-height: 16px;">Nos encantar&iacute;a atenderte pero por ahora no tenemos cobertura en tu zona; aun as&iacute; te invitamos a registrarte para acumular beneficios. / Ser&aacute; un placer atenderte, programa tu foodlist hoy mismo y programa una entrega con 30 minutos o hasta 2 semanas de antelaci&oacute;n.</p>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="row row_10 not_materialize_row nopadding">
+	                                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 nopadding">
+	                                    <div style="width: 290px; padding-top:14px;">
+	                                        <button class="ellipse_input ellipse_button white_button" type="button" style="width: 100%;">NOTIFICAR COBERTURA</button>
+	                                    </div>
+	                                </div>
+	                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 nopadding">
+	                                    <div style="width: 200px; padding-top:14px;">
+	                                        <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 100%; border: none;">REGISTRAR</button>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="modal fade" id="myGracias" role="dialog">
+	            <div class="gracias-dialog">
+	                <div class="container-fluid gracias-content">
+	                    <div class="modal-body">
+	                        <div class="row not_materialize_row" style="padding-top:2%;">
+	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:28px; text-align:center;">
+	                                <span style="font-size: 25px; font-weight:200; font-stretch: ultra-expanded;">
+	                                	&iexcl;GRACIAS POR TU COMPRA!
+	                                </span>
+	                            </div>
+	                        </div>
+	                        <div class="row not_materialize_row" style="padding-top:3%;">
+	                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+	                                <img src="img/Lineh.png" style="width: 600px; height: 1px;">
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="row row_25 not_materialize_row">
+	                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                            <div style="padding-left:20px; text-align:center;">
+	                                <span style="font-size: 20px; font-weight:lighter;">
+	                                	Tu pedido esta en proceso, hemos enviado una copia de tu <br> recibo a tu correo elect&oacute;nico
+	                                </span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="row row_20 not_materialize_row">
+	                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+	                            <form>
+	                                <button class="ellipse_input ellipse_button white_button light_underline" type="button" style="width: 200px; height:60px; padding-bottom: 5px;">Ir a mis &oacute;rdenes</button>
+	                            </form>
+	                        </div>
+	                        <div  class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+	                            <form>
+	                                <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 200px; height:60px; border: none;">Continuar Comprando</button>
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+			<ul id="slide-out" class="side-nav default-side-nav light-side-nav" style="background-color:#1B1E39;opacity:1;font-family:HelveticaNeue;font-weight:100;padding:0;margin:0;height:100%;">
+				<div class="logo-wrapper waves-light" style="text-align:center;height:25%;display:flex;align-items:center">
+					<div style="width:100%">
+						<img id="imgPerfilBarra" class="img-circle" style="width:100px;height:100px;" ng-src="{{photo}}"/>
+						<div class="white_text" style="margin:0;padding:0;">{{nombre}}&nbsp;&nbsp;&nbsp;&nbsp;{{apellido}}</div>
+					</div>
+				</div>
+				<ul id="Menu" class="collapsible collapsible-accordion" style="height:55%;">
+					<li>
+						<div class="collapsible-header leftbar_div" style="xtop:1px;">
+							<a href="123456.html" style="padding-left: 0%;padding-top: 3%;">Inicio</a>
+						</div>
+	            	</li>
+	            	<li>
+						<div class="collapsible-header leftbar_div">
+							<a href="cobertura.html" style="padding-left: 0%;padding-top: 3%;">Cobertura</a>
+						</div>
+	            	</li>
+	            	<li>
+						<div class="collapsible-header leftbar_div">
+							<a href="foodlists.html" style="padding-left: 0%;padding-top: 3%;">Foodlists</a>
+						</div>
+	            	</li>
+					<li>
+						<div class="collapsible-header leftbar_div">
+							Mi Perfil
+						</div>
+	            		<div class="collapsible-body leftbar_div" style="padding-left:70px;">
+	            			Mis Ubicaciones
+	            		</div>
+	            		<div class="collapsible-body leftbar_div" style="padding-left:70px;">
+	            			<a href="ordenes.html" style="padding-left: 0%;height: 35px;padding-top:3%;">Mis Órdenes - Factura</a>
+	            		</div>
+	            		<div class="collapsible-body leftbar_div" style="padding-left:70px;">
+	                        <a href="formas_pago.html" style="padding-left: 0%;height: 35px;padding-top:3%;">Formas de Pago</a>
+	            		</div>
+	            	</li>
+	            	<li>
+						<div class="collapsible-header leftbar_div">
+	                        <a href="invita.html" style="padding-left: 0%;padding-top: 3%;">¡Invita y come gratis!</a>
+						</div>
+	            	</li>
+	            	<li>
+						<div class="collapsible-header leftbar_div">
+							Canjea tus Códigos
+						</div>
+	            	</li>
+	            	<li>
+						<div class="collapsible-header leftbar_div">
+							Blog
+						</div>
+	            	</li>
+				</ul>
+				<div style="text-align:center;">
+					<img src="img/img/instagram_icon.png" style="max-width:10%;margin:1%;">
+					<img src="img/img/facebook_icon.png" style="max-width:10%;margin:1%;">
+					<img src="img/img/email_icon.png" style="max-width:10%;margin:1%;">
+				</div>
+				<hr class="white_opacity_full" style="margin-top:10%;margin-bottom:0;padding:0;">
+				<div style="text-align:center;">
+					<a href="#" class="white_ref_simple" style="align:center">Cerrar Sesión</a>
+					<a href="#" class="white_ref_simple" style="align:center;font-size:8pt;">Reportar un problema</a>
+				</div>
+			</ul>
+			<nav class="navbar navbar-default navbar-fixed-top customNavBar" style="z-index:10;">
+				<div class="container-fluid">
+					<div class="navbar-header" style="width:5%;">
+						<a class="navbar-brand"></a>
+					</div>
+					<div>
+						<ul class="nav navbar-nav">
+							<li class="active" style="background-color:transparent;">
+								<a class="button-collapse" style="background:transparent;height:1px;" href="#" data-activates="slide-out" data-transition="slidedown">
+									<img class="navBar_icon" style="max-height:20px;" src="img/img/menu_icon.png">
+								</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav" style="float:right;margin-right:10%;">
+							<li style="background-color:transparent;">
+								<a style="background:transparent;height:1px;" href="#" data-toggle="modal" data-target="#myFoodList">
+									<img class="navBar_icon" style="margin-top:-7px;max-height:35px;" src="img/img/checkout_icon.png">
+									<span class="badge badge-error" style="color:#FFF;position:absolute;bottom:2px;left:30px;" ng-show="carritoSize>0">{{carritoSize}}</span>
+								</a>
+							</li>
+							<li style="background-color:transparent;">
+								<a class="white-text" style="background:transparent;height:1px;font-size:small;" href="#registrarseModal" data-toggle="modal" onclick="$(nombre).val('');$(apellido).val('');$('#email').val('');$(celular).val('');$(contra).val('');$(contra2).val('');" ng-show="showRegister">
+									Registrarse
+								</a>
+								<img ng-src="{{photo}}" class="img-circle" style="height:25%;padding-bottom:10%;width:25%;" ng-show="userImage">
+								<span>{{nombre}}</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="container-fluid" id="main_container">
+				<div id="main_row_1" class="row">
+					<div id="main_col_1_1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div id="main_row_1_2" class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 full-width-row" style="padding:0;">
+								<div name="imagenUsuario" style="display:none;">
+									<a data-activates="slide-out" class="button-collapse" href="#" data-transition="slidedown" >
+										<div style="position:absolute;z-index:1;">
+											<img id="fotoUsuario" class="img-circle" src="./img/default-user.png">
+											<div id="iniciar_sesion_text" class="xs_dissapear whiteiconcolor">Bienvenido</div>
+										</div>
+									</a>
+								</div>
+								<div id="myCarousel" class="carousel slide" data-ride="carousel">
+							  		<ol class="carousel-indicators">
+							    		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							    		<li data-target="#myCarousel" data-slide-to="1"></li>
+							    		<li data-target="#myCarousel" data-slide-to="2"></li>
+							  		</ol>
+							  		<div class="carousel-inner" role="listbox" ng-controller="CarousellController">
+							    		<div class="item active">
+							    			<img ng-src="{{image1}}">
+							    		</div>
+							    		<div class="item">
+							    			<img ng-src="{{image2}}">
+							    		</div>
+							    		<div class="item">
+							      			<img ng-src="{{image3}}">
+							    		</div>
+							  		</div>
+								</div>
+							</div>
+						</div>
+						<div id="main_row_1_3" class="row">
+							<div class="col-xs- col-sm-1 col-md-1 col-lg-1 centered-text">
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 center-block">
+								<div style="margin-top:20px;margin-bottom:20px;">
+							    	<p style="color:white;">Lunes 4 - Viernes 8</p>
+								</div>
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 center-block">
+								<div style="margin-top:20px;margin-bottom:20px;">
+							    	<p class="text-right" style="color:white;">SEPTIEMBRE</p>
+								</div>
+							</div>
+						</div>
+						<div id="main_row_1_4" class="row">
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 centered-text">
+							</div>
+							<div>
+								<div id="test" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text" ng-repeat="i in contents[0].foodlists track by $index">
+									<a id="A11" class="AA" href="#" onclick="muestraMenu(1);goToMainRow1();" ng-click="getItem($index);toggle($index);" ng-mouseover="open = true" ng-mouseleave="open = false">
+										<div id="{{i.imagen}}" class="inside_image" style="z-index:1;color:white;position:absolute;display:flex;align-items:center;height:100%;width:90%;" ng-show="open">
+											<div style="width:95%;text-align:center;">
+							        			<b>{{i.titulo}}</b>
+							        			</br>{{i.descricpion}}
+						        			</div>
+						        		</div>
+										<img id="xxx" class="img-responsive shadow" ng-src={{i.imagen}}>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="main_row_2" class="row full-width-row show_hide" toggles>
+					<hr class="white_opacity_full" style="margin-top:-1%;">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="row" style="height:10%;color:white;">
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[0]" ng-click="getItemAtDate(0,0);">{{contents[0].foodlists[0].dias[0]}}</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[1]" ng-click="getItemAtDate(0,1);">{{contents[0].foodlists[0].dias[1]}}</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[2]" ng-click="getItemAtDate(0,2);">{{contents[0].foodlists[0].dias[2]}}</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[3]" ng-click="getItemAtDate(0,3);">{{contents[0].foodlists[0].dias[3]}}</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[4]" ng-click="getItemAtDate(0,4);">{{contents[0].foodlists[0].dias[4]}}</p>
+							</div>
+						</div>
+						<div class="row" style="height:90%;">
+							<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-4 col-sm-4 col-md-4 col-lg-4">
+								<img class="img-responsive" ng-src={{foods.imagen}}>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="color:white;">
+								<div class="row">
+									<p style="font-size:x-large;">{{foods.titulo}}</p>
+									<p>{{foods.descripcion}}</p>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<ul ng-repeat="j in foods.ingredientes1">
+											<li class="oval_full">{{j}}</li>
+										</ul>
+										<br>
+										<ul ng-repeat="j in foods.ingredientes2">
+											<li class="oval_full">{{j}}</li>
+										</ul>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<div id="content-1" class="content" style="max-width:100%;height:18vh;overflow:auto;" ng-repeat="j in foods.extras">
+											<p>{{j.nombre}}</p>
+											<ul ng-repeat="k in j.extras">
+												<a class="white_links" href="" ng-click=" increaseTotal(k.select);" onclick="event.stopPropagation();changeCircle(this);"><li class="oval_empty">{{k.nombre}} {{k.precio}}</li>{{aux}}</a>
+											</ul>
+										</div>
+										<hr class="white_opacity_full" style="margin-top:1%;">
+										<ul>
+											<li><span style="width:50%;float:left;"><b>PRECIO:</b></span> <span align="right" style="width:50%;float:right;">MX$  {{total.t}}</span></li>
+											<li><span style="width:50%;float:left;"><b>-DESCUENTO:</b></span> <span align="right" style="width:50%;float:right;"> APLICA UN CUPÓN</span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" style="color:white;">
+							<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p>Guárdalo y te avisamos cuando vuelva a estar disponible.</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+							<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								*Algunos opcionales pueden ser incluidos en tu platillo.</div>
+							<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+								<button class="btn ellipse_button orange_button" type="button" style="width:100%;margin-left:10px;" ng-click="addedElement();">ORDENAR</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="main_row_3" class="row full-width-row " style="margin-top:36px;">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div id="main_row_1_3" class="row">
+							<div class="col-xs- col-sm-1 col-md-1 col-lg-1 centered-text">
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 center-block">
+								<div style="margin-top:20px;margin-bottom:20px;">
+							    	<p style="color:white;">Lunes 4 - Viernes 8</p>
+								</div>
+							</div>
+							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 center-block">
+								<div style="margin-top:20px;margin-bottom:20px;">
+							    	<p class="text-right" style="color:white;">SEPTIEMBRE</p>
+								</div>
+							</div>
+						</div>
+						<div id="main_row_1_4" class="row">
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 centered-text">
+							</div>
+							<div>
+								<div id="test" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text" ng-repeat="i in contents[0].foodlists track by $index">
+									<a id="A11" class="AA" href="#" onclick="muestraMenu(1);goToMainRow1();" ng-click="getItem($index);toggle($index);" ng-mouseover="open = true" ng-mouseleave="open = false">
+										<div id="{{i.imagen}}" class="inside_image" style="z-index:1;color:white;position:absolute;display:flex;align-items:center;height:100%;width:90%;" ng-show="open">
+											<div style="width:95%;text-align:center;">
+						        				<b>{{i.titulo}}</b>
+						        				</br>{{i.descricpion}}
+					        				</div>
+					        			</div>
+										<img id="xxx" class="img-responsive shadow" ng-src={{i.imagen}}>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

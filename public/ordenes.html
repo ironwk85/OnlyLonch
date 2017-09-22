@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="./javascripts/materialize.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/fb6b07209f.js"></script>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="javascripts/angular-app.js"></script>
+    <link rel="stylesheet" href="./stylesheets/materialize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,800" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
+    
+    
+    <style type"text/css">
+    
+        @font-face {
+            font-family: HelveticaNeue;
+            src: url("./fonts/HelveticaNeueLTStd Lt.otf") format("opentype");
+        }
+    
+        html, body {
+            height:100%;
+            font-family: HelveticaNeue, Arial, sans-serif;
+            font-weight:100;
+        }
+    
+        .orange_underline
+        {
+            padding-bottom: 10px;
+            border-bottom: 3px solid #E8B81A;
+        }
+    
+        .light_underline
+        {
+            border-bottom: 1px solid rgba(0,0,0,.2);
+            padding-bottom: 22px;
+        }
+    
+        .ellipse_input {
+            font-family: Helvetica;
+            border: 1px solid rgba(0,0,0,.5);
+            width: 100%;
+            height: 60px;
+            font-size: 20px;
+            font-weight: lighter;
+            padding-left: 6%;
+        }
+    
+        .ellipse_button {
+            -webkit-border-radius: 60px ;
+            -moz-border-radius: 60px ;
+            border-radius: 60px ;
+        }
+    
+        .orange_button {
+            background-color:#E7B100;
+            box-shadow: 0px 0px 0px #888888;
+            color:white;
+            border: none;
+        }
+        .orange_button:focus {
+            background-color:#E7B100 !important;
+            color: white !important;
+        }
+    
+        .white_button {
+            background-color:#FFFFFF;
+            color:black;
+            opacity: .4;
+        }
+    
+        /* style lalo */
+        
+        /*NavBar*/
+        .customNavBar{
+            height: 50px;
+            background-color: rgba(30,35,75,0.4);
+            border: none;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        /*Left Bar*/
+        .leftbar_div{
+            color:#FFF;
+            margin-left:10px;
+            background-color:#1B1E39;
+            -webkit-transition: background-color ease 0.8s;
+            -moz-transition: background-color ease 0.8s;
+            transition: background-color ease 0.8s;
+        }
+        .leftbar_div:hover{
+            border-left:7px solid #E7B100 !important;
+            background-color: #111524 !important;
+        }
+        .side-nav li{
+            line-height: 35px;
+        }
+        .side-nav a{
+            line-height: 20px;
+            height: 20px;
+        }
+        ul.no_bullet {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li.leaf {
+            background: url('img/bulletpoint.png') no-repeat left top;
+            height: 40px;
+            padding-left: 30px;
+            padding-top: 3px;
+            color:#FFF;
+        }
+        #Menu a
+        {
+            color:white;
+            text-decoration:none;
+        }
+    
+        /*Containers*/
+        .main_container {
+            height: 100%;
+            background: rgba(0,0,0,0);
+        
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(0,0,0,0)), color-stop(100%, rgba(26,30,56,1))), url("img/img/background.png");
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            background: -o-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            background: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1a1e38', GradientType=0 ), url("img/img/background.png");
+        
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .second_container {
+            height: 115%;
+            background: rgba(26,30,56,1);
+            background: -moz-linear-gradient(top, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(26,30,56,1)), color-stop(100%, rgba(60,65,125,1)));
+            background: -webkit-linear-gradient(top, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            background: -o-linear-gradient(top, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            background: -ms-linear-gradient(top, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            background: linear-gradient(to bottom, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1e38', endColorstr='#3c417d', GradientType=0 );
+        }
+        .third_container {
+            height: 100%;
+            -webkit-background-size: contain;
+            -moz-background-size: contain;
+            -o-background-size: contain;
+            background-size: contain;
+            background-image: url("./img/img/chef.png");
+        }
+    
+        /*Receipt Modal*/
+        .modal-dialog2{
+            /*position: absolute;
+            left: 24%;
+            margin-left: -312px;
+            top: 50%;
+            margin-top: -340px;*/
+            width:1350px;
+            min-width: 1350px;
+            max-width: 1350px;
+            height:900px;
+            min-height: 900px;
+            max-height: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .modal-content2 {
+            width: 100%;
+            height: 100%;
+            background-color: #f9fafb;
+            border-radius: 8px;
+        }
+        .close-x2 {
+            opacity:.4;
+            font-weight:lighter;
+            font-size:35pt;
+            font-family: BlinkMacSystemFont;
+        }
+        .close-x-mini2 {
+            opacity:.4;
+            font-weight:lighter;
+            font-size:30pt;
+            font-family: BlinkMacSystemFont;
+        }
+    
+        .modal-header2 {
+            margin: 0 0 0;
+            padding-top: 5%;
+            padding-right: 0;
+            padding-bottom:0.5%;
+            padding-top: 0;
+            border-bottom: 0;
+        }
+    
+        .modal-body2 {
+            padding-top: 0px;
+        }
+    
+        /*Rows & Columns*/
+        .row_10 {
+            height: 10%;
+        }
+        .row_12 {
+            height: 12%;
+        }
+        .row_15{
+            height: 15%;
+        }
+        .row_20 {
+            height: 20%;
+        }
+        .row_25 {
+            height: 25%;
+        }
+        .row_30 {
+            height: 30%;
+        }
+        .row_35 {
+            height: 35%;
+        }
+        .row_40 {
+            height: 40%;
+        }
+        .row_45 {
+            height: 45%;
+        }
+        .row_50 {
+            height: 50%;
+        }
+        .row_70{
+            height: 70%;
+        }
+        .row_100{
+            height: 100%;
+        }
+    
+        .left_content {
+            text-align:left;
+        }
+        .center_content {
+            text-align:center;
+        }
+        .right_content {
+            text-align:right;
+        }
+        .not_materialize_row{
+            margin-bottom: 0px;
+        }
+    
+    
+        /*Texts*/
+        .white_text {
+            color: white;
+        }
+        .orange_underline
+        {
+            padding-bottom: 5px;
+            border-bottom: 4px solid #E7B100;
+            display:block;
+            margin-bottom:-7px;
+        }
+        .black_far_underline
+        {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #000;
+        }
+        /*Refs*/
+        .white_ref_simple, .white_ref_simple:visited, .white_ref_simple:link, .white_ref_simple:hover, .white_ref_simple:active {
+            color: white;
+            text-decoration: underline;
+        }
+    
+        .white_ref:hover {
+            color: white;
+        }
+    
+        /* fin style lalo */
+    
+    </style>
+    
+
+</head>
+
+<body>
+    
+    <!-- MODAL FACTURACIÓN-->
+    <div class="modal fade" id="myFacturacion" role="dialog" style="overflow: auto !important;">
+        <div class="modal-dialog2">
+            <!-- Modal content-->
+            <div class="container-fluid modal-content2">
+                <div class="modal-header2" style="padding-bottom: 1%;">
+                    <button type="button" class="close close-x2" data-dismiss="modal" aria-label="Close">
+                        <!--<span aria-hidden="true">&times;</span>-->
+                        <img src="img/cancel.png" style="width:18px; height:18px;" aria-hidden="true">
+                    </button>
+                </div>
+                
+                <div class="modal-body2">
+                    <div class="row not_materialize_row" style="padding-top:1.5%;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 80px;">
+                            <span style="font-size: 25px; font-weight:200; font-stretch: ultra-expanded;">DATOS DE FACTURACI&Oacute;N</span>
+                        </div>
+                    </div>
+                    <div class="row not_materialize_row">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="padding-left:80px; margin-top:0.5%;">
+                            <img src="img/Lineh.png" style="width: 1150px; height: 1px;">
+                        </div>
+                    </div>
+                    
+                    <div class="row not_materialize_row" style="padding-left:5.5%; padding-top: 5%;">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <form>
+                                <div>
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Nombre o Raz&oacute;n Social*" style="width:607px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <form>
+                                <div style="padding-left: 5%;">
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="RFC*" style="width:510px">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="row not_materialize_row" style="padding-left:5.5%; padding-top: 5%;">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <form>
+                                <div>
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Calle*" style="width:415px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <form>
+                                <div style="padding-left:24%;">
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="No. exterior*" style="padding-left: 15px; width:149px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <form>
+                                <div style="padding-left: 18%;">
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="No. interior" style="padding-left: 15px; width:138px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <form>
+                                <div>
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Colonia*" style="width:335px;">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="row not_materialize_row" style="padding-left:5.5%; padding-top: 5%;">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <form>
+                                <div>
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Municipio o Delegaci&oacute;n*" style="width:415px">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <form>
+                                <div style="padding-left:24%;">
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Estado*" style="padding-left: 15px; width:150px">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <form>
+                                <div style="padding-left: 18%;">
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="C&oacute;odigo Postal*" style="padding-left: 15px; width:193px">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="row not_materialize_row" style="padding-left:5.5%; padding-top: 5%;">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <form>
+                                <div>
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Correo Electr&oacute;nico*" style="width:415px">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 radio">
+                            <form>
+                                <!--<div class="radio" style="font-size:20px">
+                                 <label class="radio-inline"><input type="radio" name="optradio">Guardar datos de facturaci&oacute;n</label>
+                                 </div>-->
+                                <div style="padding-left: 7%; padding-top:3%;">
+                                    <input type="radio" name="saveDataF" style="font-size: 30px;"><label style="font-size: 20px; color:#000000;">Guardar datos de facturaci&oacute;n</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row not_materialize_row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div style="padding-top:120px; padding-left:60px;">
+                                <span style="font-size: 20px; font-weight:light; font-stretch: ultra-expanded;opacity:.4;">*Campos obligatorios</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row not_materialize_row">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="padding-left:80px;">
+                            <img src="img/Lineh.png" style="width: 1150px; height: 1px;">
+                        </div>
+                    </div>
+                    <div class="row not_materialize_row" style="padding-top:2%;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-9 col-sm-offset-9 col-md-offset-9 col-lg-offset-9">
+                            <div style="width:20%; padding-left:4%">
+                                <!--<button class="ellipse_input ellipse_button orange_button" type="button" style="width: 100%; border: none;">ENVIAR</button>-->
+                                <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 100%;border: none;" data-toggle="modal" data-dismiss="modal" data-target="#myGracias">ENVIAR</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--Fin modal-body-->
+            </div>
+        </div>
+    </div> <!--Fin Modal myFacturacion-->
+    <!-- FIN MODAL FACTURACIÓN-->
+    
+    <!--MENU LEFT-->
+    <!--<ul id="slide-out" class="side-nav default-side-nav light-side-nav"
+        style="background-color:#1B1E39;opacity:1;font-family:HelveticaNeue;font-weight:100;padding:0;margin:0;height:100%;">
+        <div class="logo-wrapper waves-light" style="text-align:center;height:25%;display:flex;align-items:center">
+            <div style="width:100%">
+                <img id="imgPerfilBarra" class="img-circle" style="width:100px;height:100px;" src="./img/pr.jpg"/>
+                <div class="white_text" style="margin:0;padding:0;">Nombre Apellido</div>
+            </div>
+        </div>
+        <ul id="Menu" class="collapsible collapsible-accordion" style="height:55%;">
+            <li>
+                <div class="collapsible-header leftbar_div" style="xtop:1px;">
+                    <a href="123456.html" style="padding-left: 0%;">Inicio</a>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header leftbar_div">
+                    Cobertura
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header leftbar_div">
+                    Foodlists
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header leftbar_div">
+                    Mi Perfil
+                </div>
+                <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                    Mis Ubicaciones
+                </div>
+                <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                    Mis Órdenes - Factura
+                </div>
+                <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                    Formas de Pago
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header leftbar_div">
+                    ¡Invita y come gratis!
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header leftbar_div">
+                    Códigos Promocionales
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header leftbar_div">
+                    Blog
+                </div>
+            </li>
+        </ul>
+        <div style="text-align:center;">
+            <img src="img/img/instagram_icon.png" style="max-width:10%;margin:1%;">
+                <img src="img/img/facebook_icon.png" style="max-width:10%;margin:1%;">
+                    <img src="img/img/email_icon.png" style="max-width:10%;margin:1%;">
+                        </div>
+        <hr class="white_opacity_full" style="margin-top:10%;margin-bottom:0;padding:0;">
+        <div style="text-align:center;">
+            <a href="#" class="white_ref_simple" style="align:center">Cerrar Sesión</a>
+            <a href="#" class="white_ref_simple" style="align:center;font-size:8pt;">Reportar un problema</a>
+        </div>
+    </ul>
+    <nav class="navbar navbar-default navbar-fixed-top customNavBar" style="z-index:10;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:5%;">
+                <a class="navbar-brand"></a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active" style="background-color:transparent;">
+                        <a class="button-collapse" style="background:transparent;height:1px;" href="#" data-activates="slide-out" data-transition="slidedown">
+                            <img class="navBar_icon" style="max-height:20px;" src="img/img/menu_icon.png">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;margin-right:10%;">
+                    <li style="background-color:transparent;">
+                        <a style="background:transparent;height:1px;" href="#">
+                            <img class="navBar_icon" style="margin-top:-7px;max-height:35px;" src="img/img/checkout_icon.png">
+                                </a>
+                    </li>
+                    <li style="background-color:transparent;">
+                        <a class="white-text" style="background:transparent;height:1px;font-size:small;" href="#registrarseModal" data-toggle="modal">
+                            Registrarse
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>-->
+    <!--FIN MENU LEFT-->
+    
+    
+    <div class="container-fluid">
+    
+    
+        <div class="row not_materialize_row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <ul id="slide-out" class="side-nav default-side-nav light-side-nav fixed"
+                    style="background-color:#1B1E39;opacity:1;font-family:HelveticaNeue;font-weight:100;padding:0;margin:0;height:100%;">
+                    <div class="logo-wrapper waves-light" style="text-align:center;height:25%;display:flex;align-items:center">
+                        <div style="width:100%">
+                            <img id="imgPerfilBarra" class="img-circle" style="width:100px;height:100px;" src="./img/pr.jpg"/>
+                            <div class="white_text" style="margin:0;padding:0;">Nombre Apellido</div>
+                        </div>
+                    </div>
+                    <ul id="Menu" class="collapsible collapsible-accordion" style="height:55%;">
+                        <li>
+                            <div class="collapsible-header leftbar_div" style="xtop:1px;height: 35px;">
+                                <a href="123456.html" style="padding-left: 0%;width: 283px;padding-top:3%;">Inicio</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div" style="height: 35px;">
+                                <a href="cobertura.html" style="padding-left: 0%;width: 283px;height: 35px;padding-top:3%;">Cobertura</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div" style="height: 35px;">
+                                <a href="foodlists.html" style="padding-left: 0%;width: 283px;height: 35px;padding-top:3%;">Foodlists</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                Mi Perfil
+                            </div>
+                            <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                                Mis Ubicaciones
+                            </div>
+                            <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                                <a href="ordenes.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Mis Órdenes - Factura</a>
+                            </div>
+                            <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                                <a href="formas_pago.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Formas de Pago</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                <a href="invita.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">¡Invita y come gratis!</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                Canjea tus Códigos
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                Blog
+                            </div>
+                        </li>
+                    </ul>
+                    <div style="text-align:center;">
+                        <img src="img/img/instagram_icon.png" style="max-width:10%;margin:1%;">
+                            <img src="img/img/facebook_icon.png" style="max-width:10%;margin:1%;">
+                                <img src="img/img/email_icon.png" style="max-width:10%;margin:1%;">
+                                    </div>
+                    <hr class="white_opacity_full" style="margin-top:10%;margin-bottom:0;padding:0;">
+                    <div style="text-align:center;">
+                        <a href="#" class="white_ref_simple" style="align:center">Cerrar Sesión</a>
+                        <a href="#" class="white_ref_simple" style="align:center;font-size:8pt;">Reportar un problema</a>
+                    </div>
+                </ul>
+                <!--<nav class="navbar navbar-default navbar-fixed-top customNavBar" style="z-index:10;">
+                    <div class="container-fluid">
+                        <div class="navbar-header" style="width:5%;">
+                            <a class="navbar-brand"></a>
+                        </div>
+                        <div>
+                            <ul class="nav navbar-nav">
+                                <li class="active" style="background-color:transparent;">
+                                    <a class="button-collapse" style="background:transparent;height:1px;" href="#" data-activates="slide-out" data-transition="slidedown">
+                                        <img class="navBar_icon" style="max-height:20px;" src="img/img/menu_icon.png">
+                                            </a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav" style="float:right;margin-right:10%;">
+                                <li style="background-color:transparent;">
+                                    <a style="background:transparent;height:1px;" href="#">
+                                        <img class="navBar_icon" style="margin-top:-7px;max-height:35px;" src="img/img/checkout_icon.png">
+                                            </a>
+                                </li>
+                                <li style="background-color:transparent;">
+                                    <a class="white-text" style="background:transparent;height:1px;font-size:small;" href="#registrarseModal" data-toggle="modal">
+                                        Registrarse
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>-->
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" style="padding-left: 3%;">
+                <div class="row not_materialize_row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 80px;padding-top: 4%;">
+                        <span style="font-size: 20px; font-weight:200; font-stretch: ultra-expanded;">MIS ORDENES</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left:80px;">
+                        <img src="img/Lineh.png" style="width: 95%; height: 1px;">
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 110px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">EN PROCESO</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xs-offset-9 col-sm-offset-9 col-md-offset-9 col-lg-offset-9" style="padding-left:6%;">
+                        <span style="font-size: 15px; font-weight:light;">Status</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-top: 5px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">Viernes 8 de Septiembre</span>
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-left:17%; padding-top: 5px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">Tu repartidor est&aacute; en camino</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded; padding-bottom:10px;">1x</span>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding-left: 20px; padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">CHEESY CHOICE</span>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">Burrito de carne macha a los 3 quesos</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-top:15px; padding-left:2%;">
+                        <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 150px; height:40px; font-size: 15px;">VER MAPA</button>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-8 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded; padding-left:50px;">Chiles toreados</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-8 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" style="padding-bottom:50px; padding-top:15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded; padding-left:50px;">Burrito extra</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top:15px; padding-left:80px;">
+                        <img src="img/Lineh.png" style="width: 95%; height: 1px;">
+                            </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 110px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">ENTREGADOS</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-top: 25px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">Jueves 7 de Septiembre</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded; padding-bottom:10px;">1x</span>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding-left: 20px; padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">&iexcl;VIVA M&Eacute;XICO!</span>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">Pozole</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" style="padding-top:15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded; padding-left:50px;">Crema y queso</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-left:2%;">
+                        <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 150px; height:40px; font-size: 15px;" data-toggle="modal" data-dismiss="modal" data-target="#myFacturacion">FACTURAR</button>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-top: 25px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">Jueves 7 de Septiembre</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded; padding-bottom:10px;">1x</span>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding-left: 20px; padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">DE LA ABUELA</span>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-top: 15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded;">Tortitas de pollo en salsa verde</span>
+                    </div>
+                </div>
+                <div class="row not_materialize_row">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" style="padding-top:15px;">
+                        <span style="font-size: 15px; font-weight:light; font-stretch: ultra-expanded; padding-left:50px;">Frijoles de la olla</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    
+</body>
+</html>

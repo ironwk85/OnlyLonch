@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+            
+            <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+            
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
+                
+                <!-- Latest compiled and minified JavaScript -->
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+                
+                <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen" />
+
+                <script src="./javascripts/components/core-min.js"></script>
+                <script src="./javascripts/components/enc-base64-min.js"></script>
+                <script src="./javascripts/components/enc-utf16-min.js"></script>
+                <script src="./javascripts/components/sha256.js"></script>
+                <script src="./javascripts/components/sha256-min.js"></script>
+                <script src="./javascripts/rollups/sha256.js"></script>
+                <script src="./javascripts/functions.js"></script>
+                
+                <!-- Google maps -->
+                <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+                <script>
+                    var map;
+                    
+                    function initialize() {
+                        var mapOptions = {
+                            scrollwheel: false,
+                            zoom: 15,
+                            center: new google.maps.LatLng(19.4658666,-99.237783),
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        map = new google.maps.Map(document.getElementById('map_canvas'),
+                                                  mapOptions);
+                    }
+                
+                google.maps.event.addDomListener(window, 'load', initialize);
+                    </script>
+                <!-- Fin google maps -->
+
+    </head>
+    
+    <body>
+
+    <!--Facebook-->
+        <script>
+            // This is called with the results from  FB.getLoginStatus().
+            function statusChangeCallback(response) {
+                console.log('statusChangeCallback');
+                console.log(response);
+                // The response object is returned with a status field that lets the app know the current login status of the person.
+                // Full docs on the response object can be found in the documentation for FB.getLoginStatus().
+                if (response.status === 'connected') {
+                    //alert("Connected-" + response.name);
+                    // Logged into your app and Facebook.
+                    testAPI();
+                } else if (response.status === 'not_authorized') {
+                    //alert("Not authorized");
+                    // The person is logged into Facebook, but not your app.
+                    //document.getElementById('status').innerHTML = 'Please log ' +
+                    //'into this app.';
+                } else {
+                    //alert("Not logged into facebook");
+                    // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
+                    //document.getElementById('status').innerHTML = 'Please log ' +
+                    //'into Facebook.';
+                }
+            }
+
+            // This function is called when someone finishes with the Login
+            // Button.  See the onlogin handler attached to it in the sample
+            // code below.
+            function checkLoginState() {
+                FB.getLoginStatus(function(response) {
+                    statusChangeCallback(response);
+                });
+            }
+
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '1301395986543748',
+                    cookie     : true,  // enable cookies to allow the server to access the session
+                    xfbml      : true,  // parse social plugins on this page
+                    version    : 'v2.5' // use graph api version 2.5
+                });
+
+                // Now that we've initialized the JavaScript SDK, we call 
+                // FB.getLoginStatus().  This function gets the state of the
+                // person visiting this page and can return one of three states to
+                // the callback you provide.  They can be:
+                //
+                // 1. Logged into your app ('connected')
+                // 2. Logged into Facebook, but not your app ('not_authorized')
+                // 3. Not logged into Facebook and can't tell if they are logged into
+                //    your app or not.
+                //
+                // These three cases are handled in the callback function.
+
+                FB.getLoginStatus(function(response) {
+                    statusChangeCallback(response);
+                });
+            };
+
+            //////////////////////////////////////
+            function fb_login(){
+                //alert("0");
+                $(loading).toggleClass('loadingSDialog-after');
+                FB.login(function(response) {
+                    //alert("1");
+                    if (response.authResponse) {
+                        // connected
+                        //alert("2");
+                        FB.api('/me?fields=id,name,email,picture{url}', function(response) {
+                            //alert("3");
+                            loginUserFacebook(response.email);
+                        });
+                        //window.location.reload();
+                    } else {
+                        //alert("4");
+                        //$(login).toggleClass('inicioSDialog-after');
+                        $(loginMessage).text('Hemos tenido un error, inténtalo nuevamente');
+                        $(loginMessage).css('color', 'red');
+                        $(loading).toggleClass('loadingSDialog-after');
+                    }
+                }, {scope: 'public_profile,email'});
+            }
+
+            //////////////////////////////////////
+            function fb_register(){
+                $(loading).toggleClass('loadingSDialog-after');
+                FB.login(function(response) {
+                    if (response.authResponse) {
+                        // connected
+                        FB.api('/me?fields=name,email,picture{url}', function(response) {
+                            $("#myname_reg").val(response.name+'');
+                            $("#myemail_reg").val(response.email+'');
+                            $(loading).toggleClass('loadingSDialog-after');
+                            $("#photo").val(response.picture.data.url);
+                            //alert(response.picture.data.url);
+                        });
+                        //window.location.reload();
+                    } else {
+                        // cancelled
+                    }
+                }, {scope: 'public_profile,email'});
+            }
+
+            // Load the SDK asynchronously
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            // Here we run a very simple test of the Graph API after login is
+            // successful.  See statusChangeCallback() for when this call is made.
+            function testAPI() {
+                console.log('Welcome!  Fetching your information.... ');
+                FB.api('/me', function(response) {
+                    //alert('Successful login for: ' + response.name);
+                    //document.getElementById('status').innerHTML =
+                    //'Thanks for logging in, ' + response.name + '!';
+                });
+            }
+        </script>
+    
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+<!--Facebook-->
+
+
+        
+        <!-- Inicia sección banner superior-->
+        <div id="bar" class="fade-in" style="padding-top: 0px;">
+            <div class="box" style="position: relative; width: 100%;">
+                <button class="btn" type="inicio" style="position: relative; font-size: 14px; border-radius: 0; top: 0; width: 140px; height: 60px; background-color: #F0F0F0; color: #FC2C77;"><b>Inicio</b></button>
+                <button class="btn" type="inicio" style="position: relative; font-size: 14px; border-radius: 0; top: 0; width: 200px; height: 60px; background-color: #FFFFFF; border-right: solid #F0F0F0; border-right-width: thin;"><b>Suscripción Semanal</b></button>
+            
+                <button class="btn" type="inicio" style="position: relative; font-size: 14px; border-radius: 0; top: 0; width: 140px; height: 60px; background-color: #FFFFFF; border-right: solid #F0F0F0; border-right-width: thin;"><b>¡Come Gratis!</b></button>
+            
+                <button class="btn" type="inicio" style="position: relative; font-size: 14px; border-radius: 0; top: 0; width: 140px; height: 60px; background-color: #FFFFFF; border-right: solid #F0F0F0; border-right-width: thin;"><b>Blog</b></button>
+            
+                <button class="btn" type="inicio" style="position: relative; font-size: 14px; border-radius: 0; top: 0; width: 140px; height: 60px; background-color: #FFFFFF; border-right: solid #F0F0F0; border-right-width: thin;"><b>Conoce Más</b></button>
+            
+                <button id="iniciarSesion" class="btn" type="inicio" style="position: relative; font-size: 14px; border-radius: 0; top: 0; width: 205px; height: 60px; background-color: #FFFFFF; border-right: solid #F0F0F0; border-right-width: thin;" onclick="$(login).toggleClass('inicioSDialog-after');"><img src="img/user.png" width="18px" height="20px" style="margin-right: 10px;"></img><b>Iniciar Sesión</b></button>
+            </div>
+            
+        </div><!-- Termina sección baner superior-->
+        
+        <!-- Inicia sección principal de imagen de inicio-->
+        <div class="img-bcg">
+            <img src="img/background.png" border="0" width="100%" height="830px">
+                <div style="position: absolute; top: 120px; width: 100%; height: 145px;">
+                    <img src="img/logo&slogan.png" width="955px" height="135px" style="display: block; margin: 0 auto;">
+                </div>
+                <!-- Inicia banner del centro-->
+                <div class="iframe-menu" style="background-color:rgba(255,255,255, 0); width: 100%; height: 98px;">
+                    <img src="img/services.png" width="100%" height="138px">
+                    <div class="box" style="position: absolute; top: 0; width: 100%;">
+                        <form class="form-horizontal" style="position: relative; font-size: 14px; border-radius: 0; top: 5px; width: 510px; height: 90px; background-color: #FFFFFF; color: #FC2C77;  border-right: solid #F0F0F0; border-right-width: thin;">
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; color: #3F3F3F; height:44%; font-size:19.6px; text-align:center;margin-bottom: 2px;">AL MOMENTO</p>
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #3F3F3F; font-size: 13.72px; font-weight: 200;margin-bottom: 0px;">Configura diariamente la entrega de una comida completa y balanceada<sup>1</sup>.</p>
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #3F3F3F; font-size: 13.72px; font-weight: 200;">Desde <b>MX$60 MXN</b> por paquete<sup>2</sup>!*</p>
+                        </form>
+                        <form class="form-horizontal" style="position: relative; font-size: 14px; border-radius: 0; top: 5px; width: 510px; height: 90px; background-color: #FFFFFF;">
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; color: #3F3F3F; text-align: center; height:44%; font-size:19.6px; margin-bottom: 2px;">A LA CARTA
+                            </p>
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #3F3F3F; font-size: 13.72px; font-weight: 200;margin-bottom: 0px;">Escoge el platillo que se te antoje y programa su entrega<sup>3</sup>.
+                            </p>
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #3F3F3F; font-size: 13.72px; font-weight: 200;">¡Prácticamente <b>sin restricciones</b><sup>4</sup>!
+                            </p>
+                        </form>
+                    </div>
+                </div><!-- Termina banner del centro-->
+                
+                <!-- Inicia sección de Zonas -->
+                <div class="sec3" style="background-color:rgba(255,255,255, 0); width: 100%; height: 98px;">
+                        <div class="box" style="position: relative; top: 0; width: 100%;">
+                            <form class="form-horizontal" style="position: relative; border-radius: 0; top: 5px; width: 500px; height: 250px; color: #FC2C77;">
+                                <div style="position:relative;top:0;width:100%" id="dropdown-1" class="list-zona dropdown box">
+                                    <button class="list-zona-drop btn btn-default dropdown-toggle btn-responsive" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position:relative; width:342px; height:45px;font-size: 13.72px;font-weight:200;">
+                                        Selecciona tu Zona
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu col-xs-12" aria-labelledby="dropdownMenu1" style="font-size: 2.2vmin;">
+                                        <li><a href="#">Santa Fé</a></li>
+                                        <li><a href="#">Satélite</a></li>
+                                        <li><a href="#">Polanco</a></li>
+                                    </ul>
+                                </div>
+                                <div class="box" style="position:relative;top:10px;width:100%">
+                                    <button type="button" class="btn btn-default btn-responsive" style="position:relative; width:342px; height:45px;font-size: 15px;background-color:#FFBF00; border-color: yellow;color: #ffffff;"><b>CONFIGURAR PAQUETE</b></button>
+                                </div>
+                                <div class="box" style="position:relative;top:40px;width:100%;">
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 9.8px; font-weight: 200;margin-bottom: 0px;"><sup>1</sup>Los paquetes incluyen: (1) Sopa, (1) Plato Fuerte con Guarnición,
+                                    </p>
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 9.8px; font-weight: 200;margin-bottom: 0px;">(1) Postre del Día y (1) Agua del Día. Siempre acompañamos tu elección con tortillas, limón y salsa.
+                                    </p>
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 9.8px; font-weight: 200;margin-bottom: 0px;margin-top:10px"><sup>2</sup>Precio aplica para Suscripción Semanal (5 días hábiles por MX$300.00).
+                                    </p>
+                                </div>
+                                <div class="box" style="position:relative;top:40px;width:100%;">
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 9.8px; font-weight: 200;margin-bottom: 0px;">Precio para pedidos únicos: <b>MX$70.00</b>.
+                                    </p>
+                                </div>
+                                <div class="box" style="position:relative;top:40px;width:100%;">
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 13.72px; font-weight: 200;margin-bottom: 0px; margin-top:20px;"><b>Disponible de LU-VI de 12-16h.</b>
+                                    </p>
+                                </div>
+                            </form>
+                            
+                            <form class="form-horizontal" style="position: relative; border-radius: 0; top: 5px; width: 500px; height: 250px; color: #FC2C77;">
+                                <div style="position:relative;top:0;width:100%" id="dropdown-1" class="list-zona dropdown box">
+                                    <button class="list-zona-drop btn btn-default dropdown-toggle btn-responsive" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position:relative; width:342px; height:45px;font-size: 13.72px;font-weight:200;">
+                                        Selecciona tu Zona
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu col-xs-12" aria-labelledby="dropdownMenu1" style="font-size: 2.2vmin;">
+                                        <li><a href="#">Santa Fé</a></li>
+                                        <li><a href="#">Satélite</a></li>
+                                        <li><a href="#">Polanco</a></li>
+                                    </ul>
+                                </div>
+                                <div class="box" style="position:relative;top:10px;width:100%">
+                                    <button type="button" class="btn btn-default btn-responsive" style="position:relative; width:342px; height:45px;font-size: 15px;background-color:#FE4E50; border-color: #DA4A4C;color: #ffffff;"><b>ELEGIR DEL MENÚ</b></button>
+                                </div>
+                                <div class="box" style="position:relative;top:40px;width:100%;">
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 9.8px; font-weight: 200;margin-bottom: 0px;"><sup>3</sup>Las entregas pueden ser programadas un máximo de 15 días de anticipación
+                                    </p>
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 9.8px; font-weight: 200;margin-bottom: 0px;">o un mínimo de 1h. para entregas el mismo día.
+                                    </p>
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 9.8px; font-weight: 200;margin-bottom: 0px;margin-top:10px"><sup>4</sup>Restricciones pueden aplicar en zonas de cobertura. En caso de requerir servicios de
+                                    </p>
+                                </div>
+                                <div class="box" style="position:relative;top:40px;width:100%;">
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 9.8px; font-weight: 200;margin-bottom: 0px;">catering o pedidos en volumen (mayor a MX$1,500.00), por favor contáctanos.
+                                    </p>
+                                </div>
+                                <div class="box" style="position:relative;top:40px;width:100%;">
+                                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align: center; color: #FFFFFF; font-size: 13.72px; font-weight: 200;margin-bottom: 0px; margin-top:20px;"><b>Disponible de LU-DOM de 10-20h.</b>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                
+                </div><!-- Termina sección de Zonas -->
+            </div><!-- Termina sección principal de imagen de inicio -->
+        
+        <!-- Inicia sección de ¿Cómo funciona? -->
+        <div class="sec2" style="height:550px; width:100%; top: 830px; left: 0;">
+            <div class="box" style="position: relative; top: 0; width: 100%; height:550px;">
+                <form style="position: relative; border-radius: 0; top: 0; width: 968px; height: 65px;">
+                    <p style="position: relative; font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 38.53px;">¿Cómo funciona?</p>
+                </form>
+                <form class="form-horizontal" style="position: relative; border-radius: 0; top:0; width: 965px; height: 350px">
+                    <div style="position:absolute;width:200px; top:0;height:350px;border-style:ridge;border-width:1px;border-color:#EFEFEF;background-color:#ffffff;">
+                        <div class="box" style="margin-top: 12px;margin-bottom:8px;">
+                            <img src="img/user.png" border="0" width="20px" height="22px" align="middle">
+                        </div>
+                        <div style="text-align:center;border-style:solid;margin-bottom: 0;border-left-width: 0;border-top-width: 0;border-bottom-width: 1px;border-right-width: 0; border-color:#EEEEEE">
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size:15px;"><b>Inicia Sesión</b></p>
+                        </div>
+                        <p style="color:#595959;font-size:11.56px;font-weight:200;text-align:justify;margin-left: 15px;margin-right: 15px;margin-top: 30px;margin-top: 60px;line-height:130%;">Comienza creando un perfil o accesando a tu cuenta. Será necesario para ordenar en cualquier modalidad (AL MOMENTO o A LA CARTA). Todos tus datos se encuentran protegidos en los términos previstos en nuestro <a href="" style="color: #595959;font-size:11.56;font-weight:200;line-height:130%;"><ins>aviso de privacidad</ins></a>.</p>
+                        <div class="box">
+                            <a href="#" class="btn" type="submit" onclick="$(register).toggleClass('registroDialog-after');" style="width:173px; height:45px;background:#02D04E;color:#ffffff;padding-top:12px;"><b>CREA PERFIL</b></a>
+                        </div>
+                    </div>
+                    
+                    <div style="position:absolute;left:22.8%;width:525px;height:350px;top:0;border-style:ridge;border-width:1px;border-color:#EFEFEF;background-color:#ffffff;">
+                        <div style="margin-top:20px;margin-left:15px;">
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size:15px;"><b>Para la Modalidad AL MOMENTO:</b></p>
+                        </div>
+                        <div style="position:absolute;top:15%;height:110px;width:230px;left:15px;">
+                            <p><img src="img/pencil.png" border="0" width="24px" height="20px">&nbsp;<b>Configura tu menú del día</b></p>
+                            <p style="color:#595959;font-size:11.56px;font-weight:200;text-align:justify;margin-left: 10px;margin-top: 12px;">Elige diariamente entre 3 opciones de sopa y 3 de plato fuerte. Te llegará junto al agua y postre del día, limón, tortillas y salsa.
+                            </p>
+                        </div>
+                        <div style="position:absolute;top:15%;height:110px;width:244px;right:15px;">
+                            <p><img src="img/clock.png" border="0" width="22px" height="21px">&nbsp;<b>Programa la hora de entrega</b></p>
+                                <p style="color:#595959;font-size:11.56px;font-weight:200;text-align:justify;margin-left: 10px;margin-right: 10px;margin-top: 12px;">Selecciona alguno de los horarios que disponemos para entrega entu zona. Se bloquearán si no te podemos atender.
+                                </p>
+                        </div>
+                        <div style="position:relative;border-style:solid;top:115px;border-left-width: 0;border-top-width: 0;border-bottom-width: 1px;border-right-width: 0; border-color:#EEEEEE">
+                        </div>
+                        <div style="position:absolute;top:151px;left:240px;">
+                            <img src="img/img_or.png" width="32px" height="30px"></img>
+                        </div>
+                        <div style="margin-top: 142px;margin-bottom:8px;margin-left:15px;">
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size:15px;"><b>Para la Modalidad A LA CARTA:</b></p>
+                        </div>
+                        <div style="position:absolute;top:65%;height:110px;width:230px;left:15px;">
+                            <p><img src="img/check.png" border="0" width="24px" height="20px">&nbsp;<b>Elige de todo el menú</b></p>
+                                <p style="color:#595959;font-size:11.56px;font-weight:200;text-align:justify;margin-left: 10px;margin-top: 12px;">Elige entre cientos de opciones de platillos, bebidas y snacks para disfrutar en donde tú quieras. Atendemos desde una comida hasta un banquete completo, contáctanos.
+                                </p>
+                        </div>
+                        <div style="position:absolute;top:65%;height:110px;width:244px;right:15px;">
+                            <p><img src="img/calendar.png" border="0" width="22px" height="21px">&nbsp;<b>Programa día y hora de entrega</b></p>
+                                <p style="color:#595959;font-size:11.56px;font-weight:200;text-align:justify;margin-left: 10px;margin-right: 10px;margin-top: 12px;">Selecciona fecha y hora de entrega. Puedes programarla con hasta 15 días de anticipación. Nosotros nos encargamos de su seguimiento.
+                                </p>
+                        </div>
+                    </div>
+                    
+                    <div style="position:absolute;width:200px;right:0;top:0;height:350px;border-style:ridge;border-width:1px;border-color:#EFEFEF;background-color:#ffffff;">
+                        <div class="box" style="margin-top: 12px;margin-bottom:8px;">
+                            <img src="img/heart.png" border="0" width="20px" height="22px" align="middle">
+                                </div>
+                        <div style="text-align:center;border-style:solid;margin-bottom: 0;border-left-width: 0;border-top-width: 0;border-bottom-width: 1px;border-right-width: 0; border-color:#EEEEEE">
+                            <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size:15px;"><b>¡Confirma y disfruta!</b></p>
+                        </div>
+                        <p style="color:#595959;font-size:11.56px;font-weight:200;text-align:justify;margin-left: 15px;margin-right: 15px;margin-top: 30px;line-height:130%;">Confirma la dirección de entrega, contacto, y forma de pago. Recuerda que puedes usar suscripción semanal (5 días hábiles) para ahorrar hasta MX$10.00 en cada orden AL MOMENTO. Además, puedes regalarle un Lonch de cualquier modalidad a alguien más poniendo su dirección y dejando una nota al repartidor. Nos  encargaremos de que tu orden llegue a tiempo; pero si llegamos a tener algún problema nosotros mismos te  llamaremos.</p>
+                    </div>
+                </form>
+                <form style="position: relative; border-radius: 0; top: 10px; width: 968px; height: 65px;">
+                    <p style="position: relative; font-size: 38.53px;">Zonas de cobertura</p>
+                </form>
+            </div>
+        </div><!-- Termina sección de ¿Cómo funciona? -->
+        
+        
+        <div style="position: absolute; height: 385px; width: 100%; top:1380px; left:0;">
+            <div id="map_canvas"></div>
+        </div>
+        
+        <!--Inicia última sección-->
+        <div class="box sec3" style="height: 250px; width:100%; top:1765px;background-color: #3F3F3F;">
+            <div class="box" style="position: relative; top: 0; width: 1200px; height:250px;">
+                <form class="form-horizontal" style="position: relative; border-radius: 0; top: 3px; width: 250px; height: 200px; color: #FC2C77;">
+                    <img src="img/logo.png" border="0" width="219px" height="87px">
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px;font-weight:200;color:#ffffff;margin-top: 30px;">Lonch es una marca registrada de Alimentos Enlatados S.A. de C.V.</p>
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px;font-weight:200;color:#ffffff;margin-top: 20px;">Circuito Economistas 156, Col. Ciudad
+                    Satélite, Naucalpan, Edo. Mex. México
+                    C.P. 53100</p>
+                    
+                </form>
+                <form class="form-horizontal"style="position: relative; border-radius: 0; top: 4px; width: 170px; height: 200px;margin-left: 60px;">
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200;margin-bottom: 0px;"><b>INICIO</b></p>
+                    <div style="margin-bottom: -4px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Bienvenida</a>
+                    </div>
+                    <div style="margin-bottom: -4px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">¿Cómo funciona?</a>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Zonas de cobertura</a>
+                    </div>
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200;margin-bottom: 0px;"><b>SUSCRIPCIÓN SEMANAL</b></p>
+                    <div style="margin-bottom: -4px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Suscríbete</a>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Estado de Mi Suscripción</a>
+                    </div>
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200;margin-bottom: 0px;"><b>¡COME GRATIS!</b></p>
+                    <div style="margin-bottom: -4px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">¡Da $10, recibe $10!</a>
+                    </div>
+                    <div style="margin-bottom: -4px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Registra un Código</a>
+                    </div>
+
+                </form>
+                <form class="form-horizontal" style="position: relative; border-radius: 0; top: 4px; width: 160px; height: 200px;margin-left: 25px;">
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200;margin-bottom: 0px;"><b>BLOG</b></p>
+                    <div style="margin-bottom: -7px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Usuarios</a>
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Empleados</a>
+                    </div>
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200;margin-bottom: 0px;"><b>CONOCE MÁS</b></p>
+                    <div style="margin-bottom: -7px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Soluciones Corporativas</a>
+                    </div>
+                    <div style="margin-bottom: -7px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Contacto</a>
+                    </div>
+                    <div style="margin-bottom: -7px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Prensa</a>
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Legal</a>
+                    </div>
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200;margin-bottom: 0px;"><b>SERVICIOS</b></p>
+                    <div style="margin-bottom: -7px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Lonch AL MOMENTO</a>
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        <a href="#" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200">Lonch A LA CARTA</a>
+                    </div>
+                    <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200;margin-bottom: 0px;"><b>MI PERFIL</b></p>
+                </form>
+                <form class="form-horizontal" style="position: relative; border-radius: 0; top: 5px; width: 300px; height: 200px;margin-left: 0;">
+                    <img src="img/facebook_gray.png" width="31px" height="32px" style="margin-right: 20px;">
+                    <img src="img/instagram_gray.png" width="31px" height="32px" style="margin-right: 20px;">
+                    <img src="img/whatsapp_gray.png" width="31px" height="32px">
+                    <div style="margin-top: 50px;margin-bottom:10px">
+                        <p style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px; color: #ffffff;font-weight:200;margin-bottom: 0px;"><b>PRÓXIMAMENTE<b></p>
+                    </div>
+                    <img src="img/appstore.png" width="133px" height="38px" style="margin-right:20px;margin-bottom:5px">
+                    <img src="img/googleplay.png" width="133px" height="38px" style="margin-right:20px;">
+                    <div style="position:absolute; left:150px;top:-180px">
+                        <img src="img/app.png" width="275" height="400" align="top">
+                    </div>
+                </form>
+            </div>
+        </div><!--Termina último sección-->
+        
+        <!-- Inicia popups-->
+        <div id="login" class="inicioSDialog">
+            <div style="width:629px; min-width:629px; height:130px; min-height:103px;">
+                <a href="#" onclick="$(login).toggleClass('inicioSDialog-after');initializeValues();" title="Close" class="close">X</a>
+                <div class="clear-form two-col" style="margin-left: 0px;margin-right: 0px;margin-bottom: 0px;height: 396px;width: 629px;">
+                    <div class="form-heading">
+                        <h3 align="center" class="header" style="margin-top: 5px;margin-bottom: 5px;"><b>Inicia Sesión</b></h3>
+                        <hr>
+                    </div>
+                    <div class="col1" style="margin-bottom: 0px;padding-bottom: 54px;">
+                        <p id="loginMessage" style="color: #7B7B7B; font-size: 12px;font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:400;">Inicia Sesión con los datos con los que creaste tu perfil:</p>
+                        <div class="form-body">
+                            <div>
+                                <input id="myemail_login" type="text" class="input-block-level" placeholder="Email / Teléfono" style="margin-bottom: 10px; font-size: 12px; background-color: white; font-weight: 200;">
+                                    <input id="mypwd_login" type="password" class="input-block-level" placeholder="Contraseña" style="margin-bottom: 10px; font-size: 12px; background-color: white; font-weight: 200;">
+                                        </div>
+                        </div>
+                        <div class="checkbox" style="color: #7B7B7B; border-style:solid;margin-top: 2px;margin-bottom: 0;border-left-width: 0;border-top-width: 0;border-bottom-width: 0;border-right-width: 0;left: 18px;">
+                            <p style="color: #7B7B7B; font-size: 12px;font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:400;">
+                            <input id="rememberMe_login" type="checkbox">Recordar
+                                </p>
+                                </div>
+                        <div class="form-footer" style="padding-left: 0; padding-right: 0;padding-top: 0; font-size: 14px;">
+                            <button onClick="loginUser(event);"; class="btn btn-large btn-blue btn-block" type="submit">INICIAR SESIÓN</button>
+                            <button class="btn btn-large btn-block" type="submit" style="position: absolute; font-size: 14px; border-radius: 0; left: 0; width: 314px; height: 52px; margin-top: 17px; background-color: #f8f8f8; border-radius: 0; color: #7B7B7B; font-weight:300;">¿Olvidaste tu contraseña?</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col2">
+                        <p align="center" style="color: #7B7B7B;font-size: 12px;padding-left: 15px;font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:400;">
+                        Inicio rápido con Google o Facebook:
+                        </p><br>
+                        <a href="" class="btn btn-large btn-block btn-google" style="border-radius: 24px; width: 252px; heigth: 48px; margin-left: 25px;margin-top: 10px;"><img src="img/letterG3x.png" border="0" width="30px" height="24px">Inicia Sesión con Google</a>
+                        <a onClick="fb_login()" href="#" class="btn btn-large btn-block btn-fb" style="border-radius: 24px; border-top-width: 1px;margin-top: 15px; width: 252px; heigth: 48px; margin-left: 25px;"><img src="img/letterF3x_v1.png" border="0" width="33px" height="16px">Inicia Sesión con Facebook</a>
+                        <div class="form-footer" style="padding-left: 0; padding-right: 0;padding-top: 10px;">
+                            <a class="btn btn-large btn-block" type="register" style="position: absolute; font-size: 14px; border-radius: 0; left: 315px; width: 314px; height: 56px; margin-top: 64px; background-color: #f8f8f8; border-radius: 0; color: #7B7B7B;" onclick="$(login).toggleClass('inicioSDialog-after');$(register).toggleClass('registroDialog-after');"><b>Crea tu perfil</b></a>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <div style="position:absolute; width:34px; height:32px; left: 298px; top: 158%;">
+                        <img src="img/img_or.png" height="100%" width="100%">
+                            </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <div id="loading"  class="loadingSDialog" style="width:100%; height:100%; ">
+                <img src="img/progress2.gif" style="width:100px; height:100px; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0; "/> 
+        </div>       
+        
+        <div id="register" class="registroDialog" style="min-width:354px;">
+            <div style="width:354px; min-width:354px; height:130px; min-height:103px;">
+                <a href="#" onclick="$(register).toggleClass('registroDialog-after');" title="Close" class="close">X</a>
+                <div class="clear-form two-col" style="margin-left: 0px;margin-right: 0px;margin-bottom: 0px;height: 695px;width: 354px;">
+                    <div class="form-heading" style="height: 70px;width: 385px;padding-left: 0px;">
+                        <h3 align="center" class="header" style="font-size: 25px; color: #3F3F3F; margin-top: 0;margin-bottom: 5px;"><b>Crea tu Perfil</b></h3>
+                        <hr style="margin-top: 15px;">
+                    </div>
+                    <div class="col2" style="margin-bottom: 0;padding-bottom: 54px;">
+                        <p id="registerMessage" style="color: #7B7B7B; font-size: 10px; padding-top: 1px; padding-left: 15px;font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:400;width:340px">Crea tu perfil una vez para poder ordenar y dar seguimiento a todos tus pedidos de la modalidad AL MOMENTO o A LA CARTA. Tus datos están seguros y sólo los ocupamos para dar seguimiento a tus pedidos.</p>
+                        <div class="form-body">
+                            <div>
+                                <input id="myname_reg" type="text" class="input-block-level" placeholder="Nombre*" style="margin-bottom: 10px; font-size: 12px; background-color: white; font-weight: 200;">
+                                    <input id="myemail_reg" type="text" class="input-block-level" placeholder="E-mail*" style="margin-bottom: 10px; font-size: 12px; background-color: white; font-weight: 200;">
+                                        <input id="myphone_reg" type="text" class="input-block-level" placeholder="Teléfono*" style="margin-bottom: 10px; font-size: 12px; background-color: white; font-weight: 200;">
+                                            <input id="mypwd_reg" type="password" class="input-block-level" placeholder="Contraseña*" style="margin-bottom: 10px; font-size: 12px; background-color: white; font-weight: 200;">
+                                                <input id="mypwd2_reg" type="password" class="input-block-level" placeholder="Confirmar Contraseña*" style="margin-bottom: 10px; font-size: 12px; background-color: white; font-weight: 200;">
+                                                    <input type="hidden" name="photo" id="photo">
+                                                    </div>
+                        </div>
+                        <div class="checkbox" style="color: #7B7B7B; border-style:solid;margin-top: 2px;margin-bottom: 0;border-left-width: 0;border-top-width: 0;border-bottom-width: 0;border-right-width: 0;margin-left: 18px;">
+                            <p style="color: #7B7B7B; font-size: 12px; margin-left:30px; width: 300px;font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:400;">
+                            <input id="privacy_message" type="checkbox" style="width:10px;">He leido y aceptado el <a href="#" style="font-size: 12px; color: #55ACEE;"><ins>aviso de privacidad<ins></a> y los <a href="#" style="font-size: 12px; color: #55ACEE;"><ins>términos y condiciones<ins></a>
+                                </p>
+                                </div>
+                        <div class="form-footer" style="padding-left: 0; padding-right: 0;padding-top: 0; font-size: 14px;margin-left: 18px;">
+                            <button onClick="enviaRegistro(event);" class="btn btn-large btn-blue btn-block" type="submit" style="width: 320px;">CREAR PERFIL</button>
+                            
+                        </div>
+                        <div style="position:relative; top: -20px; border-bottom: 1px solid #eeeeee;">
+                            <div style="position:relative; width:34px; height:32px; left: 150px; top: 15px;">
+                                <img src="img/img_or.png" height="100%" width="100%">
+                                    </div>
+                        </div>
+                        <div>
+                            <p style="color: #7B7B7B;font-size: 12px;padding-top: 2px;padding-left: 0px;text-align: center;font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:400;">Inicio rápido con Google o Facebook</p>
+                        </div>
+                        <div style="margin-left: 70px;">
+                            <div style="position: absolute; top: 559px; left: 69px;">
+                                <img src="img/btnGoogle.png" height="48px" width="110px">
+                                    </div>
+                            <div style="position: absolute; top: 559px; left: 179px;">
+                                <img src="img/btnFace.png" style="cursor:pointer" onClick="fb_register()" height="48px" width="110px">
+                                    </div>
+                        </div>
+                        <div style="position:relative; top: 60px;">
+                            <p style="color: #7B7B7B;font-size: 12px;padding-top: 2px;padding-left: 0px;text-align: center;font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:400;">¿Ya tienes perfil?</p>
+                        </div>
+                        <div style="position: relative; padding-left: 0; padding-right: 0;padding-top: 0;">
+                            <button onclick="$(login).toggleClass('inicioSDialog-after');$(register).toggleClass('registroDialog-after');" class="btn btn-large btn-block" type="submit" style="font-size: 14px; border-radius: 0; left: 0; width: 353px; height: 42px; margin-top: 74px; background-color: #f8f8f8; border-radius: 0; color: #7B7B7B; border-left-width: 0px;border-right-width: 0px;border-top-width: 0px;"><b>Inicia Sesión</b></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--Termina popups-->
+        
+    </body>
+    
+</html>

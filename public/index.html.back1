@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+        
+    <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
+                
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        
+        
+                
+    <style type="text/css">
+        body{
+            background: white;
+            margin: 0;
+        }
+    
+        #bar {
+            position: absolute;
+            /*padding-top: 40px;*/
+            background-color: #fff;
+            width:100%;
+            height:8%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+            visibility : hidden;
+        }
+    
+        #bar.fade-in
+        {
+            padding-top: 40px;
+            background-color: #fff;
+            width:100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+            visibility : visible;
+            -webkit-animation-name: example; /* Chrome, Safari, Opera */
+            -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+            animation-name: example;
+            animation-duration: 4s;
+        }
+        /* Chrome, Safari, Opera */
+        @-webkit-keyframes example {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        /* Standard syntax */
+        @keyframes example {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    
+        @media (max-width: 768px) {
+            .btn-responsive {
+                padding:2px 4px;
+                font-size:80%;
+                line-height: 1;
+                border-radius:3px;
+            }
+        }
+    
+        @media (min-width: 769px) and (max-width: 992px) {
+            .btn-responsive {
+                padding:4px 9px;
+                font-size:90%;
+                line-height: 1.2;
+            }
+        }
+    
+        .img-bcg {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /*style="height:100%; width:100%; top: 0; left: 0;*/
+        }
+    
+        .iframe-menu {
+            position: absolute;
+            top: 40%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    
+        .triangulo-1 {
+            position: absolute;
+            top: 40%;
+            bottom: 20%;
+            left: 23%;
+            right: 60%;
+        }
+    
+        .triangulo-2 {
+            position: absolute;
+            top: 40%;
+            bottom: 20%;
+            left: 68%;
+            right: 15%;
+        }
+    
+        .sec2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    
+        .list-zona {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            left: 17.5%;
+            right: 0;
+            width: 65%;
+            height: 16%;
+            
+        }
+        .list-zona-drop {
+            width: 100%;
+            height: 100%;
+            color: gray;
+        }
+        .sec3 {
+            position: absolute;
+            top: 62%;
+            bottom: 0;
+            left: 8%;
+            right: 50%;
+        }
+        .sec4 {
+            position: absolute;
+            top: 62%;
+            bottom: 0;
+            left: 54%;
+            right: 6%;
+        }
+        .button-1 {
+            position: absolute;
+            top: 18%;
+            left: 17.5%;
+            width: 65%;
+            height: 16%;
+        }
+        .line-1 {
+            position: absolute;
+            top: 55%;
+            left: 48%;
+            right: 42%;
+            bottom: 0.2%;
+            /*height: 40%;
+            width: 55%;*/
+        }
+        .descripcion-pkt {
+            position: absolute;
+            top: ;
+        }
+    
+        .txt-1 {
+            position: absolute;
+            top: 52%;
+            left: 0;
+            text-align:center;
+        }
+    
+        .txt-1-1 {
+            position: absolute;
+            top: 60%;
+            left: 0;
+            text-align:center;
+        }
+    
+        .txt-1-2 {
+            position: absolute;
+            top: 76%;
+            left: 0;
+            text-align:center;
+        }
+        .txt-1-3 {
+            position: absolute;
+            top: 60%;
+            left: 0;
+            text-align:center;
+        }
+    
+    </style>
+    
+    <script>
+        function showBar(){
+            document.getElementById("bar").className = "";
+            document.getElementById("bar").className = "fade-in";
+        }
+    </script>
+    
+    <script>
+        function drawShape() {
+            var canvas = document.getElementById('mycanvas');
+            var canvas2= document.getElementById('mycanvas2');
+            var canvas3= document.getElementById('mycanvas3');
+            if (canvas.getContext){
+                var ctx = canvas.getContext('2d');
+                ctx.beginPath();
+                ctx.moveTo(0,40);
+                ctx.lineTo(180,50);
+                ctx.lineTo(100,90);
+                ctx.fillStyle="#ffffff";
+                ctx.fill();
+            }
+            if (canvas2.getContext){
+                var ctx = canvas2.getContext('2d');
+                ctx.beginPath();
+                ctx.moveTo(0,40);
+                ctx.lineTo(230,25);
+                ctx.lineTo(100,90);
+                ctx.fillStyle="#ffffff";
+                ctx.fill();
+            }
+            if(canvas3.getContext){
+                var ctx = canvas3.getContext('2d');
+                    ctx.lineWidth = 1+8;
+                    ctx.beginPath();
+                    ctx.moveTo(5+8*14,5);
+                    ctx.lineTo(5+8*14,148);
+                    ctx.strokeStyle="#ffffff";
+                    ctx.stroke();
+            }
+        }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(document).on('click', '#dropdown-1 ul a', function(){
+                var selText = $(this).text();
+                $(this).parents('#dropdown-1').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+            });
+            $(document).on('click', '#dropdown-2 ul a', function(){
+                var selText = $(this).text();
+                $(this).parents('#dropdown-2').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+            });
+
+            $.ajax({
+                type: "GET",
+                url: './zonas',
+                dataType: 'json',
+                success: function(json) {
+
+                    var $el = $("#dropdown-1 ul");
+                    $el.empty(); // remove old options
+                    $.each(json, function(value, key) {
+                        $el.append($("<li><a href='#'>" + key.name + "</a></li>"));
+                    });
+                }
+            });
+            $.ajax({
+                type: "GET",
+                url: './zonas',
+                dataType: 'json',
+                success: function(json) {
+
+                    var $el = $("#dropdown-2 ul");
+                    $el.empty(); // remove old options
+                    $.each(json, function(value, key) {
+                        $el.append($("<li><a href='#'>" + key.name + "</a></li>"));
+                    });
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body onmousemove="showBar()" onload="drawShape();">
+    
+    <!-- Inicia sección banner superior-->
+    <div id="bar">
+    </div><!-- Termina sección baner superior-->
+    
+    <!-- Inicia sección principal de imagen de inicio-->
+    <div class="img-bcg">
+        <img src="img/Inicio.gif" border="0" width="100%" height="100%">
+        
+        <!-- Inicia banner del centro-->
+        <div class="iframe-menu" style="background-color:#ffffff; width: 100%; height: 13%;">
+        </div><!-- Termina banner del centro-->
+        
+        <!-- Inicia banner del triangulo 1-->
+        <div class="triangulo-1">
+            <canvas id="mycanvas" style="height:75%; width:100%;">
+        </div><!-- Termina banner intermedio "triangle 1-->
+        
+        <!-- Inicia banner del triangulo 2-->
+        <div class="triangulo-2">
+            <canvas id="mycanvas2" style="height:75%; width:100%;">
+        </div><!-- Termina banner del triangulo 2-->
+        
+        <!-- Inicia sección de Zonas -->
+        <div class="sec3">
+            <div id="dropdown-1" class="list-zona dropdown">
+                <button class="list-zona-drop btn btn-default dropdown-toggle btn-responsive" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Zona
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu col-xs-12" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Santa Fé</a></li>
+                    <li><a href="#">Satélite</a></li>
+                    <li><a href="#">Polanco</a></li>
+                </ul>
+            </div>
+            <div class="button-1">
+                <button type="button" class="btn btn-default btn-responsive" style="position: relative;background-color:#FFBF00; border-color: yellow; width: 100%; height: 100%; color: #ffffff;">CONFIGURAR PAQUETE</button>
+            </div>
+            <div class="txt-1 btn-responsive" style="position: absolute; width: 100%; height: 100%;">
+                <p style="color: #D3D3D3;">*Precio aplica para suscripción mensual de $999.00 MXN.</p>
+            </div>
+            <div class="txt-1-1 btn-responsive" style="position: absolute; width: 100%; height: 100%;">
+                <p style="color: #D3D3D3;">Precio para pedidos únicos $80.00 MXN. Ambos incluyen entrega.</p>
+            </div>
+            <div class="txt-1-2 btn-responsive" style="position: absolute; width: 100%; height: 100%; font-family: calibri; font-size: 90%;">
+                <p style="color: #FFFFFF;">Los pedidos de LONCH AL MOMENTO solo pueden ser configurados de L-V de 15-17 hrs.</p>
+            </div>
+        </div><!-- Termina sección de Zonas -->
+        
+        <div class="line-1">
+            <canvas id="mycanvas3" style="width:100%; height:100%;"></canvas>
+        </div>
+        
+        <!-- Inicia sección de Delegación/Municipio -->
+        <div class="sec4">
+            <div id="dropdown-2" class="list-zona dropdown">
+                <button class="list-zona-drop btn btn-default dropdown-toggle btn-responsive" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Delegación/Municipio
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu col-xs-12" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Cuauhtémoc</a></li>
+                    <li><a href="#">Miguel Hidalgo</a></li>
+                    <li><a href="#">Benito Juárez</a></li>
+                </ul>
+            </div>
+            <div class="button-1">
+                <button type="button" class="btn btn-default btn-responsive" style="position: absolute;background-color:#26D4EB; border-color: #00FFFF; width: 100%; height: 100%; color: #ffffff;">VER MENÚ</button>
+            </div>
+            <div class="txt-1-3 btn-responsive" style="position: absolute; width: 100%; height: 100%; font-family: calibri; font-size: 90%;">
+                <p style="color: #FFFFFF;">Los pedidos de LONCH A LA CARTA pueden ser programados en cualquier momento con un mínimo de una semana de anticipación.</p>
+            </div>
+        </div><!-- Termina sección de Delegación/Municipio -->
+        
+    </div><!-- Termina sección principal de imagen de inicio -->
+    
+    <!--style="border-style: solid; border-color: red;"-->
+    
+    <div class="sec2" style="height:40%; width:100%; top: 100%; left: 0;">
+        <p>¿Cómo funciona?</p>
+    </div>
+    
+</body>
+
+</html>

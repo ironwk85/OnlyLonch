@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
+		<script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="./javascripts/jquery.scrollify.min.js"></script>
+        <script type="text/javascript">
+        	$.scrollify({
+		        section : ".example-classname",
+		        sectionName : "section-name",
+		        interstitialSection : "",
+		        easing: "easeOutExpo",
+		        scrollSpeed: 1000,
+		        offset : 0,
+		        scrollbars: true,
+		        standardScrollElements: "",
+		        setHeights: false,
+		        overflowScroll: true,
+		        before:function() {},
+		        after:function() {},
+		        afterResize:function() {},
+		        afterRender:function() {}
+		    });
+        	$(function() {
+                $.scrollify({
+                    section : ".example-classname",
+                });
+
+                $("#form3").on('submit', function(event) {
+				    event.preventDefault();
+				    var sendInfo = {
+						email: email,
+						foto: picture
+			    	};
+			    	/*
+				    $.ajax({
+				       type: "POST",
+				       url: './register',
+				       dataType: 'json',
+				       success: function (json) {
+				            if (json.data.nombre && json.data.nombre!='' && json.data.perfil && json.data.perfil=="user"){
+				            	$(fotoUsuario).attr("src",json.data.foto);
+				            	$(imgPerfilBarra).attr("src",json.data.foto);
+				            	$('[name=imagenUsuario]').show();
+				            }
+				            else
+				            	$('[name=iniciaSesion]').show();
+				        },
+				        complete: function (){
+				            
+				        }
+				   });  */  
+				});
+
+	        	$("#form2").on('submit', function(event) {
+				    event.preventDefault();
+				    $('#submit3').click();    
+				});
+
+				$("#form1").on('submit', function(event) {
+				    event.preventDefault();
+				    $('#submit2').click();    
+				});
+            });
+
+        	function goToMainRow2(){
+        		scrollToElement( $(this).attr('main_row_2'), 1000 );
+        	}
+        	function goToMainRow3(){
+        		scrollToElement( $(this).attr('main_row_3'), 1000 );
+        	}
+        	var scrollToElement = function(el, ms){
+			    var speed = (ms) ? ms : 500;
+			    $('html,body').animate({
+			        scrollTop: $(el).offset().top
+			    }, speed);
+			}
+        </script>
+
+        <script>
+        	/****************************Facebook***********************************/
+			
+
+			window.fbAsyncInit = function() {
+			  FB.init({
+			    appId      : '1455109611172384',
+			    cookie     : true,  // enable cookies to allow the server to access 
+			                        // the session
+			    xfbml      : true,  // parse social plugins on this page
+			    version    : 'v2.5' // use graph api version 2.5
+			  });
+			};
+
+			(function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+
+			function loginFacebook() {
+			    FB.login(function(response) {
+   					if (response.status === 'connected') {
+
+   						email = null;
+   						picture = null;
+
+   						FB.api('/me', {fields: 'first_name,middle_name,last_name,email,gender,birthday,picture.width(100).height(100)'}, function(response) {
+   							if (response.email)
+   								$("#email").val(response.email);
+   							if (response.first_name && response.middle_name)
+   								$("#nombre").val(response.first_name + " " + response.middle_name);
+   							else if (response.first_name)
+   								$("#nombre").val(response.first_name);
+   							if (response.last_name)
+   								$("#apPaterno").val(response.last_name);
+   							if (response.birthday)
+   								$("#fechaNacimiento").val(response.birthday);
+   							if (response.gender)
+   								if (response.gender == "male")
+   									$("#genero").val("m");
+   								else
+   									$("#genero").val("f");
+							console.log(response);
+							email = response.email;
+							picture = response.picture.data.url;
+							console.log(email);
+							//console.log(picture);
+
+	   						var sendInfo = {
+	   							email: email,
+	   							foto: picture
+						    };
+						    /*
+							$.ajax({
+						        type: "POST",
+						        url: './loginFacebook',
+						        dataType: 'json',
+						        
+						        beforeSend: function(){
+						        },
+						        success: function(json) {
+						            if (json.status == "SUCCESS"){
+						                console.log(json);
+						                window.location.replace("./123456.html");
+						            }
+						            else{
+						                $('#errorMsg').show();
+						            }
+						        },
+						        data: sendInfo
+						    }); */
+
+					    });
+					} else if (response.status === 'not_authorized') {
+						$('#errorMsg').show();
+					    console.log("not authorized");
+					} else {
+						$('#errorMsg').show();
+					    console.log("not logged onto Facebook");
+					}
+ 				}, {scope: 'public_profile,email,user_birthday'});
+			  }
+
+			/****************************Facebook***********************************/
+        </script>
+
+        <script>
+        	function validacion(){
+        		$('#submit1').click();   
+        	}
+        </script>
+
+
+        <script>
+			// Note: This example requires that you consent to location sharing when
+			// prompted by your browser. If you see the error "The Geolocation service
+			// failed.", it means you probably did not give permission for the browser to
+			// locate you.
+
+			function initMap() {
+			  var map = new google.maps.Map(document.getElementById('map'), {
+			    center: {lat: 19.432989, lng: -99.133214},
+			    zoom: 15	
+			  });
+			  var marker = new google.maps.Marker({
+			  	  position: {lat: 19.432989, lng: -99.133214},
+			      map: map,
+			      draggable: true
+			    });
+
+			  var infoWindow = new google.maps.InfoWindow({map: map});
+			  var geocoder = new google.maps.Geocoder;
+
+			  // Try HTML5 geolocation.
+			  if (navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(function(position) {
+					var pos = {
+						lat: position.coords.latitude,
+						lng: position.coords.longitude
+					};
+
+					geocodeLatLng(geocoder, map, marker, infoWindow, position.coords.latitude, position.coords.longitude);
+
+					map.setCenter(pos);
+			    }, function() {
+			      	handleLocationError(true, infoWindow, map.getCenter());
+			    });			
+			  } else {
+			    // Browser doesn't support Geolocation
+			    handleLocationError(false, infoWindow, map.getCenter());
+			  }
+
+			  $('#calle').on('input', function() { 
+			  	  if ($('#calle').val().length > 5)
+				  	geocodeAddress(geocoder, map, marker, $('#calle').val() + ", " + $('#noExt').val() + "," + $('#colonia').val() + "," + $('#municipio').val() + "," + $('#estado').val() + "," + $('#cp').val() + "México");
+			  });
+			  $('#noExt').on('input', function() { 
+				  geocodeAddress(geocoder, map, marker, $('#calle').val() + ", " + $('#noExt').val() + "," + $('#colonia').val() + "," + $('#municipio').val() + "," + $('#estado').val() + "," + $('#cp').val() + "México");
+			  });
+			  $('#colonia').on('input', function() { 
+			  	  if ($('#colonia').val().length > 5)
+				  	geocodeAddress(geocoder, map, marker, $('#calle').val() + ", " + $('#noExt').val() + "," + $('#colonia').val() + "," + $('#municipio').val() + "," + $('#estado').val() + "," + $('#cp').val() + "México");
+			  });
+			  $('#municipio').on('input', function() { 
+			  	  if ($('#municipio').val().length > 5)
+				  	geocodeAddress(geocoder, map, marker, $('#calle').val() + ", " + $('#noExt').val() + "," + $('#colonia').val() + "," + $('#municipio').val() + "," + $('#estado').val() + "," + $('#cp').val() + "México");
+			  });
+			  $('#estado').on('input', function() { 
+			  	  if ($('#estado').val().length > 2)
+				  	geocodeAddress(geocoder, map, marker, $('#calle').val() + ", " + $('#noExt').val() + "," + $('#colonia').val() + "," + $('#municipio').val() + "," + $('#estado').val() + "," + $('#cp').val() + "México");
+			  });
+			  $('#cp').on('input', function() { 
+			  	  if ($('#cp').val().length > 3)
+				  	geocodeAddress(geocoder, map, marker, $('#calle').val() + ", " + $('#noExt').val() + "," + $('#colonia').val() + "," + $('#municipio').val() + "," + $('#estado').val() + "," + $('#cp').val() + "México");
+			  });
+			}
+
+			function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+			  infoWindow.setPosition(pos);
+			  infoWindow.setContent(browserHasGeolocation ?
+			                        'Error: No fue posible usar el servicio de geolocalización.' :
+			                        'Error: Tu explorador no soporta geolocalización.');
+			}
+
+			function geocodeAddress(geocoder, resultsMap, marker, address) {
+			  geocoder.geocode({'address': address}, function(results, status) {
+			    if (status === google.maps.GeocoderStatus.OK) {
+			      resultsMap.setCenter(results[0].geometry.location);
+			      marker.setPosition(results[0].geometry.location);
+			    } else {
+			      //alert('Geocode was not successful for the following reason: ' + status);
+			    }
+			  });
+			}
+
+			function geocodeLatLng(geocoder, map, marker, infowindow, latitude, longitude) {
+				//var input = document.getElementById('latlng').value;
+				//var latlngStr = input.split(',', 2);
+				var latlng = {lat: latitude, lng: longitude};
+				geocoder.geocode({'location': latlng}, function(results, status) {
+				if (status === google.maps.GeocoderStatus.OK) {
+				  if (results[1]) {
+				    map.setZoom(15);
+				    marker.setPosition(latlng);
+
+				    google.maps.event.addListener(marker, 'dragend', function(){
+					    regeocodeLatLng(geocoder, map, infowindow, marker.position.lat(), marker.position.lng());
+					});
+
+					$("latitude").val(marker.position.lat());
+					$("longitude").val(marker.position.lng());
+
+				    for (var i=0; i<results[1].address_components.length; i++){
+				    	for (var j=0; j<results[1].address_components[i].types.length; j++){
+				    		switch (results[1].address_components[i].types[j]){
+				    			case "administrative_area_level_1":
+				    				$(estado).val(results[1].address_components[i].long_name);
+				    				break;
+				    			case "administrative_area_level_2":
+				    				$(municipio).val(results[1].address_components[i].long_name);
+				    				break;
+				    			case "locality":
+				    				$(colonia).val(results[1].address_components[i].long_name);
+				    				break;
+				    			case "sublocality":
+				    				$(calle).val(results[1].address_components[i].long_name);
+				    				break;
+				    			case "postal_code":
+				    				$(cp).val(results[1].address_components[i].long_name);
+				    				break;
+				    			default:
+				    				break;
+				    		}
+				    	}
+				    }
+				    //infowindow.open(map, marker);
+				    marker.setMap(map);
+				  } else {
+				    //window.alert('No results found');
+				  }
+				} else {
+				  //window.alert('Geocoder failed due to: ' + status);
+				}
+				});
+				
+			}
+
+			function regeocodeLatLng(geocoder, map, infowindow, latitude, longitude) {
+				//var input = document.getElementById('latlng').value;
+				//var latlngStr = input.split(',', 2);
+				var latlng = {lat: latitude, lng: longitude};
+				geocoder.geocode({'location': latlng}, function(results, status) {
+				if (status === google.maps.GeocoderStatus.OK) {
+				  if (results[1]) {
+
+				    for (var i=0; i<results[1].address_components.length; i++){
+				    	for (var j=0; j<results[1].address_components[i].types.length; j++){
+				    		switch (results[1].address_components[i].types[j]){
+				    			case "administrative_area_level_1":
+				    				$(estado).val(results[1].address_components[i].long_name);
+				    				break;
+				    			case "administrative_area_level_2":
+				    				$(municipio).val(results[1].address_components[i].long_name);
+				    				break;
+				    			case "locality":
+				    				$(colonia).val(results[1].address_components[i].long_name);
+				    				break;
+				    			case "sublocality":
+				    				$(calle).val(results[1].address_components[i].long_name);
+				    				break;
+				    			case "postal_code":
+				    				$(cp).val(results[1].address_components[i].long_name);
+				    				break;
+				    			default:
+				    				break;
+				    		}
+				    	}
+				    }
+				    //infowindow.open(map, marker);
+				    marker.setMap(map);
+				  } else {
+				    //window.alert('No results found');
+				  }
+				} else {
+				  //window.alert('Geocoder failed due to: ' + status);
+				}
+				});
+			}
+
+
+
+	    </script>
+	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNaU6RspwCSlNWc6dFPu_xewAYLCTo7Nw&signed_in=true&callback=initMap"
+	        async defer>
+	    </script>
+
+
+
+
+        <style type="text/css">
+        	@font-face {
+			    font-family: HelveticaNeue;
+			    src: url("./fonts/HelveticaNeueLTStd Lt.otf") format("opentype");
+			}
+        	html, body{
+			    height:100%;
+			    font-size: 6px;
+			    font-family: Raleway, Helvetica, Arial, sans-serif;
+			}
+
+			.xs_dissapear{
+				visibility: hidden;
+			}
+			.xs_no-dissapear{
+				font-size: 16px;
+			}
+			.xs_t-dissapear{
+				visibility: hidden;
+			}
+			.vertical_align_bottom{
+			    display: flex;
+    			align-items: flex-end;
+			}
+			.vertical_align_center{
+			    display:flex;
+ 				align-items: center;
+			}
+			.whiteiconcolor {
+				color:white;
+			}
+			.centered-text {
+    			text-align:center
+			}
+			.oval_class{
+				width: 15%;
+				height: 15%;
+				min-width: 70px;
+				min-height: 70px;
+			}
+			.middle_text{
+				font-size: 14px;
+			}
+			.big_text{
+				font-size: 24px;
+			}
+			#sesion_logo{
+				padding-top:10px;
+				margin-left: -10px;
+				height: 15%;
+				width: 15%;
+			}
+			#main_container{
+				height: 100%;
+			}
+			#main_row_1{
+				height: 100%;
+			    background:url('./img/back2.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_col_1_1{
+			    height: 100%;
+			}
+			#main_row_1_1{
+				height: 15%;
+			}
+			#main_row_1_2{
+				height: 55%;
+				text-align: center;
+			}
+			#main_row_1_3{
+				height: 15%;
+				text-align: center;
+			}
+			#main_row_1_4{
+				height: 15%;
+				text-align: center;
+			}
+			#main_row_2{
+				height: 100%;
+			    background:url('./img/back2.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_row_2_1{
+				height: 20%;
+			}
+			#main_row_2_2{
+				height: 60%;
+				text-align: center;
+			}
+			#main_row_2_3{
+				height: 20%;
+				text-align: center;
+			}
+			#main_row_3{
+				height: 100%;
+			    background:url('./img/back3.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_row_3_1{
+				height: 20%;
+			}
+			#main_row_3_2{
+				height: 60%;
+				text-align: center;
+			}
+			#main_row_3_3{
+				height: 20%;
+				text-align: center;
+			}
+			#iniciar_sesion_text{
+				display:inline;
+				padding-top:25px;
+				padding-left:2px;
+			}
+
+			.form-control{
+				-webkit-border-radius: 60px ;
+				-moz-border-radius: 60px ;
+				border-radius: 60px ;
+			}
+			.btn-default{
+				-webkit-border-radius: 60px ;
+				-moz-border-radius: 60px ;
+				border-radius: 60px ;
+				width:50%;
+			}
+			.line {
+				overflow: hidden;
+				text-align: center;
+				color: #E7B100;
+			}
+			.line:before,
+			.line:after {
+				background-color: #FFF;
+				content: "";
+				display: inline-block;
+				height: 1px;
+				position: relative;
+				vertical-align: middle;
+				width: 50%;
+			}
+			.line:before {
+				right: 0.5em;
+				margin-left: -50%;
+			}
+			.line:after {
+				left: 0.5em;
+				margin-right: -50%;
+			}
+
+			@media (min-width: 440px) {
+				html, body {
+					font-size: 7px;
+			  	}
+
+			  	.xs_dissapear{
+					visibility: hidden;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					visibility: hidden;
+				}
+			  	.middle_text{
+					font-size: 15px;
+				}
+				.big_text{
+					font-size: 25px;
+				}
+			  	#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+			}
+
+			@media (min-width: 600px) {
+				html, body {
+					font-size: 8px;
+			  	}
+
+			  	.middle_text{
+					font-size: 16px;
+				}
+				.big_text{
+					font-size: 26px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+			  	#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: hidden;
+				}
+			}
+
+			@media (min-width: 768px) {
+				html, body {
+					font-size: 9px;
+			  	}
+
+			  	.middle_text{
+					font-size: 17px;
+				}
+				.big_text{
+					font-size: 27px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+			  	#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+			  	.xs_dissapear{
+					visibility: hidden;
+			  	}
+			}
+
+			@media (min-width: 992px) {
+			  	html, body {
+				    font-size: 11px;
+			  	}
+
+			  	.middle_text{
+					font-size: 19px;
+				}
+				.big_text{
+					font-size: 29px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+				#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visible;
+				}
+			}
+
+			@media (min-width: 1200px) {
+			  	html, body {
+			    	font-size: 13px;
+			  	}
+
+			  	.middle_text{
+					font-size: 21px;
+				}
+				.big_text{
+					font-size: 31px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+				#sesion_logo{
+					height: 50%;
+					width: 50%;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visile;
+				}
+			}
+        </style>
+		<title>Lonch</title>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<div class="container-fluid" id="main_container">
+			<div id="main_row_1" class="row vertical_align_center example-classname">
+				<div id="main_col_1_1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div id="main_row_1_1" class="row">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<img id="sesion_logo" src="./img/logo_lonch.png">
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						</div>
+					</div>
+					<div id="main_row_1_4" class="row">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<div style="color:#E7B100;">
+								Vive una experiencia única, recibe alimentos preparados por cocineros profesionales a bajo costo.
+							</div>
+							<div class="form-group">
+								<div style="margin-top:10px;text-align:center;">
+								    <a href="#" onclick="loginFacebook()" ><img style="width:60%;height:60%;" src="./img/registroFb.png"></a>
+								</div>
+								<div>
+									<h4 class="line">ó</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						</div>
+					</div>
+					<div id="main_row_1_2" class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 center-block">
+							<div></div>
+							<div >
+								<form id="form1" role="form" style="width:40%;margin-left:auto;">
+									<div class="form-group">
+										<div style="margin:10px;">
+								    		<input type="email" class="form-control" id="email" placeholder="Email" required>
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="password" class="form-control" id="password2" placeholder="Repetir Contraseña" required>
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="text" class="form-control" id="nombre" placeholder="Nombre(s)" required>
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="text" class="form-control" id="apPaterno" placeholder="Apellido Paterno" required>
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="text" class="form-control" id="apMaterno" placeholder="Apellido Materno" required>
+								    	</div>
+								  	</div>
+								  	<input id="submit1" type="submit" style="display: none;" />
+								</form>
+								</div>
+								<div>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 center-block">
+							<div></div>
+							<div >
+								<form id="form2" role="form" style="width:40%;">
+									<div class="form-group">
+								    	<div style="margin:10px;">
+								    		<input type="text" onfocus="(this.type='date')" class="form-control" id="fechaNacimiento" placeholder="Fecha de Nacimiento" required>
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="tel" class="form-control" id="telefonoCelular" placeholder="Teléfono Celular" required>
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="tel" class="form-control" id="telefonoFijo" placeholder="Teléfono Fijo">
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<input type="tel" class="form-control" id="extension" placeholder="Extensión">
+								    	</div>
+								    	<div style="margin:10px;">
+								    		<select id="genero" name="genero" class="form-control" required>
+								    			<option value="" disabled selected>Género</option>
+								    			<option value="m">Masculino</option>
+								    			<option value="f">Femenino</option>
+								    		</select>
+								    	</div>
+								  	</div>
+								  	<input id="submit2" type="submit" style="display: none;" />
+								</form>
+								</div>
+								<div>
+							</div>
+						</div>
+					</div>
+					<div id="main_row_1_3" class="row">
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<a href="#" onclick="goToMainRow3();"><i class="fa fa-angle-down fa-5x whiteiconcolor"></i></a>
+						</div>
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="main_row_3" class="row vertical_align_center example-classname">
+				<div id="main_col_1_1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div id="main_row_3_1" class="row">
+					</div>
+					<div id="main_row_3_2" class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div id="map" style="height:400px;"></div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div style="margin:10px;">
+								<form id="form3" role="form" style="width:50%;margin-left:auto;margin-right:auto;">
+					    			<div style="margin:10px;">
+							    		<input type="text" class="form-control" id="calle" placeholder="Calle" required>
+							    	</div>
+							    	<div style="margin-left:10px;margin-rigth:10px;display:inline-block;">
+							    		<input type="text" class="form-control" style="width:45%;display:inline-block;float:left" id="noExt" placeholder="No. Ext." required>
+							    		<input type="text" class="form-control" style="width:45%;display:inline-block;float:right" id="noInt" placeholder="No. Int.">
+							    	</div>
+							    	<div style="margin:10px;">
+							    		<input type="text" class="form-control" id="colonia" placeholder="Colonia" required>
+							    	</div>
+							    	<div style="margin:10px;">
+							    		<input type="text" class="form-control" id="municipio" placeholder="Municipio" required>
+							    	</div>
+							    	<div style="margin:10px;">
+							    		<input type="text" class="form-control" id="estado" placeholder="Estado" required>
+							    	</div>
+							    	<div style="margin:10px;">
+							    		<input type="number" class="form-control" id="cp" placeholder="Código Postal" required>
+							    		<input type="hidden" id="latitude">
+							    		<input type="hidden" id="longitude">
+							    	</div>
+							    	<div style="margin:10px;">
+							    		<select name="Género" class="form-control" required>
+							    			<option value="" disabled selected>Dirección de:</option>
+							    			<option value="c">Casa</option>
+							    			<option value="o">Oficina</option>
+							    		</select>
+							    	</div>
+							    	<input id="submit3" type="submit" style="display: none;" />
+							    	<button style="background-color:#E7B100;border-color:#E7B100;color:white;" onclick="validacion();" type="button" class="btn btn-default">FINALIZAR</button>
+					    		</form>
+					    	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

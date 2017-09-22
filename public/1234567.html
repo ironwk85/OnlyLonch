@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+		<link rel="stylesheet" href="./stylesheets/materialize.css">
+		<script src="./javascripts/materialize.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="./javascripts/jquery.scrollify.min.js"></script>
+		
+
+        <script type="text/javascript">
+        	/*$.scrollify({
+		        section : ".example-classname",
+		        sectionName : "section-name",
+		        interstitialSection : "",
+		        easing: "easeOutExpo",
+		        scrollSpeed: 1000,
+		        offset : 0,
+		        scrollbars: true,
+		        standardScrollElements: "",
+		        setHeights: false,
+		        overflowScroll: true,
+		        before:function() {},
+		        after:function() {},
+		        afterResize:function() {},
+		        afterRender:function() {}
+		    });*/
+        	/*$(function() {
+                $.scrollify({
+                    section : ".example-classname"
+                });
+            });*/
+
+        	function goToMainRow2(){
+        		scrollToElement( $(this).attr('main_row_2'), 1000 );
+        	}
+        	function goToMainRow3(){
+        		scrollToElement( $(this).attr('main_row_3'), 1000 );
+        	}
+
+        	var scrollToElement = function(el, ms){
+			    var speed = (ms) ? ms : 500;
+			    $('html,body').animate({
+			        scrollTop: $(el).offset().top
+			    }, speed);
+			}
+
+			$(function(){
+			    $.ajax({
+			       type: "GET",
+			       url: './authorization',
+			       dataType: 'json',
+			       success: function (json) {
+			            if (json.data.nombre && json.data.nombre!='' && json.data.perfil && json.data.perfil=="user"){
+			            	$(fotoUsuario).attr("src",json.data.foto);
+			            	$(imgPerfilBarra).attr("src",json.data.foto);
+			            	$('[name=imagenUsuario]').show();
+			            }
+			            else
+			            	$('[name=iniciaSesion]').show();
+			        },
+			        complete: function (){
+			            
+			        }
+			   }); 
+			});
+
+        </script>
+        <style type="text/css">
+        	@font-face {
+			    font-family: HelveticaNeue;
+			    src: url("./fonts/HelveticaNeueLTStd Lt.otf") format("opentype");
+			}
+        	html, body{
+			    height:100%;
+			    font-size: 6px;
+			    font-family: Raleway, Helvetica, Arial, sans-serif;
+			}
+			.cell{
+				opacity:0.7;
+			    width:100%;
+			    height:141px;
+				transition: opacity .3s ease-in-out;
+				-moz-transition: opacity .3s ease-in-out;
+				-webkit-transition: opacity .3s ease-in-out;
+			}
+			.cell_big{
+				opacity:0.7;
+			    width:100%;
+			    height:141px;
+				transition: opacity .3s ease-in-out;
+				-moz-transition: opacity .3s ease-in-out;
+				-webkit-transition: opacity .3s ease-in-out;
+			}
+			.A1, .A2, .A3, .A4, .A5 {
+			}
+			.A1:before{
+			    content: "";
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0px;
+			    left: 0px;
+				background-image:url('./img/food1.jpg');
+				background-size:cover;
+			    z-index: -1;
+			}
+			.A2:before{
+			    content: "";
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0px;
+			    left: 0px;
+				background-image:url('./img/food2.jpg');
+				background-size:cover;
+			    z-index: -1;
+			}
+			.A3:before{
+			    content: "";
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0px;
+			    left: 0px;
+				background-image:url('./img/food3.jpg');
+				background-size:cover;
+			    z-index: -1;
+			}
+			.A4:before{
+			    content: "";
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0px;
+			    left: 0px;
+				background-image:url('./img/food5.jpg');
+				background-size:cover;
+			    z-index: -1;
+			}
+			.A5:before{
+			    content: "";
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0px;
+			    left: 0px;
+				background-image:url('./img/food4.jpg');
+				background-size:cover;
+			    z-index: -1;
+			}
+			.cell:hover {
+				opacity:0.9;
+			}
+			.A1:hover:before, .A2:hover:before, .A3:hover:before, .A4:hover:before, .A5:hover:before {
+				filter: none;
+				-webkit-filter: brightness(20%);
+				transition: all .3s ease-in-out;
+				-moz-transition: all .3s ease-in-out;
+				-webkit-transition: all .3s ease-in-out;
+
+				-webkit-transform: scale(1.2);
+				 -moz-transform:    scale(1.2);
+				 -o-transform:      scale(1.2);
+				 -ms-transform:     scale(1.2);
+			}
+			.inside_image{
+				color:#ffffff;
+				text-align:center;
+				font:18px Raleway, Helvetica, Arial, sans-serif;
+				text-decoration:none;
+				display:none;
+				z-index: -100;}
+			.A1:hover .inside_image, .A2:hover .inside_image, .A3:hover .inside_image, .A4:hover .inside_image, .A5:hover .inside_image {
+				display:inline
+			}
+
+			.xs_dissapear{
+				visibility: hidden;
+			}
+			.xs_no-dissapear{
+				font-size: 16px;
+			}
+			.xs_t-dissapear{
+				visibility: hidden;
+			}
+			.vertical_align_bottom{
+			    display: flex;
+    			align-items: flex-end;
+			}
+			.vertical_align_center{
+			    display:flex;
+ 				align-items: center;
+			}
+			.whiteiconcolor {
+				color:white;
+			}
+			.centered-text {
+    			text-align:center
+			}
+			.oval_class{
+				width: 15%;
+				height: 15%;
+				min-width: 70px;
+				min-height: 70px;
+			}
+			.middle_text{
+				font-size: 14px;
+			}
+			.big_text{
+				font-size: 24px;
+			}
+
+			#cdmx_logo{
+				width: 50%;
+				height: 50%;
+				visibility: hidden;
+			}
+			#sesion_logo, #fotoUsuario{
+				padding-top:8px;
+				margin-left: -10px;
+				height: 15%;
+				width: 15%;
+				min-height: 30px;
+				min-width: 30px;
+			}
+			#main_container{
+				height: 100%;
+			}
+			#main_row_1{
+				height: 100%;
+			    background:url('./img/back1.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_col_1_1{
+			    height: 100%;
+			}
+			#main_row_1_1, #main_row_1_2, #main_row_1_3{
+				height: 33%;
+			}
+			#iniciar_sesion_text{
+				display:inline;
+				padding-top:25px;
+				padding-left:2px;
+			}
+			#main_row_2{
+				height: 100%;
+			    background:url('./img/back2.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_row_2_1{
+			    height: 20%;
+			}
+			#main_row_2_2{
+			    height: 70%;
+			}
+			#main_row_2_3{
+			    height: 10%;
+			}
+			#main_row_3{
+				height: 100%;
+			    background:url('./img/back4.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_row_3_1{
+			    height: 50%;
+			    padding-bottom: 3%;
+			}
+			#main_row_3_2{
+			    height: 50%;
+			    padding-top: 3%;
+			}
+			#main_row_4{
+				height: 100%;
+			    background:url('./img/back3.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+			#main_row_5{
+				height: 100%;
+			    background:url('./img/back2.jpg') no-repeat center center;
+			    background-size: cover;
+			}
+
+			#Menu
+		    {
+		        padding:0;
+		        margin:0;
+		        list-style-type:none;
+		        font-size:13px;
+		        color:white;
+		        width:100%;
+		    }
+
+		    #Menu li
+		    {
+		        border-bottom:0;
+		        padding:7px 10px 7px 10px;
+		    }
+
+		    #Menu li:hover
+		    {
+		        background-color:#ffcc00;
+		    }
+			#Menu li:hover a
+		    {
+		        color:White;
+		    }
+
+		    #Menu a
+		    {
+		        color:white;
+		        text-decoration:none;
+		    }
+
+		    #Menu a:link
+		    {
+		        color:white;
+		        text-decoration:none;
+		    }
+
+		    #Menu a:hover
+		    {
+		        color:white;
+		    }
+			
+			@media (min-width: 440px) {
+				html, body {
+					font-size: 7px;
+			  	}
+
+			  	.xs_dissapear{
+					visibility: hidden;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					visibility: hidden;
+				}
+			  	.middle_text{
+					font-size: 15px;
+				}
+				.big_text{
+					font-size: 25px;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: hidden;
+				}
+				#sesion_logo, #fotoUsuario{
+					height: 15%;
+					width: 15%;
+					min-height: 35px;
+					min-width: 35px;
+					margin-left: 10px;
+				}
+				#fotoUsuario{
+					width: 70%;
+					height: 70%;
+				}
+			}
+
+			@media (min-width: 600px) {
+				html, body {
+					font-size: 8px;
+			  	}
+
+			  	.middle_text{
+					font-size: 16px;
+				}
+				.big_text{
+					font-size: 26px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: visible;
+				}
+				#sesion_logo, #fotoUsuario{
+					height: 15%;
+					width: 15%;
+					min-height: 40px;
+					min-width: 40px;
+					margin-left: 35px;
+				}
+				.xs_dissapear{
+					visibility: hidden;
+				}
+			}
+
+			@media (min-width: 768px) {
+				html, body {
+					font-size: 9px;
+			  	}
+
+			  	.middle_text{
+					font-size: 17px;
+				}
+				.big_text{
+					font-size: 27px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+			  		width: 70%;
+					height: 70%;
+					visibility: visible;
+			  	}
+			  	#sesion_logo, #fotoUsuario{
+			  		height: 15%;
+					width: 15%;
+			  		min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+			  	}
+			  	.xs_dissapear{
+					visibility: hidden;
+			  	}
+			}
+
+			@media (min-width: 992px) {
+			  	html, body {
+				    font-size: 11px;
+			  	}
+
+			  	.middle_text{
+					font-size: 19px;
+				}
+				.big_text{
+					font-size: 29px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 60%;
+					height: 60%;
+					visibility: visible;
+				}
+				#sesion_logo, #fotoUsuario{
+					height: 15%;
+					width: 15%;
+					min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visible;
+				}
+			}
+
+			@media (min-width: 1200px) {
+			  	html, body {
+			    	font-size: 13px;
+			  	}
+
+			  	.middle_text{
+					font-size: 21px;
+				}
+				.big_text{
+					font-size: 31px;
+				}
+				.xs_no-dissapear{
+					font-size: 16px;
+				}
+				.xs_t-dissapear{
+					font-size: 16px;
+					visibility: visible;
+				}
+
+			  	#cdmx_logo{
+					width: 50%;
+					height: 50%;
+					visibility: visible;
+				}
+				#sesion_logo, #fotoUsuario{
+					height: 15%;
+					width: 15%;
+					min-height: 45px;
+					min-width: 45px;
+					margin-left: 0px;
+				}
+				.xs_dissapear{
+					visibility: visile;
+				}
+			}
+        </style>
+		<title>Lonch</title>
+	</head>
+	<body>
+		<div class="container-fluid" id="main_container">
+			<!-- Sidebar navigation -->
+			<ul style="background-color:black;opacity:0.5;" id="slide-out" class="side-nav default-side-nav light-side-nav">
+
+			    <!-- Logo -->
+			    <div style="margin-top:80px;margin-bottom:20px;text-align: center" class="logo-wrapper waves-light">
+			    	<img id="imgPerfilBarra" style="width:100px;height:100px;" class="img-circle" src="./img/pr.jpg"/>
+			    </div>
+			    <!--/. Logo -->
+
+			    <!--
+			    <form class="search-form" role="search">
+			        <div class="form-group waves-effect">
+			            
+			        </div>
+			    </form>
+			    /.Search Form-->
+
+			    <!-- Side navigation links -->
+			    <ul class="collapsible collapsible-accordion" id="Menu">
+			        <li><a href="#">Perfil</a></li>
+			        <li><a href="#">Ubicaciones</a></li>
+			        <li><a href="#">Historial</a></li>
+			        <li><a href="#">Pagos</a></li>
+			        <li><a href="#">Invitar a un amigo</a></li>
+			        <li><a href="#">Seguidores</a></li>
+			    </ul>
+			    <!--/. Side navigation links -->
+			</ul>
+			<!--/. Sidebar navigation -->
+			<div id="main_row_1" class="row example-classname">
+				<div id="main_col_1_1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div name="iniciaSesion" style="display:none;" id="main_row_1_1" class="row text-right">
+						<div class="col-xs-10 col-sm-11 col-md-10 col-lg-10">
+						</div>
+						<a href="./login.html">
+							<div class="col-xs-2 col-sm-1 col-md-2 col-lg-2">
+							<img id="sesion_logo" src="./img/default-user.png">
+								<div id="iniciar_sesion_text" class="xs_dissapear whiteiconcolor">INICIAR SESIÓN</div>
+							</div>
+						</a>
+					</div>
+					<div name="imagenUsuario" style="display:none;" id="main_row_1_1" class="row text-right">
+						<div class="col-xs-10 col-sm-11 col-md-10 col-lg-10">
+						</div>
+						<a data-activates="slide-out" class="button-collapse" href="#" data-transition="slidedown">
+							<div class="col-xs-2 col-sm-1 col-md-2 col-lg-2">
+							<img id="fotoUsuario" class="img-circle" src="./img/default-user.png">
+							<div id="iniciar_sesion_text" class="xs_dissapear whiteiconcolor">Bienvenido</div>
+							</div>
+						</a>
+					</div>
+					<div id="main_row_1_2" class="row">
+						<div class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+						</div>
+						<div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+							<img src="./img/logo_lonch.png" class="img-responsive">
+						</div>
+						<div class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+						</div>
+					</div>
+					<div id="main_row_1_3" class="row vertical_align_bottom">
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<p class="xs_dissapear whiteiconcolor">Scroll down</p>
+							<a href="#" onclick="goToMainRow2();"><i class="fa fa-angle-down fa-5x whiteiconcolor"></i></a>
+						</div>
+						<div class="col-xs-2 col-sm-3 col-md-3 col-lg-3">
+						</div>
+						<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 ">
+							<!--<img id="cdmx_logo" src="./img/cdmx_logo.png" class="pull-right">-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="main_row_2" class="row example-classname">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:100%;">
+					<div id="main_row_2_1" class="row vertical_align_bottom">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centered-text">
+							<p class="whiteiconcolor middle_text">ES MUY  SENCILLO</p>
+						</div>
+					</div>
+					<div id="main_row_2_2" class="row vertical_align_center">
+						<div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+						</div>
+						<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<img src="./img/oval.png" class="center-block img-responsive">
+							<br>
+							<p class="whiteiconcolor middle_text" style="font-weight:bold;">INGRESA</p>
+							<br>
+							<p class="xs_t-dissapear whiteiconcolor">The quick brown fox jumps over the lazy dog.</p>
+						</div>
+						<div class="hidden-xs col-sm-1 col-md-1 col-lg-1">
+						</div>
+						<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<img src="./img/oval.png" class="center-block img-responsive">
+							<br>
+							<p class="whiteiconcolor middle_text" style="font-weight:bold;">ELIGE</p>
+							<br>
+							<p class="xs_t-dissapear whiteiconcolor">The quick brown fox jumps over the lazy dog.</p>
+						</div>
+						<div class="hidden-xs col-sm-1 col-md-1 col-lg-1">
+						</div>
+						<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<img src="./img/oval.png" class="center-block img-responsive">
+							<br>
+							<p class="whiteiconcolor middle_text" style="font-weight:bold;">ORDENA</p>
+							<br>
+							<p class="xs_t-dissapear whiteiconcolor">The quick brown fox jumps over the lazy dog.</p>
+						</div>
+						<div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+						</div>
+					</div>
+					<div id="main_row_2_3" class="row vertical_align_bottom">
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<a href="#" onclick="goToMainRow3();"><i class="fa fa-angle-down fa-5x whiteiconcolor"></i></a>
+						</div>
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="main_row_3" class="row vertical_align_center centered-text">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centered-text" style="height:100%;">
+					<div id="main_row_3_1" class="row vertical_align_bottom">
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<div id="container">
+								<div id="row">			
+							    	<div class="cell A1">
+							      		<div id="text" class="inside_image" style="color:white;">
+							        		<b>Foodlist 1</b>
+							        		</br>The quick brown fox jumps over the lazy dog.
+							      		</div>
+							    	</div>
+							  	</div>
+							</div>
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<div id="container">
+								<div id="row">			
+							    	<div class="cell A2">
+							      		<div id="text" class="inside_image" style="color:white;">
+							        		<b>Foodlist 2</b>
+							        		</br>The quick brown fox jumps over the lazy dog.
+							      		</div>
+							    	</div>
+							  	</div>
+							</div>
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<div id="container">
+								<div id="row">			
+							    	<div class="cell A3">
+							      		<div id="text" class="inside_image" style="color:white;">
+							        		<b>Foodlist 3</b>
+							        		</br>The quick brown fox jumps over the lazy dog.
+							      		</div>
+							    	</div>
+							  	</div>
+							</div>
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						</div>
+					</div>
+					<div id="main_row_3_2" class="row vertical_align_top centered-text">
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text">
+							<div id="container">
+								<div id="row">
+							    	<div class="cell A4">
+							      		<div id="text" class="inside_image" style="color:white;">
+							        		<b>Foodlist 4</b>
+							        		</br>The quick brown fox jumps over the lazy dog.
+							      		</div>
+							    	</div>
+							  	</div>
+							</div>
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+						</div>
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 centered-text">
+							<div id="container" >
+								<div id="row" >
+							    	<div class="cell_big A5">
+							      		<div id="text" class="inside_image" style="color:white;">
+							        		<b>Foodlist 5</b>
+							        		</br>The quick brown fox jumps over the lazy dog.
+							      		</div>
+							    	</div>
+							  	</div>
+							</div>
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="main_row_4" class="row vertical_align_center example-classname">
+				<div class="col-xs-0 col-sm-4 col-md-6 col-lg-6">
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 centered-text">
+					<p class="whiteiconcolor big_text" style="margin:0;">VICTOR</p>
+					<p class="whiteiconcolor big_text" style="font-weight:bold;">MENDOZA</p>
+					<br>
+					<p class="xs_no-dissapear whiteiconcolor">The quick brown fox jumps over the lazy dog.</p>
+				</div>
+			</div>
+			<div id="main_row_5" class="row vertical_align_center example-classname">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

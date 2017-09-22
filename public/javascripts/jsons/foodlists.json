@@ -1,0 +1,2506 @@
+[
+  {
+    "semana": "Lunes 28 - Viernes 01",
+    "mes": "AGOSTO",
+    "foodlists": [
+      {
+        "titulo": "Cheesy choice",
+        "descricpion": "Un clásico de Filadelfia, el cheesesteak sandwich se ha convertido en una opción perfecta para la hora del lonch.",
+        "imagen": "img/cheesy_choice.png",
+        "dias": [
+          "Lunes 28 AGO",
+          "Martes 29 AGO",
+          "Miércoles 30 AGO",
+          "Jueves 31 AGO",
+          "Viernes 01 SEPT"
+        ],
+        "programacion": [
+          {
+            "fecha": "Lunes 28/ AGO",
+            "fechaId": "28/08/2017",
+            "titulo": "PHILLY CHEESE DE CARNE",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "El original desde Filadelfia, acompañado de ensalada rusa.",
+            "ingredientes1": [
+              "PHILLY CHEESE DE CARNE",
+              "ENSALADA RUSA",
+              "GALLETAS SALADAS",
+              "LIMONES",
+              "SALSA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CANGREJO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CAMARÓN",
+                    "precio": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO DE CHIPOTLE",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ENSALADA MIXTA",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPA AL HORNO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPAS GAJO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO DE SIRACHA",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "JALAPEÑOS",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 29/ AGO",
+            "fechaId": "29/08/2017",
+            "titulo": "CHEESETEAK SANDWICH DE POLLO",
+            "imagen": "img/pizza.png",
+            "precio": 120,
+            "descripcion": "Cheesesteak sandwich de pollo acompañado de una ensalada con manzana, frutos secos apio y repollo.",
+            "ingredientes1": [
+              "PHILLY CHEESE DE POLLO",
+              "ENSALADA WALDOF",
+              "LIMONES",
+              "SALSA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "ADEREZO DE CHIPOTLE",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ENSALADA MIXTA",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPA AL HORNO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPAS GAJO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO DE SIRACHA",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "JALAPEÑOS",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 30/ AGO",
+            "fechaId": "30/08/2017",
+            "titulo": "CHEESESTEAK SANDWICH DE CAMARÓN",
+            "imagen": "img/pizza.png",
+            "precio": 110,
+            "descripcion": "Cheesesteak sandwich de camarón con una salsa agridulce de sake acompañados de sopa con fideos chinos y vegetales tiernos.",
+            "ingredientes1": [
+              "PHILLY CHEESE DE CAMARÓN AGRIDULCE",
+              "SOPA DE POLLO CON FIDEOS CHINO",
+              "LIMONES",
+              "SALSA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CHIPS DE TORTILLA",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO DESMIGADO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "MAÍZ",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "AGUACATE",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CHILE CHIPOTLE",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO DE CHIPOTLE",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ENSALADA MIXTA",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 31/ AGO",
+            "fechaId": "31/08/2017",
+            "titulo": "CHEESESTEAK SANDWICH",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Cheesesteak sandwich de suaves escalopas de cochinillo acompañados de unos clásicos macarrones con queso.",
+            "ingredientes1": [
+              "PHYLLY CHEESE DE ESCALOPAS DE COCHINILLO",
+              "MAC AND CHEESE",
+              "LIMONES",
+              "SALSA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CANGREJO",
+                    "precion": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CAMARÓN",
+                    "precion": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO DE CHIPOTLE",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ENSALADA MIXTA",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPA AL HORNO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPAS GAJO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO DE SIRACHA",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "JALAPEÑOS",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 01/ SEPT",
+            "fechaId": "01/09/2017",
+            "titulo": "CHEESESTEAK SANDWICH DE ARRACHERA",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Cheesesteak sandwich de arrachera con chile poblano acompañado de ensalada césar.",
+            "ingredientes1": [
+              "PHYLLY CHEESE DE ARRACHERA",
+              "ENSALADA CÉSAR",
+              "LIMONES",
+              "SALSA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "POLLO",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CAMARÓN",
+                    "precion": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "MÁS ADEREZO",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "GUACAMOLE",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "DÚO DE SALSAS PICOSAS",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ENSALADA MIXTA",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPA AL HORNO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPAS GAJO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "JALAPEÑO",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Square Snacks",
+        "descricpion": "Una deliciosa opción para vegetarianos, aunque si no lo eres también puede ser para ti ya que le puedes agregar la proteina que más te guste.",
+        "imagen": "img/square_snacks.png",
+        "dias": [
+          "Lunes 28 AGO",
+          "Martes 29 AGO",
+          "Miércoles 30 AGO",
+          "Jueves 31 AGO",
+          "Viernes 01 SEPT"
+        ],
+        "programacion": [
+          {
+            "fecha": "Lunes 28/ AGO",
+            "fechaId": "28/08/2017",
+            "titulo": "RATATOUILLE",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Clásico Ratatouille acompañado de una ensalada primavera.",
+            "ingredientes1": [
+              "RATATOUILLE",
+              "ENSALADA PRIMAVERA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CANGREJO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "QUESO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CAMARÓN",
+                    "precio": "(MX $20.00",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "RES",
+                    "precio": "(MX $15.00",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 29/ AGO",
+            "fechaId": "29/08/2017",
+            "titulo": "CHILE RELLENO",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Chile ancho relleno de queso canasto acompañado de una sopa de vegetales rostizados.",
+            "ingredientes1": [
+              "CHILE ANCHO RELLENO DE QUESO",
+              "SOPA DE VEGETALES ROSTIZADOS",
+              "FRIJOLES DE LA OLLA",
+              "SALSA VERDE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "PALITOS DE PAN",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ARROZ BLANCO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "AGUACATE",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CHILE EXTRA",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 30/ AGO",
+            "fechaId": "30/08/2017",
+            "titulo": "LASAGNA",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Lasagna de nopal con flor de calabaza acompañada de un mix de lechugas con espinacas.",
+            "ingredientes1": [
+              "LASAGNA DE NOPAL CON FLOR DE CALABAZA",
+              "MIX DE LECHUGAS CON ESPINACAS",
+              "ADEREZO",
+              "SALSA VERDE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CHIPS DE TORTILLAS",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CAMARÓN",
+                    "precio": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CARNE",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "AGUACATE",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "FRIJOLES",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 31/ AGO",
+            "fechaId": "31/08/2017",
+            "titulo": "GNOCCHIS DE CAMOTE",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Gnocchis de camote, papa, remolacha y espinaca acompañadas de una sopa fría de pepino.",
+            "ingredientes1": [
+              "GNOCCHIS MULTICOLOR",
+              "SOPA FRÍA DE PEPINO"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CRUTONES",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "QUESO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CHIPS DE VERDURAS",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 01/ SEPT",
+            "fechaId": "01/09/2017",
+            "titulo": "WRAP DE ESPINACA",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Delicios wrap de espinaca, tofu, champiñon y shitaque acompañada de fideos secos con lentejas.",
+            "ingredientes1": [
+              "WRAP TARTINADE DE TOFU",
+              "FIDEOS SECOS CON LENTEJAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "PENDIENTE",
+                    "precio": "(MX $0.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "BBQ Smells",
+        "descricpion": "Para ti que amas la carne y no puedes dejar de pensar en ella, tenemos una carnivora solución",
+        "imagen": "img/bbq_smells.png",
+        "dias": [
+          "Lunes 28 AGO",
+          "Martes 29 AGO",
+          "Miércoles 30 AGO",
+          "Jueves 31 AGO",
+          "Viernes 01 SEPT"
+        ],
+        "programacion": [
+          {
+            "fecha": "Lunes 28/ AGO",
+            "fechaId": "28/08/2017",
+            "titulo": "LAS TRADICIONALES DE ARRACHERA",
+            "imagen": "img/pizza.png",
+            "precio": 120,
+            "descripcion": "Las tradicionales fajitas de arrachera acompañado de una ensalada de panela cappresse.",
+            "ingredientes1": [
+              "FAJITAS DE ARRACHERA",
+              "PANELA CAPPRESSE 2017",
+              "TORTILLAS LIMONES",
+              "SALSA ROJA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "GUACAMOLE",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ARROZ",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TORTILLAS DE HARINA",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ENSALADA MIXTA",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PURÉ DE PAPA",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 29/ AGO",
+            "fechaId": "29/08/2017",
+            "titulo": "ALAMBRE DE PURAS DELICIAS",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Desde el norte, te traemos una versión de alambre hecha en un disco de metal acompañada de ensalda de pasta fría",
+            "ingredientes1": [
+              "DISCADA NORTEÑA",
+              "ENSALADA DE PASTA FRÍA",
+              "TORTILLAS DE MAÍZ",
+              "LIMONES",
+              "SALSA ROJA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CAMARÓN",
+                    "precio": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "GUACAMOLE",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 30/ AGO",
+            "fechaId": "30/08/2017",
+            "titulo": "UN PASTOR DE CHULETA",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Chuleta de cerdo tipo al pastor acompañado de un delicioso jugo de carne con albondiguitas.",
+            "ingredientes1": [
+              "CHULETA DE CERDO AL PASTOR",
+              "JUGO DE CARNE CON ALBONDIGUITAS",
+              "PIÑA",
+              "LIMONES",
+              "SALSA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "ELOTE",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "QUESO EXTRA",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CHULETA EXTRA",
+                    "precio": "(MX $20.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 31/ AGO",
+            "fechaId": "31/08/2017",
+            "titulo": "CARNE EN SU JUGO",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Nadie se resiste a una delicisa carne en su jugo acompañado de arroz blanco.",
+            "ingredientes1": [
+              "CARNE EN SU JUGO",
+              "ARROZ BLANCO",
+              "SALSA VERDE",
+              "LIMONES",
+              "TORTILLAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "GUACAMOLE",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PURÉ DE PAPA",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ELOTE A LA PARRILLA",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CREMA Y QUESO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TORTILLAS",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 01/ SEPT",
+            "fechaId": "01/09/2017",
+            "titulo": "PARRILLADA DE TODO PARA TODOS",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Para terminar la semana como se debe, te mandamos una mini parrillada que incluye pollo, arrachera y chorizo argentino acompañado con 2 mini empanadas.",
+            "ingredientes1": [
+              "MINI PARRILLADA",
+              "MINI EMPANADAS",
+              "SALSA CHIMICHURRI",
+              "LIMONES",
+              "TORTILLAS DE MAÍZ",
+              "SALSA ROJA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CHISTORRA",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "BIFE DE LOMO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ELOTE A LA PARRILLA",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Jam",
+        "descricpion": "Si nunca te has dado la oportunidad de comer un platillo salteado por un wok, intentalo, no te vas a arrepentir.",
+        "imagen": "img/jam.png",
+        "programacion": [
+          {
+            "fecha": "Lunes 28/ AGO",
+            "fechaId": "28/08/2017",
+            "titulo": "FIDEOS Y ALGO MÁS DE POLLO",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Fideos con espinaca y germen de soya acompañado de verduras con pollo.",
+            "ingredientes1": [
+              "FIDEOS CON ESPINACA Y GERMEN DE SOYA",
+              "VERDURAS SALTEADAS CON POLLO"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CAMARÓN",
+                    "precio": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ALBONDIGUITAS DE CERDO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "SALSA AGRIDULCE",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 29/ AGO",
+            "fechaId": "29/08/2017",
+            "titulo": "ARROZ TIPO ORIENTAL",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Delicioso arroz con verduras acompañado de paquetitos de col al vapor rellenos de cerdo.",
+            "ingredientes1": [
+              "ARROZ CON VERDURAS",
+              "PAQUETES DE COL AL VAPOR RELLENOS DE CERDO",
+              "SALSA AGRIDULCE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CAMARÓN",
+                    "precio": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ALBONDIGUILLAS DE CERDO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "SALSA AGRUIDULCE",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 30/ AGO",
+            "fechaId": "30/08/2017",
+            "titulo": "RILLITOS DE CARNE",
+            "imagen": "img/pizza.png",
+            "precio": 110,
+            "descripcion": "Rollitos de carne rellenos de setas con pimientos agridulces.",
+            "ingredientes1": [
+              "ROLLITOS DE CARNE RELLENOS DE SETAS SILVESTRES",
+              "PIMIENTOS AGRIDULCES"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "ARROZ",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PASTA FRÍA",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CAMARÓN",
+                    "precio": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "SALSA AGRIDULCE",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ENSALADA MIXTA",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ARROZ",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 31/ AGO",
+            "fechaId": "31/08/2017",
+            "titulo": "PESCADO AL LIMÓN",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Pescado al vapor en salsa de té de limón acompañado de una sopa tailandesa de pollo y coco.",
+            "ingredientes1": [
+              "PESCADO AL VAPOR EN SALSA DE TE LIMÓN",
+              "SOPA TAILANDESA DE POLLO Y COCO"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "GYOSAS FRITAS DE POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CHIPS DE TORTILLA",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "CAMARÓN",
+                    "precio": "(MX $20.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ARROZ",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "VERDURAS SALTEADAS",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "GUACAMOLE CON COCO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "SALSA DE CHILE FRITO",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 01/ SEPT",
+            "fechaId": "01/09/2017",
+            "titulo": "CHOP SUEY",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Nuestra famoso Chop Suey acompañado de verduras salteadas.",
+            "ingredientes1": [
+              "CHOP SUEY",
+              "VERDURAS SALTEADAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "MÁS VERDURAS",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ALBONDIGUITAS DE CARNE",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ALBONDIGUITAS DE POLLO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ALBONDIGUITAS DE PESCADO",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PASTA",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ARROZ BLANCO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "SALSA DE CHILE FRITO",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Viva México",
+        "descricpion": "Porque sabemos que te encanta picar y compartir con tus amigos, hemos ideado los snaks perfectos.",
+        "imagen": "img/viva_mexico.png",
+        "dias": [
+          "Lunes 28 AGO",
+          "Martes 29 AGO",
+          "Miércoles 30 AGO",
+          "Jueves 31 AGO",
+          "Viernes 01 SEPT"
+        ],
+        "programacion": [
+          {
+            "fecha": "Lunes 28/ AGO",
+            "fechaId": "28/08/2017",
+            "titulo": "BAGUETTES DE PAVO Y CASA",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Nuestras tres deliciosas baguettes de pavo hecho en casa, pastrami y vegetales con queso de cabra acompañadas de unos palitos de apio y zanahoria con aderezo.",
+            "ingredientes1": [
+              "DEGUSTACIÓN DE BAGUETTES",
+              "PALITOS DE APIO Y ZANAHORIA C/ADEREZO",
+              "CATSUP (3 sobres)",
+              "MAYONESA",
+              "MOSTAZA",
+              "RAJAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "ADEREZO",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PALITOS DE APIO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "MÁS RAJAS",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "GUACAMOLE",
+                    "precio": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "MAYONESA DE CHIPOTLE",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPA AL HORNO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ELOTITOS TIERNOS",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 29/ AGO",
+            "fechaId": "29/08/2017",
+            "titulo": "TRIO DE HOT-DOGS",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Un trio de hot-dogs acompañado de una ensalada mixta.",
+            "ingredientes1": [
+              "TRIO DE HOT-DOGS",
+              "ENSALADA MIXTA",
+              "JITOMATE",
+              "CEBOLLA",
+              "CATSUP",
+              "MAYONESA",
+              "MOSTAZA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "ADEREZO",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PALITOS DE APIO Y ZANAHORIA C/ADEREZO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "RAJAS",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "HOT-DOG EXTRA",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "MAYONESA DE CHIPOTLE",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "GUACAMOLE",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPA AL HORNO",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TOCINO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ELOTITOS TIERNOS",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 30/ AGO",
+            "fechaId": "30/08/2017",
+            "titulo": "ALITAS AHUMADAS",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Las imperdibles alitas ahumadas (8 piezas) con aderezo original acompañadas de una ensalada de col.",
+            "ingredientes1": [
+              "ALITAS AHUMADAS",
+              "ENSALADA DE COL",
+              "ADEREZO ORIGINAL",
+              "ADEREZO EXTRAPICANTE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "PALITOS DE APIO Y ZANAHORIA C/ADEREZO",
+                    "precio": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO BLUE CHEESE",
+                    "precio": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO EXTRAPICANTE",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO ORIGINAL",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ADEREZO BBQ",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPA AL HORNO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "ELOTITOS TIERNOS",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "OCHO ALITAS EXTRAS",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 31/ AGO",
+            "fechaId": "31/08/2017",
+            "titulo": "TACOS DE CANASTA",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Cinco tacos de canasta ,de tortilla tamaño normal, de papa, frijol, chicharron, mole y papa con chorizo acompañado de ensalada de pepinos con cebolla morada y piña.",
+            "ingredientes1": [
+              "5 TACOS GRANDES DE CANASTA",
+              "ENSALADA DE PEPINOS, CEBOLLA MORADA Y PIÑA",
+              "SALSA ROJA",
+              "SALSA VERDE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "CHILES EN VINAGRE",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TACO EXTRA DE PAPA",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TACO EXTRA DE PAPA CON CHIRIZO",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TACO EXTRA DE FRIJOL",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TACO EXTRA DE CHICHARRÓN",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TACO EXTRA DE MOLE",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 01/ SEPT",
+            "fechaId": "01/09/2017",
+            "titulo": "MINI HAMBURGUESAS",
+            "imagen": "img/pizza.png",
+            "precio": 100,
+            "descripcion": "Trilogía de mini hamburguesas acompañadas de una ensalada cesar estilo LONCH.",
+            "ingredientes1": [
+              "TRILOGÍA DE MINI HAMBURGUESAS",
+              "MI ENSALADA CÉSAR PERO COREANA",
+              "CATSUP",
+              "MAYONESA",
+              "MOSTAZA",
+              "RAJAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+               {
+                "nombre": "Philly",
+                "extras": [
+                  {
+                    "nombre": "MÁS RAJAS",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "GUACAMOLE",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "MINI HAMBURGUESAS EXTRA",
+                    "precion": "(MX $15.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "MAYONESA DE CHIPOTLE",
+                    "precion": "(MX $5.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PAPA AL HORNO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "TOCINO",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  },
+                  {
+                    "nombre": "PIÑA ASADA",
+                    "precion": "(MX $10.00)",
+                    "select": {"s":0}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "semana": "Lunes 04 - Viernes 08",
+    "mes": "SEPTIEMBRE",
+    "foodlists": [
+      {
+        "titulo": "Foodlist 6",
+        "descricpion": "¿Amas el queso?,  derrite tus sentidos con esta deliciosa foodlist.",
+        "imagen": "img/cheesy_choice.png",
+        "programacion": [
+          {
+            "fecha": "Lunes 04/ SEPT",
+            "titulo": "SANDWICHES DE JAMÓN",
+            "precio": 100,
+            "descripcion": "Dos sandwiches de jamon y queso bañados en salsa de más queso, acompañados de una sopa fría de pepino y melón.",
+            "ingredientes1": [
+              "DÚO DE CROQUE MONSIEURS",
+              "GAZPACHO DE MELÓN",
+              "JALAPEÑOS",
+              "BERROS",
+              "LIMONES"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "CROTONES",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "ALMENDRAS",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "TOCINO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "ENSALADA MIXTA",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CROQUE MONSIEUR EXTRA",
+                "precio": "(MX $15.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 05/ SEPT",
+            "titulo": "SABANA DE RES INVIERNO",
+            "precio": 100,
+            "descripcion": "Sabana de res gratinada con queso menonita bañada en salsa verde y salsa de frijol, acompañados de un sopa tipo fondue.",
+            "ingredientes1": [
+              "SABANA DE RES INVIERNO",
+              "MINI FOUNDUE CON PAN DE OREGANO Y SALVIA",
+              "PAN DE OREGANO",
+              "FRIJOLES"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "CAMARÓN",
+                "precio": "(MX $20.00)"
+              },
+              {
+                "nombre": "PAN EXTRA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ENSALADA MIXTA",
+                "precio": "(MX $15.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 06/ SEPT",
+            "titulo": "LASAGNA DE POLLO Y RAJAS",
+            "precio": 100,
+            "descripcion": "Lasagna cremosa rellena de pollo y rajas acompañada de una ensalada verde con pepinos.",
+            "ingredientes1": [
+              "LASAGNA CREMOSA",
+              "ENSALADA DE PEPINOS",
+              "VINAGRETA",
+              "SALSA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "PORCIÓN EXTRA DE LASAGNA",
+                "precio": "(MX $10.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 07/ SEPT",
+            "titulo": "MACARRONES",
+            "precio": 100,
+            "descripcion": "Macarrones con queso en salsa de langosta acompañados de 4 croquetas de atún con pimentón y tomate.",
+            "ingredientes1": [
+              "MAC AND CHEESE DE LANGOSTA",
+              "CROQUETAS DE ATÚN A LA GALLEGA",
+              "SALSA DE TOMATE",
+              "SALSA DE QUESO"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "CROQUETA EXTRA",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "SALSA EXTRA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "SALSA DE QUESO EXTRA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "MAC AND CHEESE EXTRA",
+                "precio": "(MX $10.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 08/ SEPT",
+            "titulo": "BURRITO DE CARNE",
+            "precio": 100,
+            "descripcion": "Burrito de carne con frijoles y nuestra salsa especial de 3 quesos acompañado de hummus de aguacate, garbanzo, humo de olote y leche de coco.",
+            "ingredientes1": [
+              "BURRITO DE CARNE MACHA A LOS 3 QUESOS",
+              "HUMMUS DE AGUACATE AHUMADO Y COCO",
+              "PAN PITA",
+              "LIMÓN",
+              "SALSA VERDE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "BURRITO EXTRA",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CHILES TOREADOS",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "SALSA DE QUESO",
+                "precio": "(MX $5.00)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Foodlist 7",
+        "descricpion": "La comida típica Japonesa",
+        "imagen": "img/square_snacks.png",
+        "programacion": [
+          {
+            "fecha": "Lunes 04/ SEPT",
+            "titulo": "TEPPANYAKI VEGETARIANO",
+            "precio": 90,
+            "descripcion": "El delicioso Teppanyaki Vegetariano, para los amantes de la comida Japonesa.",
+            "ingredientes1": [
+              "TEPPANYAKI VEGETARIANO",
+              "SUNOMONO",
+              "PONZU",
+              "WASABE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "PULPO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CAMARÓN",
+                "precio": "(MX $20.00)"
+              },
+              {
+                "nombre": "KANIKAMA",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CARNE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "AJO FRITO",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "CHILES TOREADOS",
+                "precio": "(MX $5.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 05/ SEPT",
+            "titulo": "CURRY DE ARRACHERA",
+            "precio": 100,
+            "descripcion": "El delicioso Curry de arrachera... no te lo puedes perder.",
+            "ingredientes1": [
+              "CURRY DE ARRACHERA",
+              "DUMPLINGS DE HONGOS SILVESTRES",
+              "PONZU",
+              "WASABE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "TAMPICO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "GOHAN",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "CHILES TOREADOS",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "AJO FRITO",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "EXTRA DE ARRACHERA",
+                "precio": "(MX $15.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 06/ SEPT",
+            "titulo": "ROLLO DE KANIKAMA",
+            "precio": 100,
+            "descripcion": "Un exquisito Rollo de kanikama con salsa tampico.",
+            "ingredientes1": [
+              "ROLLO DE KANIKAMA CON TAMPICO",
+              "DÚO DE KUSHIAGUES",
+              "PONZU",
+              "WASABE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "KUSHIAGUE EXTRA DE QUESO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "KUSHIAGUE EXTRA DE PLÁTANO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AJO FRITO",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "AJO FRITO",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "CREMA DE CHIPOTLE",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "8 PIEZAS EXTRA",
+                "precio": "(MX $20.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 07/ SEPT",
+            "titulo": "YAKIMESHI DE VERDURAS",
+            "precio": 100,
+            "descripcion": "Un clásico Japones Yakimeshi de verduras.",
+            "ingredientes1": [
+              "YAKIMESHI DE VERDURAS",
+              "SALSA MISO DE HONGOS",
+              "CEBOLLÍN",
+              "PONZU"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CARNE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CAMARÓN",
+                "precio": "(MX $20.00)"
+              },
+              {
+                "nombre": "MIXTO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "TAMPICO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AJO FRITO",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "CREMA DE CHIPOTLE",
+                "precio": "(MX $5.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 08/ SEPT",
+            "titulo": "POLLO TERIYAKI",
+            "precio": 100,
+            "descripcion": "Pollo teriyaki.",
+            "ingredientes1": [
+              "POLLO TERIYAKI",
+              "TRILOGÍA DE ROBATAS",
+              "PONZU"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "GOHAN",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AJO FRITO",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "CHILES TOREADOS",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "SALSA TERIYAKI",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "PIEZA EXTRA DE POLLO",
+                "precio": "(MX $15.00)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Foodlist 8",
+        "descricpion": "A quién no se le antojo más de una vez comer lo mismo que en nuestras caricaturas favoritas, ahora lo puedes lograr con nuestros deliciosos platillos recien salidos de la fantasía.",
+        "imagen": "img/viva_mexico.png",
+        "programacion": [
+          {
+            "fecha": "Lunes 04/ SEPT",
+            "titulo": "LASAGNA Y ENSALADA MIXTA",
+            "precio": 100,
+            "descripcion": "Sabemos que odias los lunes tanto como Garfield, pero con esta lasagna acompañada de ensalada mixta lo vas a olvidar.",
+            "ingredientes1": [
+              "LASAGNA GARFIELD",
+              "ENSALADA MIXTA CON VINAGRETA",
+              "CREMA",
+              "QUESO"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "CROTONES",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "QUESO FRESCO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CEBOLLA FILETEADA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "SALSA EXTRA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "70 GR CARNE MOLIDA",
+                "precio": "(MX $15.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 05/ SEPT",
+            "titulo": "BABY BACK RIBS",
+            "precio": 100,
+            "descripcion": "Las favoritas de la familia Picapiedra acompañadas de una rica ensalda de col.",
+            "ingredientes1": [
+              "BABY BACK RIBS DE MINIBRONTOSAURIO",
+              "ENSALADA DE COL"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "PAPA GAJO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PAPA AL HORNO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PURÉ DE PAPA CON JALAPEÑO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ARROZ BLANCO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "GUACAMOLE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "ELOTITOS TIERNOS",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "SALSA BBQ EXTRA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "MAC AND CHEESE",
+                "precio": "(MX $10.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 06/ SEPT",
+            "titulo": "TRIO DE CANGREBURGERS",
+            "precio": 100,
+            "descripcion": "Traídas desde el Crustáceo Cascarudo, acompañada de una ensalada de algas, zanahoria, espinacas y jitomate. Aún no contamos con la fórmula secreta.",
+            "ingredientes1": [
+              "TRIO DE CANGREBURGERS",
+              "ENSALADA MARINA",
+              "MINI-BATIDO DE VAINILLA"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "TOCINO FRITO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "CEBOLLA CARAMELIZADA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "MEDALLÓN DE CANGREJO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "PAPA AL HORNO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PAPA GAJO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "JALAPEÑOS",
+                "precio": "(MX $5.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 07/ SEPT",
+            "titulo": "MONSTER SANDWICH",
+            "precio": 100,
+            "descripcion": "Cometelo antes de que los temerosos Shaggy y Scooby se lo devoren, incluye dos scooby galletas.",
+            "ingredientes1": [
+              "MONSTER SANDWICH",
+              "2 SCOOBY GALLETAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "CHIPOTLE",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "JALAPEÑOS",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "ENSALADA VERDE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "PAPA GAJO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PAPA HORNO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PIÑA ASADA",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "MILANESA",
+                "precio": "(MX $15.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 08/ SEPT",
+            "titulo": "MINI-PIZZAS NINJA CON PAPAS",
+            "precio": 100,
+            "descripcion": "Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael una deliciosa pizza acompañadas de papas gajo.",
+            "ingredientes1": [
+              "2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+              "PAPAS GAJO",
+              "CATSUP"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "QUESO DE NACHOS",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "QUESO AMARILLO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "JALAPEÑOS",
+                "precio": "(MX $5.00)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Foodlist 9",
+        "descricpion": "Con ese sazón inigualable y que tanto extrañamos de nuestras abuelitas",
+        "imagen": "img/jam.png",
+        "programacion": [
+          {
+            "fecha": "Lunes 04/ SEPT",
+            "titulo": "TORTITAS DE POLLO",
+            "precio": 100,
+            "descripcion": "Ricas tortitas de pollo bañadas en salsa acompañadas de una sopa seca de fideos al chipotle.",
+            "ingredientes1": [
+              "TORTITAS DE POLLO CON CALDILLO",
+              "SOPA DE FIDEOS SECA AL CHIPOTLE",
+              "NOPAL ASADO",
+              "FRIJOLES DE LA OLLA",
+              "TORTILLAS",
+              "LIMONES"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "CREMA Y QUESO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CHICHARRÓN",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "MÁS FRIJOLES DE LA OLLA",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ARROZ BLANCO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "MÁS TORTILLAS",
+                "precio": "(MX $10.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 05/ SEPT",
+            "titulo": "BISTEC ENCEBOLLADO PICOSITO",
+            "precio": 100,
+            "descripcion": "El que muchos odiaban y otros amaban, el bistec encebollado con una salsa de chile pasilla, acompañados de una rica crema de elote.",
+            "ingredientes1": [
+              "BISTEC ENCEBOLLADO AL CHILE PASILLA",
+              "CREMA DE ELOTE",
+              "FRIJOLES DE LA OLLA",
+              "LIMONES",
+              "TORTILLAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "CHIPS DE TORTILLA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "CUBOS DE QUESO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PALITOS DE PAN",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "MÁS FRIJOLES",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ARROZ BLANCO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $15.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 06/ SEPT",
+            "titulo": "VERDOLAGAS CON CERDO EN CONSOMÉ",
+            "precio": 100,
+            "descripcion": "Irresistibles verdolagas con cerdo bañados en una salsa verde aocmpañados de consomé de pollo.",
+            "ingredientes1": [
+              "VERDOLAGAS CON CERDO EN SALSA VERDE",
+              "CALDO DE POLLO CON VERDURAS",
+              "FRIJOLES DE LA OLLA",
+              "LIMONES",
+              "TORTILLAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "ARROZ",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CHILE PICADO",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "CHIPS DE TORTILLA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "GRANOS DE ELOTE",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "MÁS FRIJOLES",
+                "precio": "(MX $10.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 07/ SEPT",
+            "titulo": "CHILE RELLENO EN SALSA DE FRIJOL",
+            "precio": 100,
+            "descripcion": "El inigualable chile poblano relleno de queso canasto bañado en una salsa de frijol acompañado de una ensalada de esquites con aderezo de chile piquin.",
+            "ingredientes1": [
+              "CHILE RELLENO DE QUESO EN SALSA DE FRIJOL",
+              "ENSALADA DE ESQUITES",
+              "CREMA",
+              "TORTILLAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "QUESO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "MAYONESA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "MÁS ADEREZO DE PIQUIN",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "CANGREJO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CAMARÓN",
+                "precio": "(MX $20.00)"
+              },
+              {
+                "nombre": "ARROZ BLANCO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "CREMA Y QUESO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "SALSA DE MOLCAJETE",
+                "precio": "(MX $10.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 08/ SEPT",
+            "titulo": "ENMOLADAS",
+            "precio": 100,
+            "descripcion": "Las que nunca fallan, tres piezas de enmoladas rellenas de pollo acompañados de un arroz rojo con granos de elote.",
+            "ingredientes1": [
+              "ENMOLADAS DE POLLO",
+              "ARROZ ROJO",
+              "CREMA Y QUESO"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "2 HUEVOS REVUELTOS",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PLÁTANO FRITO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "CREMA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "HUEVO DURO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "FRIJOLES DE LA OLLA",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "AGUACATE",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "CEBOLLA FILETEADA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "ARROZ BLANCO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "CHICHARRÓN",
+                "precio": "(MX $5.00)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Foodlist 10",
+        "descricpion": "Haz de tu wrap lo que se te antoje con todos nuestros extras!",
+        "imagen": "img/bbq_smells.png",
+        "programacion": [
+          {
+            "fecha": "Lunes 04/ SEPT",
+            "titulo": "WRAP DE VERDURAS",
+            "precio": 100,
+            "descripcion": "Wrap de verduras de temporadas con una deliciosa ensalda tipo arabe de pepino, trigo, hierbabuena y limón .",
+            "ingredientes1": [
+              "WRAP DE VERDURAS DE TEMPORADA",
+              "ENSALADA TABULÉ",
+              "CHILES EN VINAGRE",
+              "GUACAMOLE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "PAN PITA",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "RES",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CAMARÓN",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "ADEREZO DE CHIPOTLE",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "FRIJOLES DE LA OLLA",
+                "precio": "(MX $15.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Martes 05/ SEPT",
+            "titulo": "WRAP DE POLLO",
+            "precio": 100,
+            "descripcion": "Wrap de pollo acompañado de ensalada rusa.",
+            "ingredientes1": [
+              "WRAP DE POLLO",
+              "ENSALADA RUSA",
+              "CHILES EN VINAGRE",
+              "GUACAMOLE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "ATÚN",
+                "precio": "(MX $20.00)"
+              },
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "ADEREZO DE CHIPOTLE",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "ELOTITO A LA PARRILLA",
+                "precio": "(MX $5.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Miércoles 06/ SEPT",
+            "titulo": "WRAP DE PAVO",
+            "precio": 100,
+            "descripcion": "Wrap de pavo al pastor acompañado de una sopa minestrone.",
+            "ingredientes1": [
+              "WRAP DE PAVO AL PASTOR",
+              "SOPA MINESTRONE",
+              "SALSA ROJA",
+              "GUACAMOLE"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "CHIPS DE TORTILLA",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "ARROZ",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ADEREZO DE CHIPOTLE",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "ADEREZO DE HABANERO",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "ADEREZO CÉSAR",
+                "precio": "(MX $5.00)"
+              },
+              {
+                "nombre": "ARROZ",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "FRIJOLES",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PAPA AL HORNO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ELOTITO A LA PARRILLA",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PIÑA",
+                "precio": "(MX $10.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Jueves 07/ SEPT",
+            "titulo": "WRAP CÉSAR",
+            "precio": 100,
+            "descripcion": "Wrap de ensalada cesar acompañado de una ensalada alemana de papa.",
+            "ingredientes1": [
+              "WRAP DE ENSALADA CÉSAR",
+              "ENSALADA ALEMANA DE PAPA",
+              "RAJAS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "ATÚN",
+                "precio": "(MX $20.00)"
+              },
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CAMARÓN",
+                "precio": "(MX $20.00)"
+              },
+              {
+                "nombre": "QUESO PARMESANO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ANCHOA",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "PAPA AL HORNO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ELOTITO A LA PARRILLA",
+                "precio": "(MX $10.00)"
+              }
+            ]
+          },
+          {
+            "fecha": "Viernes 08/ SEPT",
+            "titulo": "WRAP DE MILANESA",
+            "precio": 100,
+            "descripcion": "Wrap de milanesa acompañado del tradicional moros y cristianos.",
+            "ingredientes1": [
+              "WRAP DE MILANESA",
+              "MOROS Y CRISTIANOS"
+            ],
+            "ingredientes2": [
+              "AGUA DEL DÍA (Lorem ipsum dolor)",
+              "POSTRE DEL DÍA (Lorem ipsum dolor)"
+            ],
+            "extras": [
+              {
+                "nombre": "POLLO",
+                "precio": "(MX $15.00)"
+              },
+              {
+                "nombre": "CREMA Y QUESO",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "CHICHARRÓN",
+                "precio": "(MX $10.00)"
+              },
+              {
+                "nombre": "ADEREZO DE CHIPOTLE",
+                "precio": "(MX $5.00)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

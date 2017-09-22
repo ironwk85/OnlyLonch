@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="./javascripts/materialize.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/fb6b07209f.js"></script>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="javascripts/angular-app.js"></script>
+    <link rel="stylesheet" href="./stylesheets/materialize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,800" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
+    
+    
+    <style type"text/css">
+    
+        @font-face {
+            font-family: HelveticaNeue;
+            src: url("./fonts/HelveticaNeueLTStd Lt.otf") format("opentype");
+        }
+    
+        html, body {
+            height:100%;
+            font-family: HelveticaNeue, Arial, sans-serif;
+            font-weight:100;
+        }
+    
+        .orange_underline
+        {
+            padding-bottom: 10px;
+            border-bottom: 3px solid #E8B81A;
+        }
+    
+        .light_underline
+        {
+            border-bottom: 1px solid rgba(0,0,0,.2);
+            padding-bottom: 22px;
+        }
+    
+        .ellipse_input {
+            font-family: Helvetica;
+            border: 1px solid rgba(0,0,0,.5);
+            width: 100%;
+            height: 60px;
+            font-size: 20px;
+            font-weight: lighter;
+            padding-left: 6%;
+        }
+    
+        .ellipse_button {
+            -webkit-border-radius: 60px ;
+            -moz-border-radius: 60px ;
+            border-radius: 60px ;
+        }
+    
+        .orange_button {
+            background-color:#E7B100;
+            box-shadow: 0px 0px 0px #888888;
+            color:white;
+            border: none;
+        }
+        .orange_button:focus {
+            background-color:#E7B100 !important;
+            color: white !important;
+        }
+    
+        .white_button {
+            background-color:#FFFFFF;
+            color:black;
+            opacity: .4;
+        }
+    
+        /* style karen */
+        
+        /*DirBar*/
+        .nopadding {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    
+        .buttonGo{
+            background:url(./img/compass.png) no-repeat 0 17px;
+            background-color: #FFFFFF;
+            cursor:pointer;
+            border:none;
+            width:50px;
+            border-top-right-radius:30px;
+            border-bottom-right-radius:30px;
+            height:60px;
+            border:1px solid rgba(0,0,0,.5);
+            border-left:inherit;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .searchadd{
+            border:1px solid rgba(0,0,0,.5);
+            border-top-left-radius:30px;
+            border-bottom-left-radius:30px;
+            border-right:hidden;
+            font-size: 20px;
+            padding-left:20px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            height:60px;
+        }
+    
+        .form-control:focus {
+            border:1px solid rgba(0,0,0,.5);
+            border-right:hidden;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    
+        /* style lalo */
+        
+        /*NavBar*/
+        .customNavBar{
+            height: 50px;
+            background-color: rgba(30,35,75,0.4);
+            border: none;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        /*Left Bar*/
+        .leftbar_div{
+            color:#FFF;
+            margin-left:10px;
+            background-color:#1B1E39;
+            -webkit-transition: background-color ease 0.8s;
+            -moz-transition: background-color ease 0.8s;
+            transition: background-color ease 0.8s;
+        }
+        .leftbar_div:hover{
+            border-left:7px solid #E7B100 !important;
+            background-color: #111524 !important;
+        }
+        .side-nav li{
+            line-height: 35px;
+        }
+        .side-nav a{
+            line-height: 20px;
+            height: 20px;
+        }
+        ul.no_bullet {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li.leaf {
+            background: url('img/bulletpoint.png') no-repeat left top;
+            height: 40px;
+            padding-left: 30px;
+            padding-top: 3px;
+            color:#FFF;
+        }
+        #Menu a
+        {
+            color:white;
+            text-decoration:none;
+        }
+    
+        /*Containers*/
+        .main_container {
+            height: 100%;
+            background: rgba(0,0,0,0);
+        
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(0,0,0,0)), color-stop(100%, rgba(26,30,56,1))), url("img/img/background.png");
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            background: -o-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            background: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(26,30,56,1) 100%), url("img/img/background.png");
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1a1e38', GradientType=0 ), url("img/img/background.png");
+        
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .second_container {
+            height: 115%;
+            background: rgba(26,30,56,1);
+            background: -moz-linear-gradient(top, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(26,30,56,1)), color-stop(100%, rgba(60,65,125,1)));
+            background: -webkit-linear-gradient(top, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            background: -o-linear-gradient(top, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            background: -ms-linear-gradient(top, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            background: linear-gradient(to bottom, rgba(26,30,56,1) 0%, rgba(60,65,125,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1e38', endColorstr='#3c417d', GradientType=0 );
+        }
+        .third_container {
+            height: 100%;
+            -webkit-background-size: contain;
+            -moz-background-size: contain;
+            -o-background-size: contain;
+            background-size: contain;
+            background-image: url("./img/img/chef.png");
+        }
+    
+        /*Rows & Columns*/
+        .row_10 {
+            height: 10%;
+        }
+        .row_12 {
+            height: 12%;
+        }
+        .row_15{
+            height: 15%;
+        }
+        .row_20 {
+            height: 20%;
+        }
+        .row_25 {
+            height: 25%;
+        }
+        .row_30 {
+            height: 30%;
+        }
+        .row_35 {
+            height: 35%;
+        }
+        .row_40 {
+            height: 40%;
+        }
+        .row_45 {
+            height: 45%;
+        }
+        .row_50 {
+            height: 50%;
+        }
+        .row_70{
+            height: 70%;
+        }
+        .row_100{
+            height: 100%;
+        }
+    
+        .left_content {
+            text-align:left;
+        }
+        .center_content {
+            text-align:center;
+        }
+        .right_content {
+            text-align:right;
+        }
+        .not_materialize_row{
+            margin-bottom: 0px;
+        }
+    
+    
+        /*Texts*/
+        .white_text {
+            color: white;
+        }
+        .orange_underline
+        {
+            padding-bottom: 5px;
+            border-bottom: 4px solid #E7B100;
+            display:block;
+            margin-bottom:-7px;
+        }
+        .black_far_underline
+        {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #000;
+        }
+        /*Refs*/
+        .white_ref_simple, .white_ref_simple:visited, .white_ref_simple:link, .white_ref_simple:hover, .white_ref_simple:active {
+            color: white;
+            text-decoration: underline;
+        }
+    
+        .white_ref:hover {
+            color: white;
+        }
+    
+        /* fin style lalo */
+    
+    </style>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNaU6RspwCSlNWc6dFPu_xewAYLCTo7Nw&signed_in=true&callback=initMap"
+        async defer>
+        </script>
+    
+    
+    <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+        
+        
+        var map;
+        google.maps.event.addDomListener(window, 'load', initMap);
+        
+        
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                                      center: {lat: -34.397, lng: 150.644},
+                                      zoom: 15
+                                      });
+                                      var infoWindow = new google.maps.InfoWindow({map: map});
+                                      
+                                      // Try HTML5 geolocation.
+                                      if (navigator.geolocation) {
+                                          navigator.geolocation.getCurrentPosition(function(position) {
+                                                                                   var pos = {
+                                                                                   lat: position.coords.latitude,
+                                                                                   lng: position.coords.longitude
+                                                                                   };
+                                                                                   
+                                                                                   infoWindow.setPosition(pos);
+                                                                                   infoWindow.setContent('Location found.');
+                                                                                   map.setCenter(pos);
+                                                                                   }, function() {
+                                                                                   handleLocationError(true, infoWindow, map.getCenter());
+                                                                                   });
+                                      } else {
+                                          // Browser doesn't support Geolocation
+                                          handleLocationError(false, infoWindow, map.getCenter());
+                                      }
+        }
+    
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        }
+    
+    
+        $('#modalCobertura').on('shown.bs.modal', function () {
+                            google.maps.event.trigger(map, "resize");
+                            });
+                            
+                            
+    </script>
+    
+
+</head>
+
+<body>
+    
+    <div class="container-fluid">
+        <div class="row not_materialize_row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <ul id="slide-out" class="side-nav default-side-nav light-side-nav fixed"
+                    style="background-color:#1B1E39;opacity:1;font-family:HelveticaNeue;font-weight:100;padding:0;margin:0;height:100%;">
+                    <div class="logo-wrapper waves-light" style="text-align:center;height:25%;display:flex;align-items:center">
+                        <div style="width:100%">
+                            <img id="imgPerfilBarra" class="img-circle" style="width:100px;height:100px;" src="./img/pr.jpg"/>
+                            <div class="white_text" style="margin:0;padding:0;">Nombre Apellido</div>
+                        </div>
+                    </div>
+                    <ul id="Menu" class="collapsible collapsible-accordion" style="height:55%;">
+                        <li>
+                            <div class="collapsible-header leftbar_div" style="xtop:1px;">
+                                <a href="123456.html" style="padding-left: 0%;width: 283px;height: 35px;padding-top:3%;">Inicio</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                <a href="cobertura.html" style="padding-left: 0%;width: 283px;height: 35px;padding-top:3%;">Cobertura</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                <a href="foodlists.html" style="padding-left: 0%;width: 283px;height: 35px;padding-top:3%;">Foodlists</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                Mi Perfil
+                            </div>
+                            <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                                Mis Ubicaciones
+                            </div>
+                            <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                                <a href="ordenes.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Mis Órdenes - Factura</a>
+                            </div>
+                            <div class="collapsible-body leftbar_div" style="padding-left:70px;">
+                                <a href="formas_pago.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Formas de Pago</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                <a href="invita.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">¡Invita y come gratis!</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                Canjea tus Códigos
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header leftbar_div">
+                                Blog
+                            </div>
+                        </li>
+                    </ul>
+                    <div style="text-align:center;">
+                        <img src="img/img/instagram_icon.png" style="max-width:10%;margin:1%;">
+                            <img src="img/img/facebook_icon.png" style="max-width:10%;margin:1%;">
+                                <img src="img/img/email_icon.png" style="max-width:10%;margin:1%;">
+                                    </div>
+                    <hr class="white_opacity_full" style="margin-top:10%;margin-bottom:0;padding:0;">
+                    <div style="text-align:center;">
+                        <a href="#" class="white_ref_simple" style="align:center">Cerrar Sesión</a>
+                        <a href="#" class="white_ref_simple" style="align:center;font-size:8pt;">Reportar un problema</a>
+                    </div>
+                </ul>
+            </div>
+            
+            
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="padding-top:0.5%;">
+                
+                <div class="row not_materialize_row" style="width:98%;">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+                        <div id="map" style="width:100%;height:650px;margin-top:15px;"></div>
+                    </div>
+                                
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="row row_10 not_materialize_row light_underline" style="width:98%;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top: 12%; padding-left: 0%;">
+                                <span style="font-size: 25px; font-weight:600; font-stretch: ultra-expanded;">COBERTURA</span><br>
+                                <span style="font-size: 20px; font-weight:lighter;">Escribe tu direcci&oacute;n y ve el mapa para confirmar cobertura.</span>
+                            </div>
+                        </div>
+                        <div class="row row_10 not_materialize_row" style="width:98%;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                                <div class="input-group" style="padding-top:25px;">
+                                    <input type="text" id="dir" class="form-control searchadd" placeholder="Direcci&oacute;n">
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="buttonGo" />
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row_10 not_materialize_row" style="width:98%;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                                <div style="padding-top:90px;">
+                                    <span style="font-size: 16px; font-weight:lighter;font-stretch: ultra-expanded;">&iexcl;LO LAMENTAMOS! /&iexcl;DISPONIBLE EN TU ZONA!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row not_materialize_row" style="width:98%;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                                <div style="padding-top:18px;">
+                                    <p style="font-size: 16px; font-weight:lighter;font-stretch: ultra-expanded;line-height: 16px;">Nos encantar&iacute;a atenderte pero por ahora no tenemos cobertura en tu zona; aun as&iacute; te invitamos a registrarte para acumular beneficios. / Ser&aacute; un placer atenderte, programa tu foodlist hoy mismo y programa una entrega con 30 minutos o hasta 2 semanas de antelaci&oacute;n.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row not_materialize_row" style="width:98%;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                                <div style="padding-top:10px;">
+                                    <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Email" style="height:60px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row not_materialize_row" style="width:98%; padding-top:3%;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                                <span style="padding-top:14px;">
+                                    <button class="ellipse_input ellipse_button white_button" type="button" style="width: 55%; padding-right:1%;float:left;text-align:initial;">NOTIFICAR COBERTURA</button>
+                                </span>
+                            
+                                <span style="padding-top:14px;">
+                                    <button class="ellipse_input ellipse_button orange_button" type="button" style="width: 39%;padding-left:1%;float:right;">REGISTRAR</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    
+</body>
+</html>

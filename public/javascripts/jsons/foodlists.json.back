@@ -1,0 +1,1456 @@
+[{	"semana":"Lunes 28 - Viernes 01", 
+	"mes":"AGOSTO",
+	"foodlists":[{
+		"titulo":"Foodlist 1",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 28/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 29/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 30/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 31/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 01/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	},
+	{
+		"titulo":"Foodlist 2",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 28/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 29/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 30/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 31/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 01/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	},
+	{
+		"titulo":"Foodlist 3",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 28/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 29/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 30/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 31/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 01/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	},
+	{
+		"titulo":"Foodlist 4",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 28/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 29/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 30/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 31/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 01/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	},
+	{
+		"titulo":"Foodlist 5",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 28/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 29/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 30/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 31/ AGO",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 01/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	}]
+},
+{	"semana":"Lunes 04 - Viernes 08", 
+	"mes":"SEPTIEMBRE",
+	"foodlists":[{
+		"titulo":"Foodlist 6",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 04/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 05/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 06/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 07/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 08/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	},
+	{
+		"titulo":"Foodlist 7",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 04/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 05/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 06/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 07/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 08/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	},
+	{
+		"titulo":"Foodlist 8",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 04/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 05/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 06/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 07/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 08/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	},
+	{
+		"titulo":"Foodlist 9",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 04/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 05/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 06/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 07/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 08/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	},
+	{
+		"titulo":"Foodlist 10",
+		"descricpion":"The quick brown fox jumps over the lazy dog",
+		"imagen":"img/cheesy_choice.png",
+		"programacion":[{
+			"fecha":"Lunes 04/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Martes 05/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Miércoles 06/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Jueves 07/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		},
+		{
+			"fecha":"Viernes 08/ SEPT",
+			"titulo":"MINI-PIZZAS NINJA CON PAPAS",
+			"precio":100,
+			"descripcion":"Después de batallar toda la semana, disfruta con Donatello, Miguel Angel, Leonardo y Raphael: auqnue tal vez puedan.",
+			"ingredientes1":[
+				"2 MINI-PIZZAS (una de queso y otra de pepperonni)",
+				"PAPAS GAJO",
+				"CATSUP (3 sobres)",
+				"SALSA PICANTE (3 sobres)"
+			],
+			"ingredientes2":[
+				"AGUA DEL DÍA (Lorem ipsum dolor)",
+				"POSTRE DEL DÍA (Lorem ipsum dolor)"
+			],
+			"extras":[{
+				"nombre":"QUESO DE NACHOS",
+				"precion":"(MX $10.00)"
+			},
+			{
+				"nombre":"QUESO AMARILLO",
+				"precion":"(MX $15.00)"
+			},
+			{
+				"nombre":"JALAPEÑOS",
+				"precion":"(MX $5.00)"
+			}]
+		}]
+	}]
+}]

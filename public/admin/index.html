@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lonch Admin</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../stylesheets/admin2.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+  <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+  <script src="./javascripts/functionsAdmin.js"></script>
+  <script src="../javascripts/components/core-min.js"></script>
+  <script src="../javascripts/components/enc-base64-min.js"></script>
+  <script src="../javascripts/components/enc-utf16-min.js"></script>
+  <script src="../javascripts/components/sha256.js"></script>
+  <script src="../javascripts/components/sha256-min.js"></script>
+  <script src="../javascripts/rollups/sha256.js"></script>
+</head>
+<body>
+  <div id="loading"  class="loadingSDialog" style="width:100%; height:100%; ">
+     <img src="img/progress2.gif" style="width:100px; height:100px; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0; "/> 
+  </div>  
+  <div class="container">
+    <div id="login">
+      <form onsubmit="loginUser(event)">
+        <fieldset class="clearfix">
+          <p>
+            <span class="fontawesome-user"></span>
+            <input id="usuario" type="text" placeholder="Usuario" required>
+          </p> 
+          <p><span class="fontawesome-lock"></span>
+            <input id="password" type="password"  placeholder="Password" required>
+          </p> 
+          <p>
+            <input type="submit" value="Iniciar Sesión">
+          </p>
+        </fieldset>
+      </form>
+    </div> <!-- end login -->
+  </div>
+</body>
+</html>
