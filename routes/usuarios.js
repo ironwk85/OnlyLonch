@@ -70,20 +70,15 @@ exports.register = function(req, res) {
 */
 
 exports.register = function(req, res) {
-	var id = req.body.id;
 	var nombre = req.body.nombre;
 	var apellido = req.body.apellido;
 	var phone = req.body.celular;
 	var email = req.body.email;
 	var pass = req.body.contra;
-	var rememberMe = req.body.rememberMe;
 	var photo = req.body.photo;
-
-	if (photo==null || photo=="" || photo==undefined)
-		photo = null;
-	//res.send('POST request to the homepage\n'+req.body.nombre+'\n' + id + ',' + nombre + ','+ ap1 + ','+ ap2 + ','+ fechaNac + ','+ genero + ','+ noCel + ','+ noTel + ','+ ext + ','+ email + ','+ pass + ',');
-
 	var data;
+	var response = {stat:''};
+	
 	data = {
 		tables:{
 			TB_CLIENTES: [
@@ -91,31 +86,23 @@ exports.register = function(req, res) {
 			],
 		},
 	}
-	var response = {stat:''};
-
 	db.fixtures(data, function(err) {
 		if (err){
-			response.stat = "ERROR";
+			response.status = "ERROR";
 			response.data = err.code;
 		}
 		else{
-			req.session.userName = req.body.nombre;
-			req.session.apellido = req.body.apellido;
-   			req.session.email = req.body.email;
-   			req.session.photo = req.body.photo;
+			var user = new Usuario();
+		  	user.setNombre(nombre);
+		  	user.setEmail(email);
+		  	user.setFoto(photo);
+		  	req.session.nombre = user.getNombre();
+		   	req.session.email = user.getEmail();
+		   	req.session.foto = user.getFoto();
+			req.session.cookie.expires = new Date(Date.now() + (31536000*1000));
 
-   			if (rememberMe == "false"){
-	   			var seconds = 31536000;
-		    	req.session.cookie.expires = new Date(Date.now() + (seconds*1000));
-	   		}
-	   		else{
-	   			var minute = 604800;
-		    	req.session.cookie.expires = new Date(Date.now() + (minute*1000));
-	   		}
-
-			response.stat = "SUCCESS";
-			data = {name: req.session.userName, email: req.session.email, photo: req.session.photo, apellido:req.session.apellido};
-			response.data = data;
+			response.status = "SUCCESS";
+		    response.data = user;
 		}
 		res.send(JSON.stringify(response));
 	})
@@ -124,7 +111,6 @@ exports.register = function(req, res) {
 exports.login = function(req, res) {
 	var email = req.body.email;
 	var pass = req.body.pass;
-	var rememberMe = req.body.rememberMe;
 
 	db.get().query('SELECT * FROM TB_CLIENTES WHERE Email = \'' + email + '\' and Password = \'' + pass + '\'', function (err, rows) {
 
@@ -139,33 +125,22 @@ exports.login = function(req, res) {
 		  	var user = new Usuario();
 		  	user.setNombre(rows[0].Nombre);
 		  	user.setEmail(rows[0].Email);
-		  	user.setRememberMe(rememberMe);
 		  	user.setFoto(rows[0].Foto);
-
-		  	req.session.nombre = user.getNombre();
-		  	req.session.apellido = req.body.apellido;
-   			req.session.email = user.getEmail();
-   			req.session.foto = user.getFoto();
-   			req.session.rememberMe = user.getRememberMe();
-
-		  	if (rememberMe == "false"){
-	   			var seconds = 31536000;
-		    	req.session.cookie.expires = new Date(Date.now() + (seconds*1000));
-	   		}
-	   		else{
-	   			var minute = 604800;
-		    	req.session.cookie.expires = new Date(Date.now() + (minute*1000));
-	   		}
+		  	req.session.nombre = nombre;
+		   	req.session.email = email;
+		   	req.session.foto = foto;
+			req.session.cookie.expires = new Date(Date.now() + (31536000*1000));
 
 		    response.status = "SUCCESS";
 		    response.data = user;
 		}
 		else{
-			response.status = "ERROR";
+			response.status = "NOT FOUND";
 		}
 		res.send(JSON.stringify(response));
 	})
 };
+
 
 /*
 exports.loginFacebook = function(req, res) {

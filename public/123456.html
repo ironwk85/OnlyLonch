@@ -123,7 +123,7 @@
 				<div style="width:100%">
 					<img id="imgPerfilBarra" class="img-circle" style="width:100px;height:100px;" ng-src="{{photo}}"/>
 					<div class="white_text" style="margin:0;padding:0;color:#E8B81A;">
-						{{nombre}}&nbsp;&nbsp;&nbsp;&nbsp;{{apellido}}
+						{{nombre}}
 					</div>
 				</div>
 			</div>
@@ -205,7 +205,7 @@
 						</li>
 						<li style="background-color:transparent;height:100%;text-align:center;">
 							<a class="white-text" style="background:transparent;height:1px;font-size:small;" href="#registrarseModal" data-toggle="modal" onclick="$(nombre).val('');$(apellido).val('');$('#email').val('');$(celular).val('');$(contra).val('');$(contra2).val('');" ng-show="showRegister">
-								Registrarse
+								Registrarse / Login
 							</a>
 							<img ng-src="{{photo}}" class="img-circle" style="width:40%;margin-bottom:10%;" ng-show="userImage">
 						</li>
@@ -257,27 +257,27 @@
                         		<form id="formaRegistro">
                             		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
                                     	<div>
-                                        	<input type="text" class="ellipse_button ellipse_input" id="nombre" placeholder="Nombre" required ng-model="nombreInput">
+                                        	<input type="text" class="ellipse_button ellipse_input" id="nombre" placeholder="Nombre" required ng-model="nombreInput" tabindex="1">
                                     	</div>
                                     	<div style="padding-top:4%;">
-                                        	<input type="email" class="ellipse_button ellipse_input" id="email" placeholder="Email" required ng-model="emailInput">
+                                        	<input type="email" class="ellipse_button ellipse_input" id="email" placeholder="Email" required ng-model="emailInput" tabindex="3">
                                     	</div>
                                     	<div style="padding-top:4%; display: flex; align-items: center;">
                                         	<div style="margin-right: 2%;">
-                                            	<input type="password" class="ellipse_button ellipse_input" id="contra" placeholder="Contrase&ntilde;a" style="width: 100%;" required ng-model="contra">
+                                            	<input type="password" class="ellipse_button ellipse_input" id="contra" placeholder="Contrase&ntilde;a" style="width: 100%;" required ng-model="contra" tabindex="5" minlength=8>
                                         	</div>
                                         	<div>
-                                            	<input type="password" class="ellipse_button ellipse_input" id="contra2" placeholder="Confirmar" style="width: 100%; padding-left:10%" required ng-model="contra2">
+                                            	<input type="password" class="ellipse_button ellipse_input" id="contra2" placeholder="Confirmar" style="width: 100%; padding-left:10%" required ng-model="contra2" tabindex="6" minlength=8>
                                         	</div>
                                     	</div>
                             		</div>
                             		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                     	<div>
                                     		<input type="hidden" id="photo" value="" ng-model="photoInput">
-                                        	<input type="text" class="ellipse_button ellipse_input" id="apellido" placeholder="Apellido" required ng-model="apellidoInput">
+                                        	<input type="text" class="ellipse_button ellipse_input" id="apellido" placeholder="Apellido" required ng-model="apellidoInput" tabindex="2">
                                     	</div>
                                     	<div style="padding-top:4%;">
-                                        	<input type="tel" class="ellipse_button ellipse_input" id="celular" placeholder="Celular" pattern="[0-9]*" required ng-model="celular">
+                                        	<input type="tel" class="ellipse_button ellipse_input" id="celular" placeholder="Celular" pattern="[0-9]*" required ng-model="celular" tabindex="4">
                                     	</div>
                                     	<div style="padding-top:4%; display: flex; align-items: center;">
                                         	<div style="width:35%; height:50%">
@@ -285,7 +285,7 @@
                                         	</div>
                                         	<div style="width:70%; height:50%; padding-left:4%">
                                             	<!--<input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Confirmar" style="width: 100%;">-->
-                                            	<button type="submit" class="ob_hover ellipse_input ellipse_button orange_button" style="width: 100%;" ng-click="reg()">REGISTRARME</button>
+                                            	<button type="submit" class="ob_hover ellipse_input ellipse_button orange_button" style="width: 100%;" ng-click="reg()" tabindex="7">REGISTRARME</button>
                                         	</div>
                                     	</div>
                             		</div>

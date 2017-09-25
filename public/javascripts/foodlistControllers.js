@@ -1,5 +1,5 @@
 
-angular.module('lonchApp.controllers',[])
+angular.module('foodlistsApp.controllers',[])
 	.controller('CarousellController' , function($scope){  
 		$scope.image1='./img/carousel1.png';
 		$scope.image2='./img/carousel1.png';
@@ -20,20 +20,22 @@ angular.module('lonchApp.controllers',[])
     		.success(function(data, status, headers, config) {$scope.contents=data;})
 	        .error(function(data, status, headers, config) {});
 
-        $scope.toggle = function(id) {
+        $scope.toggle = function(id,elem) {
+        	var elemToShow= "event:toggleRow" + elem
+        	console.log(elemToShow);
         	if (openElement == -1){
-        		$scope.$broadcast('event:toggles');
+        		$scope.$broadcast(elemToShow);
         		openElement = id;
         		counter++;
         	}
         	else if (openElement == id){
-        		$scope.$broadcast('event:toggles');
+        		$scope.$broadcast(elemToShow);
         		openElement = id;
         		counter++;
         	}
         	else{
         		if (counter%2==0)
-        			$scope.$broadcast('event:toggles');
+        			$scope.$broadcast(elemToShow);
         		openElement = id;
         		counter = 1;
         	}
@@ -108,9 +110,9 @@ angular.module('lonchApp.controllers',[])
 			  select.s++;
 		}
 	})
-	.directive('toggles', function() {
+	.directive('toggleRow1', function() {
     	return function(scope, elem, attrs) {
-        	scope.$on('event:toggles', function() {
+        	scope.$on('event:toggleRow1', function() {
             	elem.slideToggle();
         	});
     	};

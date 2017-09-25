@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="lonchApp">
+<html ng-app="foodlistsApp">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,8 @@
 		<script src="./lib/angular/angular.min.js"></script>
 		<script src="/javascripts/jquery.mCustomScrollbar.concat.min.js"></script>
 		<script src="javascripts/angular-app.js"></script>
-		<script src="javascripts/controllers.js"></script>
+		<script src="javascripts/sessionControllers.js"></script>
+		<script src="javascripts/foodlistControllers.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="./stylesheets/materialize.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
@@ -25,13 +26,16 @@
         	function goToMainRow1(){
         		scrollToElement( $(this).attr('main_row_1_4'), 1000 );
         	}
+        	function goToMainRow2(){
+        		scrollToElement( $(this).attr('main_row_3_4'), 1000 );
+        	}
         	var scrollToElement = function(el, ms){
 			    var speed = (ms) ? ms : 500;
 			    $('html,body').animate({
 			        scrollTop: $(el).offset().top - 80
 			    }, speed);
 			}
-
+			/*
 			$(function(){
 			    $.ajax({
 			       type: "GET",
@@ -51,7 +55,7 @@
 			        }
 			   }); 
 			});
-
+			*/
 			$(document).ready(function(){
 				var helperShow = -1;
 				//$("#text1").hide();
@@ -113,16 +117,23 @@
 			    });
 			});
 
-			function muestraMenu(i){
-					goToMainRow1();
-			}
-
 			function changeCircle(element) {
 				$(element).find('li').toggleClass("oval_full2");
 			    
 			}
         </script>
         <style type="text/css">
+
+        	html, body {
+        		height: auto;
+			    min-height: 100% ;
+			    font-size: 10px ;
+			    font-weight: 500 ;
+                font-family: HelveticaNeue, Arial, sans-serif ;
+				-o-background-size: cover ;
+				background: linear-gradient(to bottom, rgba(27,30,57,1) 100%, rgba(60,65,125,1) 100%) ;
+				background-repeat:no-repeat ;
+			}
 
         	.oval_full{
         		list-style: none;
@@ -380,8 +391,6 @@
 				display:inline;
 				padding-top:25px;
 				padding-left:2px;
-			}
-			#main_row_2, #main_row_3{
 			}
 			
 		    #Menu a
@@ -1396,27 +1405,30 @@
 	                </div>
 	            </div>
 	        </div>
-			<ul id="slide-out" class="side-nav default-side-nav light-side-nav" style="background-color:#1B1E39;opacity:1;font-family:HelveticaNeue;font-weight:100;padding:0;margin:0;height:100%;">
+			<ul id="slide-out" class="side-nav default-side-nav light-side-nav" 
+			style="background-color:#1B1E39;opacity:1;font-family:HelveticaNeue;font-weight:100;padding:0;margin:0;height:100%;">
 				<div class="logo-wrapper waves-light" style="text-align:center;height:25%;display:flex;align-items:center">
 					<div style="width:100%">
 						<img id="imgPerfilBarra" class="img-circle" style="width:100px;height:100px;" ng-src="{{photo}}"/>
-						<div class="white_text" style="margin:0;padding:0;">{{nombre}}&nbsp;&nbsp;&nbsp;&nbsp;{{apellido}}</div>
+						<div class="white_text" style="margin:0;padding:0;color:#E8B81A;">
+							{{nombre}}
+						</div>
 					</div>
 				</div>
 				<ul id="Menu" class="collapsible collapsible-accordion" style="height:55%;">
 					<li>
 						<div class="collapsible-header leftbar_div" style="xtop:1px;">
-							<a href="123456.html" style="padding-left: 0%;padding-top: 3%;">Inicio</a>
+							<a href="123456.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Inicio</a>
 						</div>
 	            	</li>
 	            	<li>
 						<div class="collapsible-header leftbar_div">
-							<a href="cobertura.html" style="padding-left: 0%;padding-top: 3%;">Cobertura</a>
+							<a href="cobertura.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Cobertura</a>
 						</div>
 	            	</li>
 	            	<li>
 						<div class="collapsible-header leftbar_div">
-							<a href="foodlists.html" style="padding-left: 0%;padding-top: 3%;">Foodlists</a>
+							<a href="foodlists.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Foodlists</a>
 						</div>
 	            	</li>
 					<li>
@@ -1427,15 +1439,15 @@
 	            			Mis Ubicaciones
 	            		</div>
 	            		<div class="collapsible-body leftbar_div" style="padding-left:70px;">
-	            			<a href="ordenes.html" style="padding-left: 0%;height: 35px;padding-top:3%;">Mis Órdenes - Factura</a>
+	            			<a href="ordenes.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Mis Órdenes - Factura</a>
 	            		</div>
 	            		<div class="collapsible-body leftbar_div" style="padding-left:70px;">
-	                        <a href="formas_pago.html" style="padding-left: 0%;height: 35px;padding-top:3%;">Formas de Pago</a>
+	                        <a href="formas_pago.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">Formas de Pago</a>
 	            		</div>
 	            	</li>
 	            	<li>
 						<div class="collapsible-header leftbar_div">
-	                        <a href="invita.html" style="padding-left: 0%;padding-top: 3%;">¡Invita y come gratis!</a>
+	                        <a href="invita.html" style="padding-left: 0%;height: 35px;padding-top: 3%;">¡Invita y come gratis!</a>
 						</div>
 	            	</li>
 	            	<li>
@@ -1460,32 +1472,30 @@
 					<a href="#" class="white_ref_simple" style="align:center;font-size:8pt;">Reportar un problema</a>
 				</div>
 			</ul>
-			<nav class="navbar navbar-default navbar-fixed-top customNavBar" style="z-index:10;">
-				<div class="container-fluid">
+			<nav class="navbar navbar-default navbar-fixed-top customNavBar" style="z-index:10;margin-bottom:0px;">
+				<div class="container-fluid" style="height:100%;width:100%;">
 					<div class="navbar-header" style="width:5%;">
 						<a class="navbar-brand"></a>
 					</div>
-					<div>
-						<ul class="nav navbar-nav">
-							<li class="active" style="background-color:transparent;">
-								<a class="button-collapse" style="background:transparent;height:1px;" href="#" data-activates="slide-out" data-transition="slidedown">
+					<div class="navbar-header" style="height:100%;width:95%;">
+						<ul class="nav navbar-nav" style="height:100%;">
+							<li class="active" style="background-color:transparent;height:100%;">
+								<a class="button-collapse" style="background:transparent;height:100%;margin:0;" href="#" data-activates="slide-out" data-transition="slidedown">
 									<img class="navBar_icon" style="max-height:20px;" src="img/img/menu_icon.png">
 								</a>
 							</li>
 						</ul>
-						<ul class="nav navbar-nav" style="float:right;margin-right:10%;">
-							<li style="background-color:transparent;">
-								<a style="background:transparent;height:1px;" href="#" data-toggle="modal" data-target="#myFoodList">
-									<img class="navBar_icon" style="margin-top:-7px;max-height:35px;" src="img/img/checkout_icon.png">
-									<span class="badge badge-error" style="color:#FFF;position:absolute;bottom:2px;left:30px;" ng-show="carritoSize>0">{{carritoSize}}</span>
+						<ul class="nav navbar-nav" style="height:100%;float:right;">
+							<li style="background-color:transparent;height:100%;">
+								<a style="background:transparent;height:100%;padding:0;" href="#">
+									<img class="navBar_icon" style="width:80%;margin:10%;" src="img/img/checkout_icon.png">
 								</a>
 							</li>
-							<li style="background-color:transparent;">
+							<li style="background-color:transparent;height:100%;text-align:center;">
 								<a class="white-text" style="background:transparent;height:1px;font-size:small;" href="#registrarseModal" data-toggle="modal" onclick="$(nombre).val('');$(apellido).val('');$('#email').val('');$(celular).val('');$(contra).val('');$(contra2).val('');" ng-show="showRegister">
-									Registrarse
+									Registrarse / Login
 								</a>
-								<img ng-src="{{photo}}" class="img-circle" style="height:25%;padding-bottom:10%;width:25%;" ng-show="userImage">
-								<span>{{nombre}}</span>
+								<img ng-src="{{photo}}" class="img-circle" style="width:40%;margin-bottom:10%;" ng-show="userImage">
 							</li>
 						</ul>
 					</div>
@@ -1543,7 +1553,7 @@
 							</div>
 							<div>
 								<div id="test" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text" ng-repeat="i in contents[0].foodlists track by $index">
-									<a id="A11" class="AA" href="#" onclick="muestraMenu(1);goToMainRow1();" ng-click="getItem($index);toggle($index);" ng-mouseover="open = true" ng-mouseleave="open = false">
+									<a id="A11" class="AA" href="#" onclick="goToMainRow1();" ng-click="getItem($index);toggle($index,1);" ng-mouseover="open = true" ng-mouseleave="open = false">
 										<div id="{{i.imagen}}" class="inside_image" style="z-index:1;color:white;position:absolute;display:flex;align-items:center;height:100%;width:90%;" ng-show="open">
 											<div style="width:95%;text-align:center;">
 							        			<b>{{i.titulo}}</b>
@@ -1557,7 +1567,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="main_row_2" class="row full-width-row show_hide" toggles>
+				<div id="main_row_2" class="row full-width-row show_hide" toggleRow1>
 					<hr class="white_opacity_full" style="margin-top:-1%;">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="row" style="height:10%;color:white;">
@@ -1629,7 +1639,7 @@
 				</div>
 				<div id="main_row_3" class="row full-width-row " style="margin-top:36px;">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div id="main_row_1_3" class="row">
+						<div id="main_row_3_3" class="row">
 							<div class="col-xs- col-sm-1 col-md-1 col-lg-1 centered-text">
 							</div>
 							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 center-block">
@@ -1643,12 +1653,12 @@
 								</div>
 							</div>
 						</div>
-						<div id="main_row_1_4" class="row">
+						<div id="main_row_3_4" class="row">
 							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 centered-text">
 							</div>
 							<div>
 								<div id="test" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 centered-text" ng-repeat="i in contents[0].foodlists track by $index">
-									<a id="A11" class="AA" href="#" onclick="muestraMenu(1);goToMainRow1();" ng-click="getItem($index);toggle($index);" ng-mouseover="open = true" ng-mouseleave="open = false">
+									<a id="A11" class="AA" href="#" onclick="goToMainRow2();" ng-click="getItem($index);toggle($index,2);" ng-mouseover="open = true" ng-mouseleave="open = false">
 										<div id="{{i.imagen}}" class="inside_image" style="z-index:1;color:white;position:absolute;display:flex;align-items:center;height:100%;width:90%;" ng-show="open">
 											<div style="width:95%;text-align:center;">
 						        				<b>{{i.titulo}}</b>
@@ -1658,6 +1668,76 @@
 										<img id="xxx" class="img-responsive shadow" ng-src={{i.imagen}}>
 									</a>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="main_row_4" class="row full-width-row show_hide" toggleRow2>
+					<hr class="white_opacity_full" style="margin-top:-1%;">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="row" style="height:10%;color:white;">
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[0]" ng-click="getItemAtDate(0,0);">{{contents[0].foodlists[0].dias[0]}}</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[1]" ng-click="getItemAtDate(0,1);">{{contents[0].foodlists[0].dias[1]}}</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[2]" ng-click="getItemAtDate(0,2);">{{contents[0].foodlists[0].dias[2]}}</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[3]" ng-click="getItemAtDate(0,3);">{{contents[0].foodlists[0].dias[3]}}</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p class="text-center" style="width:100%;margin-top: -2vh;padding-top: 1vh;cursor: pointer; cursor: hand;" ng-class="orange[4]" ng-click="getItemAtDate(0,4);">{{contents[0].foodlists[0].dias[4]}}</p>
+							</div>
+						</div>
+						<div class="row" style="height:90%;">
+							<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-4 col-sm-4 col-md-4 col-lg-4">
+								<img class="img-responsive" ng-src={{foods.imagen}}>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="color:white;">
+								<div class="row">
+									<p style="font-size:x-large;">{{foods.titulo}}</p>
+									<p>{{foods.descripcion}}</p>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<ul ng-repeat="j in foods.ingredientes1">
+											<li class="oval_full">{{j}}</li>
+										</ul>
+										<br>
+										<ul ng-repeat="j in foods.ingredientes2">
+											<li class="oval_full">{{j}}</li>
+										</ul>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<div id="content-1" class="content" style="max-width:100%;height:18vh;overflow:auto;" ng-repeat="j in foods.extras">
+											<p>{{j.nombre}}</p>
+											<ul ng-repeat="k in j.extras">
+												<a class="white_links" href="" ng-click=" increaseTotal(k.select);" onclick="event.stopPropagation();changeCircle(this);"><li class="oval_empty">{{k.nombre}} {{k.precio}}</li>{{aux}}</a>
+											</ul>
+										</div>
+										<hr class="white_opacity_full" style="margin-top:1%;">
+										<ul>
+											<li><span style="width:50%;float:left;"><b>PRECIO:</b></span> <span align="right" style="width:50%;float:right;">MX$  {{total.t}}</span></li>
+											<li><span style="width:50%;float:left;"><b>-DESCUENTO:</b></span> <span align="right" style="width:50%;float:right;"> APLICA UN CUPÓN</span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" style="color:white;">
+							<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<p>Guárdalo y te avisamos cuando vuelva a estar disponible.</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+							<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								*Algunos opcionales pueden ser incluidos en tu platillo.</div>
+							<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+								<button class="btn ellipse_button orange_button" type="button" style="width:100%;margin-left:10px;" ng-click="addedElement();">ORDENAR</button>
 							</div>
 						</div>
 					</div>

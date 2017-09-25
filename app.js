@@ -222,16 +222,15 @@ app.post('/loginFacebook', function(req,res){
 })
 
 app.get('/activeSession', function(req,res){
-  var nombre = req.session.userName;
+  var nombre = req.session.nombre;
   var response;
-  console.log("---------------------"+nombre);
+  console.log(nombre+"-----------------------------------------------++++++++++++++++ ");
   if (nombre==undefined || nombre==null || nombre=="")
-    response = {status:'ERROR'};
+    response = {status:'NOT LOGGED'};
   else{
-    var seconds = 31536000;
-    req.session.cookie.expires = new Date(Date.now() + (seconds*1000));
+    req.session.cookie.expires = new Date(Date.now() + (31536000*1000));
     response = {status:'SUCCESS'};
-    response.data = {nombre: nombre , apellido:req.session.apellido, email: req.session.email, foto: req.session.photo};
+    response.data = {nombre: nombre , email: req.session.email, foto: req.session.foto};
   }
   res.send(JSON.stringify(response));
 })

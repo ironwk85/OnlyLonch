@@ -26,34 +26,6 @@ angular.module('sessionApp.controllers', [])
 						console.log("---------------------");
 						console.log($scope.emailInput);
 						console.log("---------------------");
-						/*email = response.email;
-						picture = response.picture.data.url;
-						console.log(email);
-						console.log(picture);
-
-							var sendInfo = {
-								email: email,
-								foto: picture
-					    };
-
-						$.ajax({
-					        type: "POST",
-					        url: './loginFacebook',
-					        dataType: 'json',
-					        
-					        beforeSend: function(){
-					        },
-					        success: function(json) {
-					            if (json.status == "SUCCESS"){
-					                console.log(json);
-					                window.location.replace("./123456.html");
-					            }
-					            else{
-					                $('#errorMsg').show();
-					            }
-					        },
-					        data: sendInfo
-					    }); */
 					});
 				} 
 				else if (response.status === 'not_authorized')
@@ -69,7 +41,7 @@ angular.module('sessionApp.controllers', [])
 			apiService.logged()
 	  			.then(function(data) {    
 	  				console.log(data);
-	  				if (data.data.status == "ERROR"){
+	  				if (data.data.status == "NOT LOGGED"){
 	  					$scope.showRegister = true;
 	        			$scope.userImage = false;
 	        			$scope.nombre = "";
@@ -81,7 +53,6 @@ angular.module('sessionApp.controllers', [])
 	        			$scope.userImage = true;
 	        			$scope.photo = data.data.data.foto;
 	        			$scope.nombre = data.data.data.nombre;
-	        			$scope.apellido = data.data.data.apellido;
 	        		}   
 	  			}, function() {  
 	  				console.log("ERROR");  
@@ -95,7 +66,7 @@ angular.module('sessionApp.controllers', [])
 				alert("La longitud de la contraseña debe ser de mínimo 8 dígitos");
 				allowed = false;
 			}
-			if ($scope.contra != $scope.contra2){
+			if ( allowed != false && $scope.contra != $scope.contra2){
 				alert("Las contraseñas deben ser iguales");
 				allowed = false;
 			}
@@ -118,7 +89,6 @@ angular.module('sessionApp.controllers', [])
 	        				$scope.userImage = true;
 	        				$scope.photo = data.data.data.photo;
 	        				$scope.nombre = data.data.data.name;
-	        				$scope.apellido = data.data.data.apellido;
 	        			}  
 	  				}
 	  				, function() {
