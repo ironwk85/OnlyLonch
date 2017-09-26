@@ -5,11 +5,9 @@ angular.module('foodlistsApp.controllers',[])
 		$scope.image2='./img/carousel1.png';
 		$scope.image3='./img/carousel1.png';
 	})
-	.controller('FoodlistsController' , function($scope, $http, apiService){  
+	.controller('FoodlistsController' , function($rootScope, $scope, $http, apiService){  
 		$scope.contents = null;
 		$scope.orange = ["","","","",""];
-		$scope.carrito = [];
-		$scope.carritoSize = 0;
 		foodlist = -1;
 		dateIndex = -1
 		openElement = -1;
@@ -100,6 +98,9 @@ angular.module('foodlistsApp.controllers',[])
 					for (var i=0; i< data[0].foodlists[id].programacion.length; i++){
 						if (today.localeCompare(data[0].foodlists[id].programacion[i].fechaId) == 0){
 							$scope.foods = data[0].foodlists[id].programacion[i];
+							$scope.selectedFoodlist = data[0].foodlists[id].idFoodist;
+							$scope.selectedFoodlistFood = data[0].foodlists[id].programacion[i].titulo;
+							$scope.selectedFoodlistName = data[0].foodlists[id].titulo;
 							$scope.total = {t:($scope.foods.precio)};
 							$scope.orange = ["","","","",""];
 							$scope.orange[i] = "orange_upperline";
@@ -121,19 +122,28 @@ angular.module('foodlistsApp.controllers',[])
 					$scope.total = {t:($scope.foods.precio)};
 					$scope.orange = ["","","","",""];
 					$scope.orange[d] = "orange_upperline";
+					$scope.selectedFoodlist = data[0].foodlists[foodlist].idFoodist;
+					$scope.selectedFoodlistFood = data[0].foodlists[foodlist].programacion[d].titulo;
+					$scope.selectedFoodlistName = data[0].foodlists[foodlist].titulo;
 	        	})
 	        	.error(function(data, status, headers, config) {});
 		}
 
 		$scope.addedElement = function(){
-			console.log("----------------------------------------");
-			console.log($scope.foods);
-			console.log("----------------------------------------");
-			$scope.foods.total = $scope.total.t;
-			$scope.carrito.push({fechaId:$scope.foods.fechaId,extras:$scope.total.extras,total:$scope.foods.total});
-			$scope.carritoSize = $scope.carrito.length;
 
-			apiService.updateCart($scope.carrito, $scope.carritoSize)
+			console.log("-------------Carrito antes---------------------------");
+			console.log($rootScope.carrito);
+			console.log("----------------------------------------");
+
+			$scope.foods.total = $scope.total.t;
+			$rootScope.carrito.push({foodlist:$scope.selectedFoodlist,name:$scope.selectedFoodlistName,food:$scope.selectedFoodlistFood,fechaId:$scope.foods.fechaId,extras:$scope.total.extras,total:$scope.foods.total});
+			$rootScope.carritoSize = $scope.carrito.length;
+
+			console.log("-------------Carrito despues---------------------------");
+			console.log($rootScope.carrito);
+			console.log("----------------------------------------");
+
+			apiService.updateCart($rootScope.carrito, $rootScope.carritoSize)
   				.then(function(data) {    
   					console.log(data);
   				}

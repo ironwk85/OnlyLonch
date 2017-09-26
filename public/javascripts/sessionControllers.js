@@ -1,6 +1,6 @@
 
 angular.module('sessionApp.controllers', [])
-	.controller('mainController', function($scope, apiService) {  
+	.controller('mainController', function($rootScope, $scope, apiService) {  
   		$scope.emailInput = "";
 		$scope.nombreInput = "";
 		$scope.apellidoInput = "";
@@ -38,6 +38,8 @@ angular.module('sessionApp.controllers', [])
 		}
 
 		$scope.isLogged = function(){
+			$rootScope.carrito = [];
+			$rootScope.carritoSize = 0;
 			apiService.logged()
 	  			.then(function(data) {    
 	  				console.log(data);
@@ -53,8 +55,13 @@ angular.module('sessionApp.controllers', [])
 	        			$scope.userImage = true;
 	        			$scope.photo = data.data.data.foto;
 	        			$scope.nombre = data.data.data.nombre;
-	        			$scope.carrito = data.data.data.carrito;
-						$scope.carritoSize = data.data.data.carritoSize;
+	        			$rootScope.carrito = data.data.data.carrito;
+						$rootScope.carritoSize = data.data.data.carritoSize;
+
+						console.log("-------------Carrito network---------------------------");
+						console.log($rootScope.carrito);
+						console.log(typeof $rootScope.carrito);
+						console.log("----------------------------------------");
 	        		}   
 	  			}, function() {  
 	  				console.log("ERROR");  
