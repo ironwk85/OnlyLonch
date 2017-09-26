@@ -13,7 +13,9 @@ angular.module('foodlistsApp.controllers',[])
 		foodlist = -1;
 		dateIndex = -1
 		openElement = -1;
-		counter = 0;
+		openRow = -1;
+		counter1 = 0;
+		counter2 = 0;
     	
     	/*Foodlists JSON*/
     	$http.get('javascripts/jsons/foodlists.json')
@@ -21,24 +23,54 @@ angular.module('foodlistsApp.controllers',[])
 	        .error(function(data, status, headers, config) {});
 
         $scope.toggle = function(id,elem) {
-        	var elemToShow= "event:toggleRow" + elem
-        	console.log(elemToShow);
-        	if (openElement == -1){
-        		$scope.$broadcast(elemToShow);
+        	var elemToToggle = "event:toggleRow" + elem;
+
+        	if (openElement == id && openRow == elem){
+        		$scope.$broadcast(elemToToggle);
         		openElement = id;
-        		counter++;
+        		openRow = elem
+        		if (elem == 1)
+        			counter1++;
+        		else
+        			counter2++;
         	}
-        	else if (openElement == id){
-        		$scope.$broadcast(elemToShow);
+        	else if (openRow!=-1 && openRow!= elem){
+        		if (elem == 1){
+        			if (counter1%2 == 0)
+        				$scope.$broadcast("event:toggleRow1");
+        			if (counter2%2 == 1){
+        				$scope.$broadcast("event:toggleRow2");
+        				counter2++;
+        			}
+        			counter1++;
+        		}
+        		else{
+        			if (counter2%2 == 0)
+        				$scope.$broadcast("event:toggleRow2");
+        			if (counter1%2 == 1){
+        				$scope.$broadcast("event:toggleRow1");
+        				counter1++;
+        			}
+        			counter2++;
+        		}
         		openElement = id;
-        		counter++;
+        		openRow = elem
+        	}
+        	else if (openRow == -1){
+        		$scope.$broadcast(elemToToggle);
+        		openElement = id;
+        		openRow = elem
+        		if (elem == 1)
+        			counter1++;
+        		else
+        			counter2++;
         	}
         	else{
-        		if (counter%2==0)
-        			$scope.$broadcast(elemToShow);
         		openElement = id;
-        		counter = 1;
+        		openRow = elem
         	}
+        	console.log(counter1+"++++++++++++++++++++++++++++++++");
+        	console.log(counter2+"++++++++++++++++++++++++++++++++");
 	    }
 
 		$scope.orangeStyle = function(id){
@@ -103,11 +135,12 @@ angular.module('foodlistsApp.controllers',[])
 		$scope.increaseTotal = function(select){
 			  if (select.s%2 == 0){
 			  	$scope.total.t = $scope.total.t + 10;
+			  	select.s++;
 			  } 
 			  else{
 			  	$scope.total.t = $scope.total.t - 10;
+			  	select.s--;
 			  }
-			  select.s++;
 		}
 	})
 	.directive('toggleRow1', function() {
@@ -116,4 +149,12 @@ angular.module('foodlistsApp.controllers',[])
             	elem.slideToggle();
         	});
     	};
+	})
+	.directive('toggleRow2', function() {
+    	return function(scope, elem, attrs) {
+        	scope.$on('event:toggleRow2', function() {
+            	elem.slideToggle();
+        	});
+    	};
 	});
+
