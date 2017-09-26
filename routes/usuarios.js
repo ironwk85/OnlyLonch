@@ -110,9 +110,10 @@ exports.register = function(req, res) {
 
 exports.login = function(req, res) {
 	var email = req.body.email;
-	var pass = req.body.pass;
+	var pass = req.body.password;
 
-	db.get().query('SELECT * FROM TB_CLIENTES WHERE Email = \'' + email + '\' and Password = \'' + pass + '\'', function (err, rows) {
+	db.get().query('SELECT * FROM TB_CLIENTES WHERE (Email = \'' + email + '\' and Password = \'' + pass + '\') or (No_Celular = CONVERT(\'' + email + '\',UNSIGNED INTEGER) and Password = \'' + pass + '\')', function (err, rows) {
+	console.log('SELECT * FROM TB_CLIENTES WHERE (Email = \'' + email + '\' and Password = \'' + pass + '\') or (No_Celular = CONVERT(\'' + email + '\',UNSIGNED INTEGER) and Password = \'' + pass + '\')');
 
 		var response = {status:''};
 	    
@@ -126,9 +127,9 @@ exports.login = function(req, res) {
 		  	user.setNombre(rows[0].Nombre);
 		  	user.setEmail(rows[0].Email);
 		  	user.setFoto(rows[0].Foto);
-		  	req.session.nombre = nombre;
-		   	req.session.email = email;
-		   	req.session.foto = foto;
+		  	req.session.nombre = user.getNombre();
+		   	req.session.email = user.getEmail();
+		   	req.session.foto = user.getFoto();
 			req.session.cookie.expires = new Date(Date.now() + (31536000*1000));
 
 		    response.status = "SUCCESS";

@@ -53,7 +53,42 @@ angular.module('sessionApp.controllers', [])
 	        			$scope.userImage = true;
 	        			$scope.photo = data.data.data.foto;
 	        			$scope.nombre = data.data.data.nombre;
+	        			$scope.carrito = data.data.data.carrito;
+						$scope.carritoSize = data.data.data.carritoSize;
 	        		}   
+	  			}, function() {  
+	  				console.log("ERROR");  
+	  			});  
+		}
+
+		$scope.tryLogin = function(){
+			apiService.login($scope.emailLogin, $scope.contraLogin)
+  				.then(function(data) {    
+  					console.log(data);
+  					if (data.data.status != "SUCCESS"){
+  						console.log("ERROR");
+  						console.log(data);
+        			}
+        			else{
+        				$(registrarseModal).modal('hide');
+        				$scope.showRegister = false;
+        				$scope.userImage = true;
+        				$scope.photo = data.data.data.photo;
+        				$scope.nombre = data.data.data.nombre;
+        			}
+        			$scope.emailLogin = "";
+        			$scope.contraLogin = "";
+  				}
+  				, function() {
+  					console.log("ERROR"); 
+  				});
+		}
+
+		$scope.tryLogout = function(){
+			apiService.logout()
+	  			.then(function(data) {    
+	  				console.log(data); 
+	  				$scope.isLogged();	
 	  			}, function() {  
 	  				console.log("ERROR");  
 	  			});  
@@ -93,7 +128,7 @@ angular.module('sessionApp.controllers', [])
 	  				}
 	  				, function() {
 	  					console.log("ERROR"); 
-	  				});  
+	  				});
 	  		}
   		} 
 	});

@@ -1,9 +1,11 @@
 [
   {
+    "id":0,
     "semana": "Lunes 28 - Viernes 01",
     "mes": "AGOSTO",
     "foodlists": [
       {
+        "idFoodist":0,
         "titulo": "Cheesy choice",
         "descricpion": "Un clásico de Filadelfia, el cheesesteak sandwich se ha convertido en una opción perfecta para la hora del lonch.",
         "imagen": "img/cheesy_choice.png",
@@ -38,46 +40,55 @@
                 "nombre": "Philly",
                 "extras": [
                   {
+                    "idExtra":0,
                     "nombre": "CANGREJO",
                     "precio": "(MX $15.00)",
                     "select": {"s":0}
                   },
                   {
+                    "idExtra":1,
                     "nombre": "POLLO",
                     "precio": "(MX $15.00)",
                     "select": {"s":0}
                   },
                   {
+                    "idExtra":2,
                     "nombre": "CAMARÓN",
                     "precio": "(MX $20.00)",
                     "select": {"s":0}
                   },
                   {
+                    "idExtra":3,
                     "nombre": "ADEREZO DE CHIPOTLE",
                     "precio": "(MX $5.00)",
                     "select": {"s":0}
                   },
                   {
+                    "idExtra":4,
                     "nombre": "ENSALADA MIXTA",
                     "precio": "(MX $15.00)",
                     "select": {"s":0}
                   },
                   {
+                    "idExtra":5,
                     "nombre": "PAPA AL HORNO",
                     "precio": "(MX $10.00)",
                     "select": {"s":0}
                   },
                   {
+                    "idExtra":6,
                     "nombre": "PAPAS GAJO",
                     "precio": "(MX $10.00)",
                     "select": {"s":0}
                   },
                   {
+                    "idExtra":7,
                     "nombre": "ADEREZO DE SIRACHA",
                     "precio": "(MX $5.00)",
                     "select": {"s":0}
                   },
                   {
+                    "idExtra":8,
                     "nombre": "JALAPEÑOS",
                     "precio": "(MX $5.00)",
                     "select": {"s":0}
@@ -344,6 +355,7 @@
         ]
       },
       {
+        "idFoodist":1,
         "titulo": "Square Snacks",
         "descricpion": "Una deliciosa opción para vegetarianos, aunque si no lo eres también puede ser para ti ya que le puedes agregar la proteina que más te guste.",
         "imagen": "img/square_snacks.png",
@@ -577,6 +589,7 @@
         ]
       },
       {
+        "idFoodist":2,
         "titulo": "BBQ Smells",
         "descricpion": "Para ti que amas la carne y no puedes dejar de pensar en ella, tenemos una carnivora solución",
         "imagen": "img/bbq_smells.png",
@@ -816,6 +829,7 @@
         ]
       },
       {
+        "idFoodist":3,
         "titulo": "Jam",
         "descricpion": "Si nunca te has dado la oportunidad de comer un platillo salteado por un wok, intentalo, no te vas a arrepentir.",
         "imagen": "img/jam.png",
@@ -1089,6 +1103,7 @@
         ]
       },
       {
+        "idFoodist":4,
         "titulo": "Viva México",
         "descricpion": "Porque sabemos que te encanta picar y compartir con tus amigos, hemos ideado los snaks perfectos.",
         "imagen": "img/viva_mexico.png",
@@ -1422,10 +1437,12 @@
     ]
   },
   {
+    "id":1,
     "semana": "Lunes 04 - Viernes 08",
     "mes": "SEPTIEMBRE",
     "foodlists": [
       {
+        "idFoodist":5,
         "titulo": "Foodlist 6",
         "descricpion": "¿Amas el queso?,  derrite tus sentidos con esta deliciosa foodlist.",
         "imagen": "img/cheesy_choice.png",

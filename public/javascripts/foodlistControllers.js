@@ -5,7 +5,7 @@ angular.module('foodlistsApp.controllers',[])
 		$scope.image2='./img/carousel1.png';
 		$scope.image3='./img/carousel1.png';
 	})
-	.controller('FoodlistsController' , function($scope, $http){  
+	.controller('FoodlistsController' , function($scope, $http, apiService){  
 		$scope.contents = null;
 		$scope.orange = ["","","","",""];
 		$scope.carrito = [];
@@ -126,20 +126,35 @@ angular.module('foodlistsApp.controllers',[])
 		}
 
 		$scope.addedElement = function(){
+			console.log("----------------------------------------");
+			console.log($scope.foods);
+			console.log("----------------------------------------");
 			$scope.foods.total = $scope.total.t;
-			$scope.carrito.push($scope.foods);
+			$scope.carrito.push({fechaId:$scope.foods.fechaId,extras:$scope.total.extras,total:$scope.foods.total});
 			$scope.carritoSize = $scope.carrito.length;
-			console.log($scope.carrito);
+
+			apiService.updateCart($scope.carrito, $scope.carritoSize)
+  				.then(function(data) {    
+  					console.log(data);
+  				}
+  				, function() {
+  					console.log("ERROR"); 
+  				});
 		}
 
 		$scope.increaseTotal = function(select){
 			  if (select.s%2 == 0){
 			  	$scope.total.t = $scope.total.t + 10;
 			  	select.s++;
+			  	$scope.total.extras.push(idExtra);
 			  } 
 			  else{
 			  	$scope.total.t = $scope.total.t - 10;
 			  	select.s--;
+			  	for (var i=0; i<$scope.total.extras.length; i++){
+			  		if (i == idExtra[i])
+			  			$scope.total.extras.splice(i,1);
+			  	}
 			  }
 		}
 	})

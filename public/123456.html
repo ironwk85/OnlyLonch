@@ -13,107 +13,13 @@
 		<script src="javascripts/sessionControllers.js"></script>
 		<script src="javascripts/indexControllers.js"></script>
 		<script src="javascripts/facebook.js"></script>
+		<script src="javascripts/functions.js"></script>
 		<link rel="stylesheet" href="./stylesheets/materialize.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="./stylesheets/font-awesome.min.css">
 		<link rel="stylesheet" href="./stylesheets/general.css">
-        <script type="text/javascript">
-				//checkLoginState();
 
-			/*$(function(){
-			    $.ajax({
-			       type: "GET",
-			       url: './authorization',
-			       dataType: 'json',
-			       success: function (json) {
-			            if (json.data.nombre && json.data.nombre!='' && json.data.perfil && json.data.perfil=="user"){
-			            	$(fotoUsuario).attr("src",json.data.foto);
-			            	$(imgPerfilBarra).attr("src",json.data.foto);
-			            	$('[name=imagenUsuario]').show();
-			            }
-			            else
-			            	$('[name=iniciaSesion]').show();
-			        },
-			        complete: function (){
-			            
-			        }
-			   }); 
-			});*/
-
-			function remove_nuevo(){
-				$("#nuevo_boton").removeClass("orange_underline");
-				$("#viejo_boton").addClass("orange_underline");
-			}
-
-			function remove_viejo(){
-				$("#viejo_boton").removeClass("orange_underline");
-				$("#nuevo_boton").addClass("orange_underline");
-			}
-
-			/*function registro(){
-
-	            var nombre = $("#nombre").val();
-	            var apellido = $("#apellido").val();
-	            var email = $("#email").val();
-	            var celular = $("#celular").val();
-	            var contra = $("#contra").val();
-	            var photo = $("#photo").val();
-
-	            var sendInfo = {
-	               nombre: nombre,
-	               apellido: apellido,
-	               email: email,
-	               celular: celular,
-	               contra: contra,
-	               photo: photo
-	           };
-
-				$.ajax({
-			       type: "POST",
-			       url: './register',
-			       dataType: 'json',
-			       success: function (json) {
-			            /*if (json.data.nombre && json.data.nombre!='' && json.data.perfil && json.data.perfil=="user"){
-			            	$(fotoUsuario).attr("src",json.data.foto);
-			            	$(imgPerfilBarra).attr("src",json.data.foto);
-			            	$('[name=imagenUsuario]').show();
-			            }
-			            else
-			            	$('[name=iniciaSesion]').show();*//*
-			        },
-			        data: sendInfo,
-			        success: function (json){
-			        	if (json.stat == "ERROR"){
-			        		if (json.data == "ER_DUP_ENTRY"){
-			        			alert("El correo que has ingresado ya se encuentra registrado.");
-			        		}
-			        		else
-			        			alert("Ha ocurrido un error, por favor intenta registrarte de nuevo.");
-			        	}
-			        	else
-			        		$(registrarseModal).modal('hide');
-			        }
-			   });
-			}*/
-
-			/*function checkRegister() {
-
-				var allowed = true;
-
-				if ($(contra).val().length < 8){
-					alert("La longitud de la contraseña debe ser de mínimo 8 dígitos");
-					allowed = false;
-				}
-				if ($(contra).val() != $(contra2).val()){
-					alert("Las contraseñas deben ser iguales");
-					allowed = false;
-				}
-				if (allowed === true)
-					registro();
-			}*/
-
-        </script>
 		<title>Lonch</title>
 	</head>
 	<body ng-controller="mainController" ng-init="isLogged()">
@@ -175,7 +81,7 @@
 			</div>
 			<hr class="white_opacity_full" style="margin-top:10%;margin-bottom:0;padding:0;">
 			<div style="text-align:center;">
-				<a href="#" class="white_ref_simple" style="align:center">Cerrar Sesión</a>
+				<a href="#" class="white_ref_simple" style="align:center" ng-click="tryLogout()">Cerrar Sesión</a>
 				<a href="#" class="white_ref_simple" style="align:center;font-size:8pt;">Reportar un problema</a>
 			</div>
 		</ul>
@@ -233,14 +139,14 @@
                             	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content" style="padding-right:0;padding-left:0px;">
                                 	<form>
 	                                    <div style="padding-top:8%;">
-	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Email/Celular">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Email/Celular" ng-model="emailLogin">
 	                                    </div>
 	                                    <div style="padding-top:4%; display: flex; align-items: center;">
 	                                        <div style="margin-right: 2%;">
-	                                            <input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Contrase&ntilde;a" style="width: 100%;">
+	                                            <input type="password" class="ellipse_button ellipse_input" id="usr" placeholder="Contrase&ntilde;a" style="width: 100%;" ng-model="contraLogin">
 	                                        </div>
 	                                        <div style="width: 50%">
-	                                            <button class="ob_hover ellipse_input ellipse_button orange_button" type="button" style="width: 100%;">INGRESAR</button>
+	                                            <button class="ob_hover ellipse_input ellipse_button orange_button" type="button" style="width: 100%;" ng-click="tryLogin()">INGRESAR</button>
 	                                        </div>
 	                                    </div>
 	                                    <div style="text-align: right; padding-top:1.5%;padding-right:3%;">

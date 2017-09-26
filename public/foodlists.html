@@ -7,9 +7,12 @@
 		<script src="./javascripts/materialize.js"></script>
 		<script src="./lib/angular/angular.min.js"></script>
 		<script src="/javascripts/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="javascripts/components/core-min.js"></script>
+		<script src="javascripts/components/sha1-min.js"></script>
 		<script src="javascripts/angular-app.js"></script>
 		<script src="javascripts/sessionControllers.js"></script>
 		<script src="javascripts/foodlistControllers.js"></script>
+		<script src="javascripts/functions.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="./stylesheets/materialize.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin "anonymous">
@@ -35,27 +38,7 @@
 			        scrollTop: $(el).offset().top - 80
 			    }, speed);
 			}
-			/*
-			$(function(){
-			    $.ajax({
-			       type: "GET",
-			       url: './authorization',
-			       dataType: 'json',
-			       success: function (json) {
-			            if (json.data.nombre && json.data.nombre!='' && json.data.perfil && json.data.perfil=="user"){
-			            	$(fotoUsuario).attr("src",json.data.foto);
-			            	$(imgPerfilBarra).attr("src",json.data.foto);
-			            	$('[name=imagenUsuario]').show();
-			            }
-			            else
-			            	$('[name=iniciaSesion]').show();
-			        },
-			        complete: function (){
-			            
-			        }
-			   }); 
-			});
-			*/
+
 			$(document).ready(function(){
 				var helperShow = -1;
 				//$("#text1").hide();
@@ -185,32 +168,6 @@
 				background-position: 0 .2em;
 
         	}
-
-        	.badge {
-			  padding: 1px 9px 2px;
-			  font-size: 12.025px;
-			  font-weight: bold;
-			  white-space: nowrap;
-			  color: #ffffff;
-			  background-color: #999999;
-			  -webkit-border-radius: 9px;
-			  -moz-border-radius: 9px;
-			  border-radius: 9px;
-			}
-
-			.badge:hover {
-			  color: #ffffff;
-			  text-decoration: none;
-			  cursor: pointer;
-			}
-
-			.badge-error {
-			  background-color: #b94a48;
-			}
-
-			.badge-error:hover {
-			  background-color: #953b39;
-			}
 
         	.orange_upperline 
 			{
@@ -887,6 +844,7 @@
 	                                <img src="img/Lineh.png" style="width: 100%; height: 1px;">
 	                            </div>
 	                        </div>
+	                        <!---->
 	                        <div class="row not_materialize_row">
 	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 110px; padding-top: 5px;">
 	                                <span style="font-size: 20px; font-weight:500;">VIERNES 8 DE SEPTIEMBRE</span>
@@ -947,6 +905,7 @@
 	                                </div>
 	                            </div>
 	                        </div>
+	                        <!---->
 	                        <div class="row not_materialize_row" style="padding-left:5%;padding-right:5%;">
 	                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	                                <img src="img/Lineh.png" style="width: 100%; height: 1px;">
@@ -1405,6 +1364,99 @@
 	                </div>
 	            </div>
 	        </div>
+	        <div class="modal fade" id="registrarseModal" role="dialog">
+            	<div class="modal-dialog">
+                	<div class="container-fluid modal-content">
+                    	<div class="modal-header">
+                        	<button type="button" class="close close-x" data-dismiss="modal" aria-label="Close">
+                            	<span aria-hidden="true">&times;</span>
+                        	</button>
+                    	</div>
+                    	<div class="modal-body">
+                        	<div class="row row_30 not_materialize_row light_underline">
+                            	<div id="nuevo_boton" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 orange_underline letters_hover3" style="cursor:pointer;right:10px;" ng-click="open2=false;" onclick="remove_viejo();">
+                                	<span class="letters_hover">NUEVO USUARIO</span><br>
+                                	<span class="letters_hover2">&iquest;Tu primera vez por aqu&iacute;?</span>
+                            	</div>
+                            	<div id="viejo_boton" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 right_content letters_hover3" style="text-align:right;cursor:pointer;left:10px;" ng-click="open2=true;" onclick="remove_nuevo();">
+                                	<span class="letters_hover">USUARIO CON REGISTRO</span><br>
+                                	<span class="letters_hover2">&iexcl;Un gusto volverte a recibir!</span>
+                            	</div>
+                        	</div>
+                        	<div class="row row_50 not_materialize_row light_underline" style="padding-top: 3%;padding-bottom: 4%;" ng-show="open2">
+                            	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content" style="padding-right:0;padding-left:0px;">
+                                	<form>
+	                                    <div style="padding-top:8%;">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="emailLogin" placeholder="Email/Celular" ng-model="emailLogin">
+	                                    </div>
+	                                    <div style="padding-top:4%; display: flex; align-items: center;">
+	                                        <div style="margin-right: 2%;">
+	                                            <input type="password" class="ellipse_button ellipse_input" id="contraLogin" ng-model="contraLogin" placeholder="Contrase&ntilde;a" style="width: 100%;">
+	                                        </div>
+	                                        <div style="width: 50%">
+	                                            <button class="ob_hover ellipse_input ellipse_button orange_button" type="button" style="width: 100%;" ng-click="tryLogin()">INGRESAR</button>
+	                                        </div>
+	                                    </div>
+	                                    <div style="text-align: right; padding-top:1.5%;padding-right:3%;">
+	                                        <a href="" style="color:rgba(0,0,0,0.5);"><u>Olvid&eacute; mi contrase&ntilde;a</u></a>
+	                                    </div>
+                                	</form>
+                            	</div>
+                        	</div>
+                        	<div class="row row_50 not_materialize_row light_underline" style="padding-top: 3%;padding-bottom: 2.5%;" ng-hide="open2">
+                        		<form id="formaRegistro">
+                            		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
+                                    	<div>
+                                        	<input type="text" class="ellipse_button ellipse_input" id="nombre" placeholder="Nombre" required ng-model="nombreInput" tabindex="1">
+                                    	</div>
+                                    	<div style="padding-top:4%;">
+                                        	<input type="email" class="ellipse_button ellipse_input" id="email" placeholder="Email" required ng-model="emailInput" tabindex="3">
+                                    	</div>
+                                    	<div style="padding-top:4%; display: flex; align-items: center;">
+                                        	<div style="margin-right: 2%;">
+                                            	<input type="password" class="ellipse_button ellipse_input" id="contra" placeholder="Contrase&ntilde;a" style="width: 100%;" required ng-model="contra" tabindex="5" minlength=8>
+                                        	</div>
+                                        	<div>
+                                            	<input type="password" class="ellipse_button ellipse_input" id="contra2" placeholder="Confirmar" style="width: 100%; padding-left:10%" required ng-model="contra2" tabindex="6" minlength=8>
+                                        	</div>
+                                    	</div>
+                            		</div>
+                            		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    	<div>
+                                    		<input type="hidden" id="photo" value="" ng-model="photoInput">
+                                        	<input type="text" class="ellipse_button ellipse_input" id="apellido" placeholder="Apellido" required ng-model="apellidoInput" tabindex="2">
+                                    	</div>
+                                    	<div style="padding-top:4%;">
+                                        	<input type="tel" class="ellipse_button ellipse_input" id="celular" placeholder="Celular" pattern="[0-9]*" required ng-model="celular" tabindex="4">
+                                    	</div>
+                                    	<div style="padding-top:4%; display: flex; align-items: center;">
+                                        	<div style="width:35%; height:50%">
+                                            	<span style="color:rgba(0,0,0,0.5);"><u>&iquest;Tienes un c&oacute;digo de invitaci&oacute;n?</u></span>
+                                        	</div>
+                                        	<div style="width:70%; height:50%; padding-left:4%">
+                                            	<!--<input type="text" class="ellipse_button ellipse_input" id="usr" placeholder="Confirmar" style="width: 100%;">-->
+                                            	<button type="submit" class="ob_hover ellipse_input ellipse_button orange_button" style="width: 100%;" ng-click="reg()" tabindex="7">REGISTRARME</button>
+                                        	</div>
+                                    	</div>
+                            		</div>
+                            	</form>
+                        	</div>
+                    	</div>
+                    	<div class="row row_12 not_materialize_row" style="margin-left:0;margin-right:20%;">
+                        	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3                          col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content">
+                            	<div style="padding-top:0;">
+                                	<img ng-click="registroFacebook();" style="cursor: pointer;" src="img/img/boton_face.png">
+                            	</div>
+                        	</div>
+                    	</div>
+                    	<div class="row row_10 not_materialize_row" style="text-align:center;">
+                        	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top:1.8%;">
+                            	<span style="font-size:12px; color:rgba(0,0,0,0.5); vertical-align:top">Al ingresar tus datos confirmas ser mayor de edad y aceptar los <u>T&eacute;rminos y Condiciones</u> y el <u>Aviso de Privacidad</u> de LONCH&reg;</span>
+                        	</div>
+                    	</div>
+                	</div>
+            	</div>
+        	</div>
 			<ul id="slide-out" class="side-nav default-side-nav light-side-nav" 
 			style="background-color:#1B1E39;opacity:1;font-family:HelveticaNeue;font-weight:100;padding:0;margin:0;height:100%;">
 				<div class="logo-wrapper waves-light" style="text-align:center;height:25%;display:flex;align-items:center">
@@ -1463,7 +1515,7 @@
 				</div>
 				<hr class="white_opacity_full" style="margin-top:10%;margin-bottom:0;padding:0;">
 				<div style="text-align:center;">
-					<a href="#" class="white_ref_simple" style="align:center">Cerrar Sesión</a>
+					<a href="#" class="white_ref_simple" style="align:center" ng-click="tryLogout()">Cerrar Sesión</a>
 					<a href="#" class="white_ref_simple" style="align:center;font-size:8pt;">Reportar un problema</a>
 				</div>
 			</ul>

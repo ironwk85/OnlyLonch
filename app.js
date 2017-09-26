@@ -28,7 +28,6 @@ var permissions = "";
 /**************************************************************/
 /**************************SETS********************************/
 /**************************************************************/
-
 app.set('env', 'development');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
@@ -70,7 +69,7 @@ app.use(session({
   key: 'session_cookie_name',
   secret: 'session_cookie_secret2',
   store: sessionStore,
-  resave: true, 
+  resave: false, 
   saveUninitialized: false,
   unset: 'destroy',
   cookie: {
@@ -120,7 +119,8 @@ app.use(function(req, res, next){
               next();
   }
   else if (fullUrl.localeCompare("/") == 0
-    || fullUrl.localeCompare("/123456.html") == 0){ 
+    || fullUrl.localeCompare("/123456.html") == 0
+    || fullUrl.localeCompare("/foodlists.html") == 0){ 
 
     console.log("Entering authentication as user");
     console.log("---nombre: " + nombre);
@@ -216,6 +216,11 @@ app.post('/register', function(req,res){
   console.log(":::::"+res);
 })
 
+app.post('/login', function(req,res){
+  usuarios.login(req,res);
+  console.log(":::::"+res);
+})
+
 app.post('/loginFacebook', function(req,res){
   usuarios.loginFacebook(req,res);
   console.log(":::::"+res);
@@ -230,8 +235,30 @@ app.get('/activeSession', function(req,res){
   else{
     req.session.cookie.expires = new Date(Date.now() + (31536000*1000));
     response = {status:'SUCCESS'};
-    response.data = {nombre: nombre , email: req.session.email, foto: req.session.foto};
+    response.data = {nombre: nombre , email: req.session.email, foto: req.session.foto, carrito: req.session.carrito, carritoSize: req.session.carritoSize};
   }
+  res.send(JSON.stringify(response));
+})
+
+app.get('/logout', function(req,res){
+  var response;
+  req.session.destroy();
+
+  if (req.session)
+    response = {status:'ERROR'};
+  else
+    response = {status:'SUCCESS'};
+  
+  res.send(JSON.stringify(response));
+})
+
+app.post('/updateCart', function(req,res){
+  var response;
+
+  req.session.carrito = req.body.carrito;
+  req.session.carritoSize = req.body.carritoSize;
+
+  response = {status:'SUCCESS'};
   res.send(JSON.stringify(response));
 })
 
