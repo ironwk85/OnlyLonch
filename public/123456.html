@@ -199,9 +199,10 @@
 					</ul>
 					<ul class="nav navbar-nav" style="height:100%;float:right;">
 						<li style="background-color:transparent;height:100%;">
-							<a style="background:transparent;height:100%;padding:0;" href="#">
-								<img class="navBar_icon" style="width:80%;margin:10%;" src="img/img/checkout_icon.png">
-							</a>
+							<a style="background:transparent;height:100%;padding:0;" href="#registrarseModal" data-toggle="modal">
+									<img class="navBar_icon" style="width:80%;margin:10%;" src="img/img/checkout_icon.png">
+									<span class="badge badge-error" style="color:#FFF;position:absolute;bottom:2px;left:30px;" ng-show="carritoSize>0">{{carritoSize}}</span>
+								</a>
 						</li>
 						<li style="background-color:transparent;height:100%;text-align:center;">
 							<a class="white-text" style="background:transparent;height:1px;font-size:small;" href="#registrarseModal" data-toggle="modal" onclick="$(nombre).val('');$(apellido).val('');$('#email').val('');$(celular).val('');$(contra).val('');$(contra2).val('');" ng-show="showRegister">
