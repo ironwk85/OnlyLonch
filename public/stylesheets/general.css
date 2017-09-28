@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: HelveticaNeue;
     src: url("../fonts/HelveticaNeueLTStd Lt.otf") format("opentype");
@@ -190,26 +189,6 @@ li.leaf {
 .ellipse_button:hover {
 	background-color:#FFF;
 }
-.orange_button {
-	background-color:#E7B100;
-	box-shadow: 0px 0px 0px #888888;
-	color:white;
-	border: none;
-}
-.orange_button:focus {
-	background-color:#E7B100 !important;
-	color: white !important;
-}
-.transparent_button {
-	border-color:#FFF;
-	box-shadow: 0px 0px 0px #888888;
-	color:white;
-	background:none;
-	border-width: 2px;
-}
-.transparent_button:focus {
-	background-color:none !important;
-}
 			
 /*Texts*/
 .white_text {
@@ -376,16 +355,25 @@ li.leaf {
     padding-left: 6%;
 }
 
-.ellipse_button {
-    -webkit-border-radius: 60px ;
-    -moz-border-radius: 60px ;
-    border-radius: 60px ;
-}
-
 .orange_button {
-    background-color:#E7B100;
-    color:white;
-    border: none;
+	background-color:#E7B100;
+	box-shadow: 0px 0px 0px #888888;
+	color:white;
+	border:none;
+}
+.orange_button:focus {
+	background-color:#E7B100 !important;
+	color: white !important;
+}
+.transparent_button {
+	border-color:#FFF;
+	box-shadow: 0px 0px 0px #888888;
+	color:white;
+	background:none;
+	border-width: 2px;
+}
+.transparent_button:focus {
+	background-color:none !important;
 }
 
 .blue_button {
@@ -489,4 +477,3 @@ padding: 1px 9px 2px;
     border-top: none;
     border-radius: 0 0 7px 7px;
 }
-	        

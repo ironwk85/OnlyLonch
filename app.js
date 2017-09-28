@@ -130,6 +130,7 @@ app.use(function(req, res, next){
       req.session.cookie.expires = new Date(Date.now() + (seconds*1000));
       //res.redirect("/index.html");
       console.log("Logueado");
+      next();
     }
     else
       next();

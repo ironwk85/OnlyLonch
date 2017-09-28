@@ -12,6 +12,7 @@
 		<script src="javascripts/angular-app.js"></script>
 		<script src="javascripts/sessionControllers.js"></script>
 		<script src="javascripts/foodlistControllers.js"></script>
+		<script src="javascripts/facebook.js"></script>
 		<script src="javascripts/functions.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="./stylesheets/materialize.css">
@@ -214,24 +215,6 @@
 				box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.2);
 			}
 			/*Buttons*/
-			.ellipse_button {
-				-webkit-border-radius: 60px ;
-				-moz-border-radius: 60px ;
-				border-radius: 60px ;
-			}
-			.ellipse_button:hover {
-				background-color:#FFF;
-			}
-			.orange_button {
-				background-color:#E7B100;
-				box-shadow: 0px 0px 0px #888888;
-				color:white;
-				border: none;
-			}
-			.orange_button:focus {
-				background-color:#E7B100 !important;
-				color: white !important;
-			}
 			.transparent_button:focus {
 				background-color:none !important;
 			}
@@ -658,15 +641,6 @@
             {
                 border-bottom: 1px solid rgba(0,0,0,.2);
                 padding-bottom: 22px;
-            }
-            .ellipse_input {
-                /*font-family: Helvetica;*/
-                border: 1px solid rgba(0,0,0,.5);
-                width: 100%;
-                height: 60px;
-                font-size: 20px;
-                font-weight: lighter;
-                padding-left: 6%;
             }
             .cobertura-dialog{
                 /*position: absolute;
@@ -1323,11 +1297,11 @@
                     	</div>
                     	<div class="modal-body">
                         	<div class="row row_30 not_materialize_row light_underline">
-                            	<div id="nuevo_boton" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 orange_underline letters_hover3" style="cursor:pointer;right:10px;" ng-click="open2=false;" onclick="remove_viejo();">
+                            	<div id="nuevo_boton" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 orange_underline letters_hover3" style="cursor:pointer;right:10px;" ng-click="open2=false;getFace=true;loginFace=false;" onclick="remove_viejo();">
                                 	<span class="letters_hover">NUEVO USUARIO</span><br>
                                 	<span class="letters_hover2">&iquest;Tu primera vez por aqu&iacute;?</span>
                             	</div>
-                            	<div id="viejo_boton" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 right_content letters_hover3" style="text-align:right;cursor:pointer;left:10px;" ng-click="open2=true;" onclick="remove_nuevo();">
+                            	<div id="viejo_boton" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 right_content letters_hover3" style="text-align:right;cursor:pointer;left:10px;" ng-click="open2=true;getFace=false;loginFace=true;" onclick="remove_nuevo();">
                                 	<span class="letters_hover">USUARIO CON REGISTRO</span><br>
                                 	<span class="letters_hover2">&iexcl;Un gusto volverte a recibir!</span>
                             	</div>
@@ -1336,14 +1310,14 @@
                             	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content" style="padding-right:0;padding-left:0px;">
                                 	<form>
 	                                    <div style="padding-top:8%;">
-	                                        <input type="text" class="ellipse_button ellipse_input" id="emailLogin" placeholder="Email/Celular" ng-model="emailLogin">
+	                                        <input type="text" class="ellipse_button ellipse_input" id="emailLogin" placeholder="Email/Celular" ng-model="emailLogin" required>
 	                                    </div>
 	                                    <div style="padding-top:4%; display: flex; align-items: center;">
 	                                        <div style="margin-right: 2%;">
-	                                            <input type="password" class="ellipse_button ellipse_input" id="contraLogin" ng-model="contraLogin" placeholder="Contrase&ntilde;a" style="width: 100%;">
+	                                            <input type="password" class="ellipse_button ellipse_input" id="contraLogin" placeholder="Contrase&ntilde;a" style="width: 100%;" ng-model="contraLogin" required>
 	                                        </div>
 	                                        <div style="width: 50%">
-	                                            <button class="ob_hover ellipse_input ellipse_button orange_button" type="button" style="width: 100%;" ng-click="tryLogin()">INGRESAR</button>
+	                                            <button class="ob_hover ellipse_input ellipse_button orange_button" type="submit" style="width: 100%;" ng-click="tryLogin()">INGRESAR</button>
 	                                        </div>
 	                                    </div>
 	                                    <div style="text-align: right; padding-top:1.5%;padding-right:3%;">
@@ -1356,27 +1330,27 @@
                         		<form id="formaRegistro">
                             		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
                                     	<div>
-                                        	<input type="text" class="ellipse_button ellipse_input" id="nombre" placeholder="Nombre" required ng-model="nombreInput" tabindex="1">
+                                        	<input type="text" class="ellipse_button ellipse_input" id="nombre" placeholder="Nombre" required ng-model="nombreInput" tabindex="1"/>
                                     	</div>
                                     	<div style="padding-top:4%;">
-                                        	<input type="email" class="ellipse_button ellipse_input" id="email" placeholder="Email" required ng-model="emailInput" tabindex="3">
+                                        	<input type="email" class="ellipse_button ellipse_input" id="email" placeholder="Email" required ng-model="emailInput" tabindex="3"/>
                                     	</div>
                                     	<div style="padding-top:4%; display: flex; align-items: center;">
                                         	<div style="margin-right: 2%;">
-                                            	<input type="password" class="ellipse_button ellipse_input" id="contra" placeholder="Contrase&ntilde;a" style="width: 100%;" required ng-model="contra" tabindex="5" minlength=8>
+                                            	<input type="password" class="ellipse_button ellipse_input" id="contra" placeholder="Contrase&ntilde;a" style="width: 100%;" required ng-model="contra" tabindex="5" minlength=8/>
                                         	</div>
                                         	<div>
-                                            	<input type="password" class="ellipse_button ellipse_input" id="contra2" placeholder="Confirmar" style="width: 100%; padding-left:10%" required ng-model="contra2" tabindex="6" minlength=8>
+                                            	<input type="password" class="ellipse_button ellipse_input" id="contra2" placeholder="Confirmar" style="width: 100%; padding-left:10%" required ng-model="contra2" tabindex="6" minlength=8/>
                                         	</div>
                                     	</div>
                             		</div>
                             		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                     	<div>
                                     		<input type="hidden" id="photo" value="" ng-model="photoInput">
-                                        	<input type="text" class="ellipse_button ellipse_input" id="apellido" placeholder="Apellido" required ng-model="apellidoInput" tabindex="2">
+                                        	<input type="text" class="ellipse_button ellipse_input" id="apellido" placeholder="Apellido" ng-model="apellidoInput" tabindex="2" ng-required="true"/>
                                     	</div>
                                     	<div style="padding-top:4%;">
-                                        	<input type="tel" class="ellipse_button ellipse_input" id="celular" placeholder="Celular" pattern="[0-9]*" required ng-model="celular" tabindex="4">
+                                        	<input type="tel" class="ellipse_button ellipse_input" id="celular" placeholder="Celular" pattern="[0-9]*" required ng-model="celular" tabindex="4"/>
                                     	</div>
                                     	<div style="padding-top:4%; display: flex; align-items: center;">
                                         	<div style="width:35%; height:50%">
@@ -1391,10 +1365,17 @@
                             	</form>
                         	</div>
                     	</div>
-                    	<div class="row row_12 not_materialize_row" style="margin-left:0;margin-right:20%;">
+                    	<div id="getFace" class="row row_12 not_materialize_row" style="margin-left:0;margin-right:20%;" ng-show="getFace">
                         	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3                          col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content">
                             	<div style="padding-top:0;">
-                                	<img ng-click="registroFacebook();" style="cursor: pointer;" src="img/img/boton_face.png">
+                                	<img ng-click="getInfoFacebook();" style="cursor: pointer;" src="img/img/boton_face.png">
+                            	</div>
+                        	</div>
+                    	</div>
+                    	<div id="loginFace" class="row row_12 not_materialize_row" style="margin-left:0;margin-right:20%;" ng-show="loginFace">
+                        	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3                          col-xs-6 col-sm-6 col-md-6 col-lg-6 center_content">
+                            	<div style="padding-top:0;">
+                                	<img ng-click="tryLoginFacebook();" style="cursor: pointer;" src="img/img/boton_face.png">
                             	</div>
                         	</div>
                     	</div>

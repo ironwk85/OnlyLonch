@@ -18,6 +18,12 @@ angular.module('foodlistsApp',['foodlistsApp.controllers','sessionApp.controller
 						return response; 
 					});    
 			},
+			loginFacebook: function(em) {
+				return $http.post('/loginFacebook',{email:em})
+					.then(function(response) { 
+						return response; 
+					});    
+			},
 			logout: function(){
 				return $http.get('/logout')
 					.then(function(response){
@@ -52,6 +58,12 @@ angular.module('sessionApp',['sessionApp.controllers'])
 			login: function(em, p) {
 				p = CryptoJS.SHA1(p).toString();
 				return $http.post('/login',{email:em, password:p})
+					.then(function(response) { 
+						return response; 
+					});    
+			},
+			loginFacebook: function(em) {
+				return $http.post('/loginFacebook',{email:em})
 					.then(function(response) { 
 						return response; 
 					});    

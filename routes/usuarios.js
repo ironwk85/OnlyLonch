@@ -77,7 +77,7 @@ exports.register = function(req, res) {
 	var pass = req.body.contra;
 	var photo = req.body.photo;
 	var data;
-	var response = {stat:''};
+	var response = {};
 	
 	data = {
 		tables:{
@@ -130,6 +130,7 @@ exports.login = function(req, res) {
 		  	req.session.nombre = user.getNombre();
 		   	req.session.email = user.getEmail();
 		   	req.session.foto = user.getFoto();
+		   	req.session.perfil = "user";
 			req.session.cookie.expires = new Date(Date.now() + (31536000*1000));
 
 		    response.status = "SUCCESS";
@@ -142,46 +143,34 @@ exports.login = function(req, res) {
 	})
 };
 
-
-/*
 exports.loginFacebook = function(req, res) {
 	var email = req.body.email;
-	var foto = req.body.foto;
-	//var rememberMe = req.body.rememberMe;
 
-	console.log(req.body);
 	console.log('SELECT * FROM TB_CLIENTES WHERE Email = \'' + email + '\'');
-
 	db.get().query('SELECT * FROM TB_CLIENTES WHERE Email = \'' + email + '\'', function (err, rows) {
+
 		var response = {status:''};
+		console.log(rows);
 	    if (err){
 	    	response.stauts = "ERROR";
-	    	res.send(JSON.stringify(status)); 
 	  	}
 	  	if (rows.length > 0){
-		  	var user = new Usuario();
+	  		var user = new Usuario();
 		  	user.setNombre(rows[0].Nombre);
 		  	user.setEmail(rows[0].Email);
-		  	user.setFacebook(rows[0].Facebook);
-
-		  	if (rows[0].Foto && rows[0].Foto!="")
-		  		user.setFoto(rows[0].Foto);
-		  	else
-		  		user.setFoto(foto);
-
+		  	user.setFoto(rows[0].Foto);
 		  	req.session.nombre = user.getNombre();
-   			req.session.email = user.getEmail();
-   			req.session.foto = user.getFoto();
-   			req.session.facebook = user.getFacebook();
-   			req.session.perfil = "user";
+		   	req.session.email = user.getEmail();
+		   	req.session.foto = user.getFoto();
+		   	req.session.perfil = "user";
+			req.session.cookie.expires = new Date(Date.now() + (31536000*1000));
 
 		    response.status = "SUCCESS";
 		    response.data = user;
 		}
 		else{
-			response.status = "ERROR";
+			response.status = "NOT LOGGED";
 		}
 		res.send(JSON.stringify(response));
 	})
 };
-*/
