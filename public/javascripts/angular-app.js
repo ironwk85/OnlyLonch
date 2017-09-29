@@ -41,6 +41,12 @@ angular.module('foodlistsApp',['foodlistsApp.controllers','sessionApp.controller
 					.then(function(response){
 						return response;
 					});
+			},
+			sendEmail: function(t, s, m, hm){
+				return $http.post('/sendEmail',{to:t,subject:s,message:m,htmlMessage:hm})
+					.then(function(response){
+						return response;
+					});
 			}
 		}
 	}); 
@@ -76,6 +82,12 @@ angular.module('sessionApp',['sessionApp.controllers'])
 			},
 			logged: function(){
 				return $http.get('/activeSession')
+					.then(function(response){
+						return response;
+					});
+			},
+			sendEmail: function(t, s, m, hm){
+				return $http.post('/sendEmail',{to:t,subject:s,message:m,htmlMessage:hm})
 					.then(function(response){
 						return response;
 					});

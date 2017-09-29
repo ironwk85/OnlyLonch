@@ -835,6 +835,8 @@ exports.getNumProgramacion = function(req, res) {
 //------------------------------------------//
 //-------- CÓDIGO AGREGADO POR KAGG --------//
 //------------------------------------------//
+//----------------TE AMO KAGG---------------//
+//------------------------------------------//
 
 exports.getProgramacion = function(req, res) {
     var inicio = req.body.inicio;

@@ -10,6 +10,7 @@ var admin = require('./routes/admin');
 var db = require('./db')
 var formidable = require('formidable')
 var multer  =   require('multer');
+var nodemailer = require('nodemailer');
 var filenameString = "";
 var storage =   multer.diskStorage({
   destination: function (req, file, callback) {
@@ -24,6 +25,25 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('foto');
 var app = express();
 var permissions = "";
+
+let poolConfig = {
+    pool: true,
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // use TLS
+    auth: {
+        user: 'ironwk85@gmail.com',
+        pass: 'M2H5hZmb$'
+    }
+};
+let transporter = nodemailer.createTransport(poolConfig);
+transporter.verify(function(error, success) {
+   if (error) {
+        console.log(error);
+   } else {
+        console.log('Server is ready to take our messages');
+   }
+});
 
 /**************************************************************/
 /**************************SETS********************************/
@@ -261,6 +281,32 @@ app.post('/updateCart', function(req,res){
 
   response = {status:'SUCCESS'};
   res.send(JSON.stringify(response));
+})
+
+app.post('/insertDireccion', function(req,res){
+  usuarios.insertDireccion(req,res);
+  console.log(":::::"+res);
+})
+
+app.get('/getDirecciones', function(req,res){
+  usuarios.getDirecciones(req,res);
+  console.log(":::::"+res);
+})
+
+app.post('/sendEmail', function(req,res){
+  let mailOptions = {
+      from: '"El iron 👻" <ironwk85@gmail.com>',
+      to: req.body.to,
+      subject: req.body.subject,
+      text: req.body.message,
+      html: req.body.htmlMessage
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);  
+  });
 })
 
 /**************************************************************/

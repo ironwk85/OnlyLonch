@@ -18,6 +18,7 @@
     "express-mysql-session": "latest",
     "excel-export-impr":"*",
     "multer":"*",
-    "formidable":"*"
+    "formidable":"*",
+    "nodemailer":"latest"
   }
 }
