@@ -130,6 +130,9 @@ angular.module('foodlistsApp.controllers',[])
 		}
 
 		$scope.addedElement = function(){
+                
+                if ($rootScope.carrito == null)
+                $rootScope.carrito = [];
 
 			console.log("-------------Carrito antes---------------------------");
 			console.log($rootScope.carrito);
