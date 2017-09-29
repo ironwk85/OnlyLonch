@@ -51,7 +51,7 @@ angular.module('foodlistsApp',['foodlistsApp.controllers','sessionApp.controller
 		}
 	}); 
 
-angular.module('sessionApp',['sessionApp.controllers'])
+angular.module('coberturaApp',['coberturaApp.controllers','sessionApp.controllers'])
 	.factory('apiService', function($http) {  
 		return {    
 			register: function(n, a, em, cel, con, ph) {
@@ -88,6 +88,50 @@ angular.module('sessionApp',['sessionApp.controllers'])
 			},
 			sendEmail: function(t, s, m, hm){
 				return $http.post('/sendEmail',{to:t,subject:s,message:m,htmlMessage:hm})
+					.then(function(response){
+						return response;
+					});
+			},
+			getDirecciones: function(t, s, m, hm){
+				return $http.get('/getDirecciones')
+					.then(function(response){
+						return response;
+					});
+			}
+		}
+	});
+
+angular.module('sessionApp',['sessionApp.controllers'])
+	.factory('apiService', function($http) {  
+		return {    
+			register: function(n, a, em, cel, con, ph) {
+				con = CryptoJS.SHA1(con).toString();
+				return $http.post('/register',{nombre:n, apellido:a, email:em, celular:cel, contra:con, photo:ph})
+					.then(function(response) { 
+						return response; 
+					});    
+			},
+			login: function(em, p) {
+				p = CryptoJS.SHA1(p).toString();
+				return $http.post('/login',{email:em, password:p})
+					.then(function(response) { 
+						return response; 
+					});    
+			},
+			loginFacebook: function(em) {
+				return $http.post('/loginFacebook',{email:em})
+					.then(function(response) { 
+						return response; 
+					});    
+			},
+			logout: function(){
+				return $http.get('/logout')
+					.then(function(response){
+						return response;
+					});
+			},
+			logged: function(){
+				return $http.get('/activeSession')
 					.then(function(response){
 						return response;
 					});

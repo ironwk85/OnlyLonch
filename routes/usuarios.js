@@ -226,7 +226,7 @@ exports.getDirecciones = function(req, res) {
 	    	res.send(JSON.stringify(response)); 
 	  	}
 
-	  	if (rows.length > 0){
+	  	if (rows && rows.length > 0){
 		  	var direccion = new Direccion();
 		  	direccion.setId(rows[0].ID_DIreccion);
 		  	direccion.setDireccion(rows[0].direccion);

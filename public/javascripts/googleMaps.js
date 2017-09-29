@@ -3,13 +3,20 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 var map;
+var geocoder;
+var marker;
+var infowindow;
+var polancoCoords;
+var polancoPolygon;
 //google.maps.event.addDomListener(window, 'load', initMap);
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644}, zoom: 12
+        center: {lat: -34.397, lng: 150.644}, zoom: 15
     });
-    var polancoCoords = [
+    geocoder = new google.maps.Geocoder();
+
+    polancoCoords = [
         {lat: 19.456355, lng: -99.2200184},
         {lat: 19.4542508, lng: -99.2198896},
         {lat: 19.4487879, lng: -99.2201042},
@@ -73,7 +80,7 @@ function initMap() {
     ];
 
     // Construct the polygon.
-    var polancoPolygon = new google.maps.Polygon({
+    polancoPolygon = new google.maps.Polygon({
         paths: polancoCoords,
         strokeColor: '#FF0000',
         strokeOpacity: 0.8,
@@ -90,21 +97,20 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-            var infowindow = new google.maps.InfoWindow({
+            infowindow = new google.maps.InfoWindow({
               content: "Ubicación actual."
             });
-            var marker = new google.maps.Marker({
+            marker = new google.maps.Marker({
               position: pos,
               map: map,
-              title: 'Ubicación actual.'
+              title: 'Ubicación actual.',
+              draggable: true
             });
             marker.addListener('click', function() {
               infowindow.open(map, marker);
             });
-            infowindow.open(map, marker);
 
-            google.maps.geometry.poly.containsLocation(marker.getPosition(), polancoPolygon)?alert("YES"):alert("NO");
-
+            geocodeLatLng(position.coords.latitude, position.coords.longitude);
             map.setCenter(pos);
         }, 
         function() {
@@ -116,9 +122,107 @@ function initMap() {
     }
 }
 
+function geocodeAddress() {
+    var address = document.getElementById('dir').value;
+
+    if (address.length > 5){
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+                marker.setPosition(results[0].geometry.location);
+                map.setCenter(results[0].geometry.location);
+                $("latitude").val(marker.position.lat());
+                $("longitude").val(marker.position.lng());
+                
+                google.maps.geometry.poly.containsLocation(marker.getPosition(), polancoPolygon)?$(inside).val("true"):$(inside).val("false");
+
+                $("latitude").trigger('input'); 
+                $("latitude").trigger('change');
+                $("longitude").trigger('input'); 
+                $("longitude").trigger('change');
+                $(inside).trigger('input'); 
+                $(inside).trigger('change');
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+}
+
+function geocodeLatLng(latitude, longitude) {
+    var latlng = {lat: latitude, lng: longitude};
+    geocoder.geocode({'location': latlng}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          if (results[0]) {
+            map.setZoom(15);
+            marker.setPosition(latlng);
+
+            google.maps.event.addListener(marker, 'dragend', function(){
+                regeocodeLatLng(marker.position.lat(), marker.position.lng());
+            });
+
+            $("latitude").val(marker.position.lat());
+            $("longitude").val(marker.position.lng());
+            $(dir).val(results[0].formatted_address);
+
+            infowindow.open(map, marker);
+            marker.setMap(map);
+            google.maps.geometry.poly.containsLocation(marker.getPosition(), polancoPolygon)?$(inside).val("true"):$(inside).val("false");
+
+            $("latitude").trigger('input'); 
+            $("latitude").trigger('change');
+            $("longitude").trigger('input'); 
+            $("longitude").trigger('change');
+            $(inside).trigger('input'); 
+            $(inside).trigger('change');
+            $(dir).trigger('input'); 
+            $(dir).trigger('change');
+
+          } else {
+            console.log('No results found');
+          }
+        } else {
+          console.log('Geocoder failed due to: ' + status);
+        }
+    });
+    
+}
+
+function regeocodeLatLng(latitude, longitude) {
+    var latlng = {lat: latitude, lng: longitude};
+    geocoder.geocode({'location': latlng}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      if (results[0]) {
+        $(dir).val(results[0].formatted_address);
+        marker.setMap(map);
+        $("latitude").val(marker.position.lat());
+        $("longitude").val(marker.position.lng());
+        google.maps.geometry.poly.containsLocation(marker.getPosition(), polancoPolygon)?$(inside).val("true"):$(inside).val("false");
+
+        $("latitude").trigger('input'); 
+        $("latitude").trigger('change');
+        $("longitude").trigger('input'); 
+        $("longitude").trigger('change');
+        $(inside).trigger('input'); 
+        $(inside).trigger('change');
+        $(dir).trigger('input'); 
+        $(dir).trigger('change');
+
+      } else {
+        console.log('No results found');
+      }
+    } else {
+      console.log('Geocoder failed due to: ' + status);
+    }
+    });
+}
+
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
         'Error: The Geolocation service failed.' :
         'Error: Your browser doesn\'t support geolocation.');
 }
+
+//$('#modalCobertura').on('shown.bs.modal', function () {
+ //               google.maps.event.trigger(map, "resize");
+ //           });

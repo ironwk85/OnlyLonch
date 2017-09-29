@@ -294,6 +294,8 @@ app.get('/getDirecciones', function(req,res){
 })
 
 app.post('/sendEmail', function(req,res){
+  var response;
+
   let mailOptions = {
       from: '"El iron 👻" <ironwk85@gmail.com>',
       to: req.body.to,
@@ -303,9 +305,14 @@ app.post('/sendEmail', function(req,res){
   };
   transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-          return console.log(error);
+        console.log("ERROR")
+        response = {status:'ERROR'};
       }
+      else
+        response = {status:'SUCCESS'};
+
       console.log('Message sent: %s', info.messageId);  
+      res.send(JSON.stringify(response));
   });
 })
 
